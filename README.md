@@ -1,5 +1,4 @@
-[# WorkFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-workflow-t6/assets/103579574/1b646a51-cb24-4890-87d7-eebc0f09eb40
-)
+![logoWF](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-workflow-t6/assets/103579574/7e8a5ae0-4070-4b4a-848a-feab0a00948c)
 
 `CURSO`
 
