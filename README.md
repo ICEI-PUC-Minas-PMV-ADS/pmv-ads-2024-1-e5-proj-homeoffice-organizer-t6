@@ -1,4 +1,4 @@
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-workflow-t6/assets/103579574/09e939fe-123f-437c-ac55-629ec4539d1e" width="1000">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-workflow-t6/assets/103579574/3d898a5a-6dc8-46d6-8e5b-6789a633bf34" width="1000">
 
 `CURSO`
 
