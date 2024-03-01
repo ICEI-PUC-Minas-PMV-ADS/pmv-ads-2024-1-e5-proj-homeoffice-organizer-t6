@@ -14,8 +14,8 @@ Esse projeto visa desenvolver um sistema que possibilta o processo de marcação
 
 
 ## Integrantes
-| [<img src="https://avatars.githubusercontent.com/u/103579574?v=4" width=115><br><sub>Vinicius Luiz</sub>](https://github.com/viniciussluiz) | [<img src="https://avatars.githubusercontent.com/u/100442612?v=4" width=115><br><sub>Alisson Carvalho</sub>](https://github.com/alessaocarvalho) | [<img src="https://avatars.githubusercontent.com/u/96542702?v=4" width=115><br><sub>Nathalia Liberato</sub>](https://github.com/NathaliaLiberato) | [<img src="https://avatars.githubusercontent.com/u/85913563?v=4" width=115><br><sub>Jéssica Grimaldi</sub>](https://github.com/jessicagrimaldi) | [<img src="https://avatars.githubusercontent.com/u/91231500?v=4" width=115><br><sub>Arthur Rocha</sub>](https://github.com/ar7hurr0och4) |
-| :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/103579574?v=4" width=115><br><sub>Vinicius Luiz</sub>](https://github.com/viniciussluiz) | [<img src="https://avatars.githubusercontent.com/u/100442612?v=4" width=115><br><sub>Alisson Carvalho</sub>](https://github.com/alessaocarvalho) | [<img src="https://avatars.githubusercontent.com/u/96542702?v=4" width=115><br><sub>Nathalia Liberato</sub>](https://github.com/NathaliaLiberato) | [<img src="https://avatars.githubusercontent.com/u/91231500?v=4" width=115><br><sub>Arthur Rocha</sub>](https://github.com/ar7hurr0och4) |
+| :---: | :---: | :---: | :---: |
 
 ## Orientador
 | [<img src="https://avatars.githubusercontent.com/u/68968690?v=4" width=115><br><sub>Joyce Carvalho</sub>](https://github.com/joycecpc) |
