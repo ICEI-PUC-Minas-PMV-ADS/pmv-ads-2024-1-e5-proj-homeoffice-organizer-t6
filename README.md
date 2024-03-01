@@ -1,6 +1,6 @@
 <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/d1c75161-4f12-4d08-91a3-7291171ba7f1" width="1000">
 
-# WorkFlow
+# Home Office Organizer
 
 `Análise e Desenvolvimento de Sistemas`
 
