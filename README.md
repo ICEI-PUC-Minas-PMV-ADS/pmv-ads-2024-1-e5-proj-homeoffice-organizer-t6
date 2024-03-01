@@ -1,4 +1,4 @@
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-workflow-t6/assets/103579574/3d898a5a-6dc8-46d6-8e5b-6789a633bf34" width="1000">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/d1c75161-4f12-4d08-91a3-7291171ba7f1" width="1000">
 
 # WorkFlow
 
