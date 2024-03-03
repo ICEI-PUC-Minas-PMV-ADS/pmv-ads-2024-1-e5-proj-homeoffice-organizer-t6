@@ -21,8 +21,8 @@ A implementação desse sistema de gerenciamento de home office trará uma séri
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+A situação-problema enfrentada pela Onimusic, que envolve a necessidade de um sistema de gerenciamento de home office para seus colaboradores, pode ser relacionada ao impacto social esperado com a implantação do sistema sociotécnico. Ao implementar essa solução, a empresa não apenas melhora sua eficiência interna, mas também promove um ambiente de trabalho mais flexível e adaptável, o que contribui para o equilíbrio entre vida profissional e pessoal dos colaboradores. Isso está alinhado com o princípio da Extensão Universitária de atuar como agente transformador, promovendo a inclusão, o desenvolvimento social e a cidadania.
 
 ## Descrição do Parceiro
 
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+A Onimusic é uma distribuidora de música gospel brasileira, fundada em 2004 na cidade de Nova Lima, no estado de Minas Gerais. Reconhecida por seu compromisso com a qualidade artística e sua contribuição para o cenário da música gospel no Brasil, a Onimusic tem se destacado como uma das principais empresas do setor. Com uma ampla variedade de artistas e projetos musicais, a gravadora tem alcançado sucesso tanto nacional quanto internacionalmente, promovendo valores cristãos e influenciando positivamente a cultura e a sociedade. Com uma equipe dedicada e apaixonada pela música, a Onimusic continua a inovar e a expandir seu alcance, buscando sempre oferecer o melhor para seus artistas e ouvintes. Vale destacar que a empresa valoriza a qualidade de vida e o bem-estar de seus colaboradores, buscando constantemente formas de melhorar o ambiente de trabalho e promover um equilíbrio saudável entre vida profissional e pessoal. Com uma equipe dedicada e talentosa, a empresa está sempre em busca de soluções criativas para os desafios do dia a dia, visando sempre a satisfação de seus clientes e colaboradores.
