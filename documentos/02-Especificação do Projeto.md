@@ -7,7 +7,8 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 ## Personas
 
 <img src="/documentos/img/Persona.jpg">
-
+<img src="/documentos/img/Persona1.jpg">
+<img src="/documentos/img/Persona2.jpg">
 
 ## Arquitetura e Tecnologias
 
