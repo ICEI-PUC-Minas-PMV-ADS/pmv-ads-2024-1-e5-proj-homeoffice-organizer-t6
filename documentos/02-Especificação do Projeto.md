@@ -6,7 +6,6 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 ## Personas
 
-![Uploading image.png…]()
 
 
 ## Arquitetura e Tecnologias
