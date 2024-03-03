@@ -28,12 +28,12 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 
 | ID   | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Deve existir um botão de "+" para adicionar um novo colaborador ao calendário. | ALTA |
+|RF-001| Deve existir um botão com um ícone de "+" e texto "Adicionar colaborador" para adicionar um novo colaborador ao calendário. | ALTA |
 |RF-002| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
 |RF-003| Os gestores devem poder criar e editar escalas de trabalho para os colaboradores. | ALTA | 
 |RF-005| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
-|RF-005| Deve haver um botão de "-" para remover um colaborador do calendário. | ALTA |
-|RF-006| O sistema deve permitir a remoção de um colaborador com um único clique, sem confirmações adicionais. | ALTA |
+|RF-005| Deve haver um botão de "-" e texto "Remover colaborador" para remover um colaborador do calendário. | ALTA |
+|RF-006| O sistema deve permitir a remoção de um colaborador com um clique, e uma confirmação. | ALTA |
 
 
 
