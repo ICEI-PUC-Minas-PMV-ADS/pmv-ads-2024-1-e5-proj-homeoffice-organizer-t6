@@ -6,7 +6,7 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 ## Personas
 
-![image](documentos/img/diagramafluxo2.jpg)
+<img src="/documentos/img/Persona.jpg">
 
 
 ## Arquitetura e Tecnologias
