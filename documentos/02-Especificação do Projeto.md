@@ -4,12 +4,6 @@
 
 Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
 
-## Personas
-
-<img src="/documentos/img/Persona.jpg">
-<img src="/documentos/img/Persona1.jpg">
-<img src="/documentos/img/Persona2.jpg">
-
 ## Arquitetura e Tecnologias
 
 o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
