@@ -4,6 +4,19 @@
 
 Nesta seção, iremos abordar a definição do problema e a ideia de solução sob a perspectiva do usuário. Utilizaremos técnicas como criação de diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além de considerar as restrições do projeto. Isso nos permitirá entender as necessidades dos usuários e os objetivos do sistema, garantindo uma abordagem centrada no usuário e uma solução eficaz para facilitar o registro de dias de home office.
 
+## Personas
+
+<img src="/documentos/img/Persona.jpg">
+<img src="/documentos/img/Persona1.jpg">
+<img src="/documentos/img/Persona2.jpg">
+
+
+## Histórias de Usuários
+
+A partir de uma entrevista com as personas, foi possível registrar as seguintes histórias de usuários.
+
+<img src="/documentos/img/historiaUsuario.jpg">
+
 
 ## Arquitetura e Tecnologias
 
@@ -55,6 +68,7 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 |RE-01| A aplicação deve ser desenvolvida utilizando a linguagem de programação e o framework determinados pela equipe de desenvolvimento. |
 |RE-02| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
 |RE-03| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
+|RE-04| O sistema deve ser implementado de maneira a não exigir autenticação ou login para adicionar ou remover colaboradores, mantendo o processo simples. |
 
 ## Diagrama de Casos de Uso
 
@@ -68,6 +82,9 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 
 ![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/dc9fd6ee-1d2e-464b-ba04-d128f0550da0)
 
+A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
+
+> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 ## Projeto da Base de Dados
 
