@@ -2,7 +2,8 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Nesta seção, iremos abordar a definição do problema e a ideia de solução sob a perspectiva do usuário. Utilizaremos técnicas como criação de diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além de considerar as restrições do projeto. Isso nos permitirá entender as necessidades dos usuários e os objetivos do sistema, garantindo uma abordagem centrada no usuário e uma solução eficaz para facilitar o registro de dias de home office.
+
 
 ## Arquitetura e Tecnologias
 
@@ -10,10 +11,7 @@ o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a s
 
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
-
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+![ProjectModelCanvasA1 (1)_page-0001 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/4854aefb-b70c-4737-9a43-7027d1866294)
 
 ## Requisitos
 
@@ -33,7 +31,7 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 |RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores. | ALTA | 
 |RF-006| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
 |RF-007| O gestor deve conseguir remover um colaborador do calendário. | ALTA |
-|RF-008| O sistema deve permitir a remoção de um colaborador com um único clique, sem confirmações adicionais. | MÉDIA |
+|RF-008| O sistema deve permitir a remoção de um colaborador com uma confirmação adicional | MÉDIA |
 
 
 
@@ -62,24 +60,14 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+![Use case diagram](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/31c4a971-9815-46bf-8f83-99a3fba55e06)
 
 ## Modelo ER (Projeto Conceitual)
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
 
-Sugestão de ferramentas para geração deste artefato: LucidChart e Draw.io.
+![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/dc9fd6ee-1d2e-464b-ba04-d128f0550da0)
 
-A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 ## Projeto da Base de Dados
 
