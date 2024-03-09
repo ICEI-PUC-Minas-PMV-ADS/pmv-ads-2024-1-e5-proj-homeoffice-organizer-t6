@@ -1,8 +1,21 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
 Nesta seção, iremos abordar a definição do problema e a ideia de solução sob a perspectiva do usuário. Utilizaremos técnicas como criação de diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além de considerar as restrições do projeto. Isso nos permitirá entender as necessidades dos usuários e os objetivos do sistema, garantindo uma abordagem centrada no usuário e uma solução eficaz para facilitar o registro de dias de home office.
+
+
+## Personas
+
+<img src="/documentos/img/Persona.jpg">
+<img src="/documentos/img/Persona1.jpg">
+<img src="/documentos/img/Persona2.jpg">
+
+
+## Histórias de Usuários
+
+A partir de uma entrevista com as personas, foi possível registrar as seguintes histórias de usuários.
+
+<img src="/documentos/img/historiaUsuario.jpg">
 
 
 ## Arquitetura e Tecnologias
