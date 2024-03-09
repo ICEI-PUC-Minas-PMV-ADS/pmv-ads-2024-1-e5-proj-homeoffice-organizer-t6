@@ -20,7 +20,12 @@ A partir de uma entrevista com as personas, foi possível registrar as seguintes
 
 ## Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+
+Para o projeto, propomos uma arquitetura cliente-servidor, onde o cliente será uma aplicação web desenvolvida em React, utilizando JavaScript. O servidor será responsável por fornecer os dados da aplicação e realizar operações de armazenamento e recuperação dos registros de home office.
+
+A aplicação React funcionará como a interface do usuário, permitindo que os colaboradores visualizem o calendário de home office, registrem seus dias de trabalho remoto e recebam notificações relevantes.
+
+Para armazenar os dados dos colaboradores, sugerimos o uso de arquivos JSON, garantindo uma solução simples e de fácil implementação. O servidor será responsável por gerenciar esses arquivos e fornecer os dados necessários à aplicação cliente.
 
 ## Project Model Canvas
 
