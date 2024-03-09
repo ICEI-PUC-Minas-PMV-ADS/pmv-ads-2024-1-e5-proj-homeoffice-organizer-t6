@@ -77,7 +77,7 @@ O diagrama de casos de uso é o próximo passo após a elicitação de requisito
 
 ## Modelo ER (Projeto Conceitual)
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
+![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/94d50f7f-7f08-4d72-a4b1-c4daa1785d07)
 
 ![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/dc9fd6ee-1d2e-464b-ba04-d128f0550da0)
 
