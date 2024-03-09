@@ -12,10 +12,7 @@ o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a s
 
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
-
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+![ProjectModelCanvasA1 (1)_page-0001 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/4854aefb-b70c-4737-9a43-7027d1866294)
 
 ## Requisitos
 
