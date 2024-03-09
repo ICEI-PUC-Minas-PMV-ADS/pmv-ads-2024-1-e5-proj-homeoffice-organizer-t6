@@ -4,6 +4,7 @@
 
 Nesta seção, iremos abordar a definição do problema e a ideia de solução sob a perspectiva do usuário. Utilizaremos técnicas como criação de diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além de considerar as restrições do projeto. Isso nos permitirá entender as necessidades dos usuários e os objetivos do sistema, garantindo uma abordagem centrada no usuário e uma solução eficaz para facilitar o registro de dias de home office.
 
+
 ## Arquitetura e Tecnologias
 
 o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
@@ -23,12 +24,14 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 
 | ID   | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Deve existir um botão com um ícone de "+" e texto "Adicionar colaborador" para adicionar um novo colaborador ao calendário. | ALTA |
-|RF-002| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
-|RF-003| Os gestores devem poder criar e editar escalas de trabalho para os colaboradores. | ALTA | 
-|RF-005| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
-|RF-005| Deve haver um botão de "-" e texto "Remover colaborador" para remover um colaborador do calendário. | ALTA |
-|RF-006| O sistema deve permitir a remoção de um colaborador com um clique, e uma confirmação. | ALTA |
+|RF-001| O sistema deve possuir autenticação simples para os gestores. | ALTA |
+|RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores e alterações de escala. | ALTA |
+|RF-003| O gestor deve conseguir adicionar um novo colaborador ao calendário. | ALTA |
+|RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
+|RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores. | ALTA | 
+|RF-006| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
+|RF-007| O gestor deve conseguir remover um colaborador do calendário. | ALTA |
+|RF-008| O sistema deve permitir a remoção de um colaborador com uma confirmação adicional | MÉDIA |
 
 
 
@@ -52,7 +55,6 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 |RE-01| A aplicação deve ser desenvolvida utilizando a linguagem de programação e o framework determinados pela equipe de desenvolvimento. |
 |RE-02| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
 |RE-03| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
-|RE-04| O sistema deve ser implementado de maneira a não exigir autenticação ou login para adicionar ou remover colaboradores, mantendo o processo simples. |
 
 ## Diagrama de Casos de Uso
 
