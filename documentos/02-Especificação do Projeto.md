@@ -43,26 +43,30 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 | ID   | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| O sistema deve possuir autenticação simples para os gestores. | ALTA |
-|RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores e alterações de escala. | ALTA |
-|RF-003| O gestor deve conseguir adicionar um novo colaborador ao calendário. | ALTA |
+|RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores. | ALTA |
+|RF-003| O gestor deve conseguir adicionar ao calendário um novo colaborador. | ALTA |
 |RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
 |RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores. | ALTA | 
 |RF-006| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
-|RF-007| O gestor deve conseguir remover um colaborador do calendário. | ALTA |
-|RF-008| O sistema deve permitir a remoção de um colaborador com uma confirmação adicional | MÉDIA |
+|RF-007| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
+|RF-008| O sistema deve possibilitar que seja marcado no máximo dois dias de home office por semana, bloqueando o usuário se houver tentativa de acrescentar mais dias. | ALTA |
+|RF-009| O sistema deve informar quantos dias de home office serão permitidos por colaborador no mês. | ALTA |
+|RF-010| Se houver dia de feriado em uma semana, deve ser decrescido um número nos dias de home office do colaborador de forma automática e nessa semana o sistema deve possibiltar apenas a marcação de um dia.  | ALTA |
+|RF-011| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | ALTA |
+|RF-012| O gestor deve conseguir remover um colaborador do calendário com confirmação adicional | ALTA |
 
 
 
-### Requisitos não Funcionais
+### Requisitos Não Funcionais
 Os requisitos não funcionais não estão relacionados diretamente com os serviços específicos do sistema oferecidos aos seus usuários. Eles estão relacionados com o nível de serviço esperado para o melhor funcionamento do software como um todo. O descritivo abaixo representa o escopo não funcional que a plataforma atenderá:
 
 | ID    | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A interface do sistema deve ser extremamente simples e intuitiva, garantindo uma curva de aprendizado mínima. | ALTA |
-|RNF-002| A adição e remoção de colaboradores deve ser realizada de forma rápida, sem exigir navegação por menus complexos. | ALTA |
+|RNF-001| Ao fazer login, o usuário deve conseguir visualizar a tela inicial em até 3 segundos | ALTA |
+|RNF-002| A adição e remoção de colaboradores deve ser realizada com no máximo 4 cliques. | ALTA |
 |RNF-003| O calendário deve ter uma aparência clara e legível, mesmo quando exibido em telas grandes durante apresentações de slides. | MÉDIA |
-|RNF-003| O sistema deve ser projetado para funcionar de forma eficiente e rápida, sem a necessidade de processos de carregamento demorados. | MÉDIA |
-
+|RNF-004| Sistema deve ser inteiramente responsivo. | MÉDIA |
+|RNF-004| Sistema deve permitir baixar o relatóro de um colaborador com apenas dois cliques. | MÉDIA |
 
 ## Restrições
 
@@ -70,19 +74,18 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|RE-01| A aplicação deve ser desenvolvida utilizando a linguagem de programação e o framework determinados pela equipe de desenvolvimento. |
-|RE-02| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
-|RE-03| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
+|RE-01| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
+|RE-02| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
 
 ## Diagrama de Casos de Uso
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
-![Use case diagram](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/31c4a971-9815-46bf-8f83-99a3fba55e06)
+![Use case diagram](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/76b302e9-8096-43b0-b35d-f4c9abd08890)
 
 ## Modelo ER (Projeto Conceitual)
 
-![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/94d50f7f-7f08-4d72-a4b1-c4daa1785d07)
+![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/7593deb7-2b75-4b6b-b44c-92a9d0fd9a91)
 
 
 ## Projeto da Base de Dados
