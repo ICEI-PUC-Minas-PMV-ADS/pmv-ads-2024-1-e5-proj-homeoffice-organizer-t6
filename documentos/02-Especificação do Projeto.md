@@ -48,13 +48,15 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 |RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
 |RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores, marcando um dia do calendário com o nome desse respectivo colaborador. | ALTA | 
 |RF-006| Para agendar o dia, o método deve ser arrastando o nome do colaborador até esse dia. | MÉDIA |
-|RF-007| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
-|RF-008| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
-|RF-009| O sistema deve possibilitar que seja marcado no máximo dois dias de home office por semana, bloqueando o usuário se houver tentativa de acrescentar mais dias. | ALTA |
-|RF-010| O sistema deve informar quantos dias de home office serão permitidos por colaborador no mês. | ALTA |
-|RF-011| Se houver dia de feriado em uma semana, deve ser decrescido um número nos dias de home office do colaborador de forma automática e nessa semana o sistema deve possibiltar apenas a marcação de um dia.  | ALTA |
-|RF-012| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | ALTA |
-|RF-013| O gestor deve conseguir remover um colaborador do calendário com confirmação adicional | ALTA |
+|RF-007| Deve existir um filtro por setor no calendário que, quando usado, filtra apenas por membros daquele determinado setor. | ALTA |
+|RF-008| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
+|RF-009| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
+|RF-010| O sistema deve possibilitar que seja marcado no máximo dois dias de home office por semana, bloqueando o usuário com um aviso se houver tentativa de acrescentar mais dias. | ALTA |
+|RF-011| O sistema não deve permitir que um colaborador faça home office na segunda e na sexta. Apenas em um dos dois dias. | ALTA |
+|RF-012| O sistema deve informar quantos dias de home office serão permitidos por colaborador no mês. | ALTA |
+|RF-013| Se houver dia de feriado em uma semana, deve ser decrescido um número nos dias de home office do colaborador de forma automática e nessa semana o sistema deve possibiltar apenas a marcação de um dia.  | ALTA |
+|RF-014| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | ALTA |
+|RF-015| O gestor deve conseguir remover um colaborador do calendário com confirmação adicional | ALTA |
 
 
 
