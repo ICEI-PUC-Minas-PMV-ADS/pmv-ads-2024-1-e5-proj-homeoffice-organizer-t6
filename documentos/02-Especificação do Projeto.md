@@ -1,21 +1,35 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Nesta seção, iremos abordar a definição do problema e a ideia de solução sob a perspectiva do usuário. Utilizaremos técnicas como criação de diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além de considerar as restrições do projeto. Isso nos permitirá entender as necessidades dos usuários e os objetivos do sistema, garantindo uma abordagem centrada no usuário e uma solução eficaz para facilitar o registro de dias de home office.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+
+## Personas
+
+<img src="/documentos/img/Persona.jpg">
+<img src="/documentos/img/Persona1.jpg">
+<img src="/documentos/img/Persona2.jpg">
+
+
+## Histórias de Usuários
+
+A partir de uma entrevista com as personas, foi possível registrar as seguintes histórias de usuários.
+
+<img src="/documentos/img/historiaUsuario.jpg">
+
 
 ## Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+
+Para o projeto, propomos uma arquitetura cliente-servidor, onde o cliente será uma aplicação web desenvolvida em React, utilizando JavaScript. O servidor será responsável por fornecer os dados da aplicação e realizar operações de armazenamento e recuperação dos registros de home office.
+
+A aplicação React funcionará como a interface do usuário, permitindo que os colaboradores visualizem o calendário de home office, registrem seus dias de trabalho remoto e recebam notificações relevantes.
+
+Para armazenar os dados dos colaboradores, sugerimos o uso de arquivos JSON, garantindo uma solução simples e de fácil implementação. O servidor será responsável por gerenciar esses arquivos e fornecer os dados necessários à aplicação cliente.
 
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
-
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+![ProjectModelCanvasA1 (1)_page-0001 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/4854aefb-b70c-4737-9a43-7027d1866294)
 
 ## Requisitos
 
@@ -29,26 +43,33 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 | ID   | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| O sistema deve possuir autenticação simples para os gestores. | ALTA |
-|RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores e alterações de escala. | ALTA |
-|RF-003| O gestor deve conseguir adicionar um novo colaborador ao calendário. | ALTA |
+|RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores. | ALTA |
+|RF-003| O gestor deve conseguir adicionar ao calendário um novo colaborador. | ALTA |
 |RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
-|RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores. | ALTA | 
-|RF-006| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
-|RF-007| O gestor deve conseguir remover um colaborador do calendário. | ALTA |
-|RF-008| O sistema deve permitir a remoção de um colaborador com um único clique, sem confirmações adicionais. | MÉDIA |
+|RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores, marcando um dia do calendário com o nome desse respectivo colaborador. | ALTA | 
+|RF-006| Para agendar o dia, o método deve ser arrastando o nome do colaborador até esse dia. | MÉDIA |
+|RF-007| Deve existir um filtro por setor no calendário que, quando usado, filtra apenas por membros daquele determinado setor. | ALTA |
+|RF-008| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
+|RF-009| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
+|RF-010| O sistema deve possibilitar que seja marcado no máximo dois dias de home office por semana, bloqueando o usuário com um aviso se houver tentativa de acrescentar mais dias. | ALTA |
+|RF-011| O sistema não deve permitir que um colaborador faça home office na segunda e na sexta. Apenas em um dos dois dias. | ALTA |
+|RF-012| O sistema deve informar quantos dias de home office serão permitidos por colaborador no mês. | ALTA |
+|RF-013| Se houver dia de feriado em uma semana, deve ser decrescido um número nos dias de home office do colaborador de forma automática e nessa semana o sistema deve possibiltar apenas a marcação de um dia.  | ALTA |
+|RF-014| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | ALTA |
+|RF-015| O gestor deve conseguir remover um colaborador do calendário com confirmação adicional | ALTA |
 
 
 
-### Requisitos não Funcionais
+### Requisitos Não Funcionais
 Os requisitos não funcionais não estão relacionados diretamente com os serviços específicos do sistema oferecidos aos seus usuários. Eles estão relacionados com o nível de serviço esperado para o melhor funcionamento do software como um todo. O descritivo abaixo representa o escopo não funcional que a plataforma atenderá:
 
 | ID    | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A interface do sistema deve ser extremamente simples e intuitiva, garantindo uma curva de aprendizado mínima. | ALTA |
-|RNF-002| A adição e remoção de colaboradores deve ser realizada de forma rápida, sem exigir navegação por menus complexos. | ALTA |
+|RNF-001| Ao fazer login, o usuário deve conseguir visualizar a tela inicial em até 3 segundos | ALTA |
+|RNF-002| A adição e remoção de colaboradores deve ser realizada com no máximo 4 cliques. | ALTA |
 |RNF-003| O calendário deve ter uma aparência clara e legível, mesmo quando exibido em telas grandes durante apresentações de slides. | MÉDIA |
-|RNF-003| O sistema deve ser projetado para funcionar de forma eficiente e rápida, sem a necessidade de processos de carregamento demorados. | MÉDIA |
-
+|RNF-004| Sistema deve ser inteiramente responsivo. | MÉDIA |
+|RNF-004| Sistema deve permitir baixar o relatóro de um colaborador com apenas dois cliques. | MÉDIA |
 
 ## Restrições
 
@@ -56,33 +77,21 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|RE-01| A aplicação deve ser desenvolvida utilizando a linguagem de programação e o framework determinados pela equipe de desenvolvimento. |
-|RE-02| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
-|RE-03| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
+|RE-01| A equipe de desenvolvimento deve seguir as diretrizes e boas práticas de desenvolvimento estabelecidas pela empresa. |
+|RE-02| A equipe de desenvolvimento deve garantir que o sistema seja compatível com o sistema de apresentação de slides existente na empresa. |
 
 ## Diagrama de Casos de Uso
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+![Use case diagram](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/76b302e9-8096-43b0-b35d-f4c9abd08890)
 
 ## Modelo ER (Projeto Conceitual)
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
+![Flowchart](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/7593deb7-2b75-4b6b-b44c-92a9d0fd9a91)
 
-Sugestão de ferramentas para geração deste artefato: LucidChart e Draw.io.
-
-A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 ## Projeto da Base de Dados
 
-O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
+![Modelo ER](img/Modelo_ER.png)
+
