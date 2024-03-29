@@ -5,31 +5,39 @@ function Cadastro() {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    senha: ''
-  })
+    senha: '',
+    confirmarSenha: ''
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Dados do formulário:', formData)
+    e.preventDefault();
+
+    if (formData.senha !== formData.confirmarSenha) {
+      alert('As senhas não correspondem.');
+      return;
+    }
+
+    console.log('Dados do formulário:', formData);
     setFormData({
       nome: '',
       email: '',
-      senha: ''
-    })
-  }
+      senha: '',
+      confirmarSenha: ''
+    });
+  };
 
   return (
     <div className="cadastro-container">
-      <h2>Cadastro</h2>
       <form className="cadastro-form" onSubmit={handleSubmit}>
         <div className="form-group">
+          <h2 className='form-text'>Fazer Cadastro</h2>
           <label htmlFor="nome">Nome:</label>
           <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
         </div>
@@ -41,7 +49,11 @@ function Cadastro() {
           <label htmlFor="senha">Senha:</label>
           <input type="password" id="senha" name="senha" value={formData.senha} onChange={handleChange} required />
         </div>
-        <button type="submit">Cadastrar</button>
+        <div className="form-group">
+          <label htmlFor="confirmarSenha">Confirmar Senha:</label>
+          <input type="password" id="confirmarSenha" name="confirmarSenha" value={formData.confirmarSenha} onChange={handleChange} required />
+        </div>
+        <button type="submit">Criar Conta</button>
       </form>
     </div>
   );
