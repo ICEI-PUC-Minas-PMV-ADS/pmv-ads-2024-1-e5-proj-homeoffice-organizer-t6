@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../Navbar/Navbar';
 import './Cadastro.css';
 
 function Cadastro() {
@@ -24,6 +25,18 @@ function Cadastro() {
       return;
     }
 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      alert('Por favor, insira um email válido.');
+      return;
+    }
+
+    const senhaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!senhaPattern.test(formData.senha)) {
+      alert('A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.');
+      return;
+    }
+
     console.log('Dados do formulário:', formData);
     setFormData({
       nome: '',
@@ -34,6 +47,8 @@ function Cadastro() {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="cadastro-container">
       <form className="cadastro-form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -55,6 +70,7 @@ function Cadastro() {
         </div>
         <button type="submit">Criar Conta</button>
       </form>
+    </div>
     </div>
   );
 }
