@@ -1,0 +1,108 @@
+/* Fontes */
+h2 {
+  font-family: Zen Kaku Gothic Antique, sans-serif;
+  font-size: 31.25px;
+  font-weight: 700;
+  line-height: 37.5px;
+  text-align: center;
+  ;
+  }
+  
+  .fs-14 {
+    color: darkgrey;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  ul {
+    text-align: right; 
+    margin-right: 80px;
+  }
+  
+  /* Modificação de elementos */
+  body {
+    background-color: #DDAE3A; 
+    margin: 0;
+    padding: 0; 
+  }
+  
+  
+  nav .navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  
+  .logo-navbar {
+    width: 310px;
+    height: 165px;
+  
+  }
+  
+  .btncadastro {
+    font-family: Zen Kaku Gothic Antique, sans-serif;
+    background-color: #DDAE3A;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    text-decoration: none;
+    font-weight: bold;
+  
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
+  
+  .login-form {
+    text-align: center;
+    background-color: #FFFFFF ;
+    width: 592px;
+    padding: 20px;
+    border: 1px;
+    border-radius: 2px;
+  }
+  
+  .form-group { 
+    margin-bottom: 30px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  [type="submit"] {
+    color: aliceblue;
+    font-family: Zen Kaku Gothic Antique, sans-serif;
+    margin-bottom: 20px;
+  
+  }
+  
+  button {
+    padding: 20px;
+    border-radius: 5px;
+    width: 60vh;
+    background-color: black;
+    
+  }
+  
+  button:hover {
+    background-color: #808080;
+  }
