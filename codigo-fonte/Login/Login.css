@@ -57,6 +57,10 @@ h2 {
     font-weight: bold;
   
   }
+
+  .btncadastro:hover {
+    background-color: rgba(216, 164, 33, 0.863);
+  }
   
   .login-container {
     display: flex;
@@ -104,5 +108,5 @@ h2 {
   }
   
   button:hover {
-    background-color: #808080;
+    background-color: rgba(0, 0, 0, 0.76);
   }
