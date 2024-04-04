@@ -1,26 +1,21 @@
 
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-;
-src/App.css,a/a/aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
+G
+backend/app/settings.py,a/6/a68b9ccdbf98b7a1347b74cd6c065660c90e552b
 C
-src/Login/Login.css,9/c/9ce0e6139346b6c5cf9db4f2a924632c98706b9b
-B
-src/Login/Login.js,3/9/3962a5d4078f6fc47ba236d0539fcdc6caaf1c2f
+backend/app/urls.py,2/0/2019254a67e95ca600fada481c217cb3fd89557c
 H
-src/Register/Cadastro.js,a/f/afd84619dfd3cb0e95677d7e747ef50fd56faf6d
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-H
-src/Cadastro/Cadastro.js,d/a/da6a466cda5f49847149a12df4a99df677f8cea1
+backend/usuarios/urls.py,2/4/246e75c452d1c89ff0efad2c0fe3c1c4eb37c8cd
 I
-src/Cadastro/Cadastro.css,b/9/b9075b04a42a42e57e9b6a8e4c29069db91fb5f1
-S
-#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+backend/usuarios/views.py,8/5/85317467db794fe20d7716fb92e9e0d4ef3bebd4
+H
+backend/requirements.txt,7/4/7467689207bc56c9ef017581c0c04191bc16e11e
+K
+frontend/src/Login/Login.js,6/5/651c84e283087952fa64a6d8ecaab37f5733a682
+Q
+!frontend/src/Cadastro/Cadastro.js,e/7/e7a1bb53721ecbe126d5c482b468053b39a5f494
+J
+backend/usuarios/models.py,f/8/f8b6d85e2cabbc8bd0e03f44bd0ab5f68b60e8b9
+O
+backend/usuarios/serializers.py,0/5/050f146fa31003d428684a5d2673b1051d83c333
+C
+frontend/src/App.js,d/6/d63b8ace488b6134c279ccc0cc109223d4d79c20

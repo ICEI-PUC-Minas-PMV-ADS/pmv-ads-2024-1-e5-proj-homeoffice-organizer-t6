@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="f1df9d93-2e2e-47c9-b38d-2d0f34f866c5" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/node_modules/workbox-build/src/templates" />
+      </list>
+    </option>
+  </component>
+</module>
