@@ -24,7 +24,6 @@ function Cadastro() {
       [name]: value
     });
 
-    // Verificar se as senhas coincidem durante a digitação
     if (name === 'senha' || name === 'confirmarSenha') {
       setErrors({
         ...errors,
@@ -47,7 +46,7 @@ function Cadastro() {
       formErrors.email = true;
     }
 
-    const senhaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    const senhaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
     if (!senhaPattern.test(formData.senha)) {
       formErrors.senha = true;
     }
