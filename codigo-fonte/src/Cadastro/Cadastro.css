@@ -20,8 +20,8 @@
 }
 
 .form-text {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 label {
   display: block;
@@ -35,6 +35,15 @@ input[type="password"] {
   padding: 20px 10px;
   border: 1px solid #ccc;
   border-radius: 1px;
+}
+
+input.error {
+  border-color: #ff0000;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
 }
 
 button {

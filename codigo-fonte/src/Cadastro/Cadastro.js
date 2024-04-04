@@ -10,6 +10,13 @@ function Cadastro() {
     confirmarSenha: ''
   });
 
+  const [errors, setErrors] = useState({
+    nome: false,
+    email: false,
+    senha: false,
+    confirmarSenha: false
+  });
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,20 +27,25 @@ function Cadastro() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    let formErrors = { ...errors };
+
     if (formData.senha !== formData.confirmarSenha) {
-      alert('As senhas não correspondem.');
-      return;
+      formErrors.confirmarSenha = true;
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.email)) {
-      alert('Por favor, insira um email válido.');
-      return;
+      formErrors.email = true;
     }
 
     const senhaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     if (!senhaPattern.test(formData.senha)) {
-      alert('A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.');
+      formErrors.senha = true;
+    }
+
+    setErrors(formErrors);
+
+    if (Object.values(formErrors).some(error => error)) {
       return;
     }
 
@@ -49,28 +61,32 @@ function Cadastro() {
   return (
     <div>
       <Navbar isLoginPage={false} />
-    <div className="cadastro-container">
-      <form className="cadastro-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <h2 className='form-text'>Fazer Cadastro</h2>
-          <label htmlFor="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" value={formData.senha} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmarSenha">Confirmar Senha:</label>
-          <input type="password" id="confirmarSenha" name="confirmarSenha" value={formData.confirmarSenha} onChange={handleChange} required />
-        </div>
-        <button type="submit">Criar Conta</button>
-      </form>
-    </div>
+      <div className="cadastro-container">
+        <form className="cadastro-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <h2 className='form-text'>Fazer Cadastro</h2>
+            <label htmlFor="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} className={errors.nome ? 'error' : ''} required />
+            {errors.nome && <span className="error-message">Por favor, insira um nome válido.</span>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className={errors.email ? 'error' : ''} required />
+            {errors.email && <span className="error-message">Por favor, insira um email válido.</span>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" value={formData.senha} onChange={handleChange} className={errors.senha ? 'error' : ''} required />
+            {errors.senha && <span className="error-message">A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.</span>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" value={formData.confirmarSenha} onChange={handleChange} className={errors.confirmarSenha ? 'error' : ''} required />
+            {errors.confirmarSenha && <span className="error-message">As senhas não correspondem.</span>}
+          </div>
+          <button type="submit">Criar Conta</button>
+        </form>
+      </div>
     </div>
   );
 }
