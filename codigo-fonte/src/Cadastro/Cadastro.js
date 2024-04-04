@@ -18,10 +18,19 @@ function Cadastro() {
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+
+    // Verificar se as senhas coincidem durante a digitação
+    if (name === 'senha' || name === 'confirmarSenha') {
+      setErrors({
+        ...errors,
+        confirmarSenha: formData.senha !== value
+      });
+    }
   };
 
   const handleSubmit = (e) => {

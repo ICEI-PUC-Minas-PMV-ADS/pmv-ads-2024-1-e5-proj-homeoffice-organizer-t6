@@ -7,9 +7,9 @@ function Login() {
     <div>
       <Navbar isLoginPage={true} />
     <div className="login-container">
-      <h2>Login</h2>
       <form className="login-form">
         <div className="form-group">
+        <h2 className='form-text'>Login</h2>
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" required />
         </div>
