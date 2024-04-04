@@ -48,7 +48,7 @@ function Cadastro() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar isLoginPage={false} />
     <div className="cadastro-container">
       <form className="cadastro-form" onSubmit={handleSubmit}>
         <div className="form-group">

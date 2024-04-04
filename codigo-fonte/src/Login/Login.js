@@ -1,8 +1,11 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 import './Login.css'
 
 function Login() {
   return (
+    <div>
+      <Navbar isLoginPage={true} />
     <div className="login-container">
       <h2>Login</h2>
       <form className="login-form">
@@ -16,6 +19,7 @@ function Login() {
         </div>
         <button type="submit">Fazer Login</button>
       </form>
+    </div>
     </div>
   );
 }
