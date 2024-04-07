@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3da5b96e-e9cf-466a-adc6-63c142c46490" name="Changes" comment="feat(auth) checkpoint autenticacao de users">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Home/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/img/HomeOrganizerLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85317467db794fe20d7716fb92e9e0d4ef3bebd4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85317467db794fe20d7716fb92e9e0d4ef3bebd4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Login/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Login/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Login/Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cadastro/Cadastro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/Cadastro.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/Cadastro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

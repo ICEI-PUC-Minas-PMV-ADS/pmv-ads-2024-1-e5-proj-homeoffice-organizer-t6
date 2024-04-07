@@ -11,17 +11,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/login/', {
-        email,
-        password
-      });
-      console.log('Login bem-sucedido:', response.data);
-      navigate('/home');
-    } catch (error) {
-      setError('Credenciais inválidas');
-    }
+
   };
 
   return (

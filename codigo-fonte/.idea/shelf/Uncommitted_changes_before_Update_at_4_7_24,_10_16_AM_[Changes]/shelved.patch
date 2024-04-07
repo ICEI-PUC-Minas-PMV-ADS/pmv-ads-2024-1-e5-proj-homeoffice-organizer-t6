@@ -1,0 +1,40 @@
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n9\n\tREADME.md\u0012,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d\n;\n\u000Bsrc/App.css\u0012,a/a/aa7165aefcf8ee3d73539e99ab007daf1aa18d8d\n:\n\nsrc/App.js\u0012,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714\nC\n\u0013src/Login/Login.css\u0012,9/c/9ce0e6139346b6c5cf9db4f2a924632c98706b9b\nB\n\u0012src/Login/Login.js\u0012,3/9/3962a5d4078f6fc47ba236d0539fcdc6caaf1c2f\nH\n\u0018src/Register/Cadastro.js\u0012,a/f/afd84619dfd3cb0e95677d7e747ef50fd56faf6d\n<\n\fpackage.json\u0012,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a\nA\n\u0011package-lock.json\u0012,f/a/fa288d1472d29beccb489a676f68739ad365fc47\nH\n\u0018src/Cadastro/Cadastro.js\u0012,d/a/da6a466cda5f49847149a12df4a99df677f8cea1\nI\n\u0019src/Cadastro/Cadastro.css\u0012,b/9/b9075b04a42a42e57e9b6a8e4c29069db91fb5f1\nS\n#.idea/sonarlint/issuestore/index.pb\u0012,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0\n]\n-.idea/sonarlint/securityhotspotstore/index.pb\u0012,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 5e70320e5414c503d415000b55f09ad36b0dc079)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1712495772711)
+@@ -23,4 +23,6 @@
+ S
+ #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+ ]
+--.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+\ No newline at end of file
++-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
++D
++src/Navbar/Navbar.js,f/b/fb6ec1dc55057bc889df53599f8e039b4c334cd7
+\ No newline at end of file
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n9\n\tREADME.md\u0012,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d\n;\n\u000Bsrc/App.css\u0012,a/a/aa7165aefcf8ee3d73539e99ab007daf1aa18d8d\n:\n\nsrc/App.js\u0012,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714\nC\n\u0013src/Login/Login.css\u0012,9/c/9ce0e6139346b6c5cf9db4f2a924632c98706b9b\nB\n\u0012src/Login/Login.js\u0012,3/9/3962a5d4078f6fc47ba236d0539fcdc6caaf1c2f\nH\n\u0018src/Register/Cadastro.js\u0012,a/f/afd84619dfd3cb0e95677d7e747ef50fd56faf6d\n<\n\fpackage.json\u0012,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a\nA\n\u0011package-lock.json\u0012,f/a/fa288d1472d29beccb489a676f68739ad365fc47\nH\n\u0018src/Cadastro/Cadastro.js\u0012,d/a/da6a466cda5f49847149a12df4a99df677f8cea1\nI\n\u0019src/Cadastro/Cadastro.css\u0012,b/9/b9075b04a42a42e57e9b6a8e4c29069db91fb5f1\nS\n#.idea/sonarlint/issuestore/index.pb\u0012,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0\n]\n-.idea/sonarlint/securityhotspotstore/index.pb\u0012,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+--- a/.idea/sonarlint/securityhotspotstore/index.pb	(revision 5e70320e5414c503d415000b55f09ad36b0dc079)
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	(date 1712495772711)
+@@ -23,4 +23,6 @@
+ S
+ #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+ ]
+--.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+\ No newline at end of file
++-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
++D
++src/Navbar/Navbar.js,f/b/fb6ec1dc55057bc889df53599f8e039b4c334cd7
+\ No newline at end of file
