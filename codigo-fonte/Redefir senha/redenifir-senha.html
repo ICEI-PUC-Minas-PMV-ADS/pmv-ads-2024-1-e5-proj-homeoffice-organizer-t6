@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinição de senha</title>
+  <link rel="stylesheet" href="redefinr-senha.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <img src="Logo.png" class="logo-navbar">
+    </div>
+  </nav>
+  <!-- //Navbar -->
+  <div class="container">
+    <form class="redefinir-form">
+      <h1>Esqueci minha senha</h1>
+      <h2>Para redefinir sua senha, informe o usuário ou e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</h2>
+      <div class="form-group">
+        <input name="user.email" id="email" type="email" inputmode="email" placeholder="E-mail" class="autenticacao">
+        <label class="active" for="email"></label>
+        <br>
+      </div>
+      <button id="btn-enviar" type="submit">Enviar</button>
+      <a class="fs-14 cancel-link" href="index.html">Cancelar</a>
+    </form>
+  </div>
+  <script type="text/javascript" src="redefinir-senha.js"></script>
+</body>
+
+</html>
