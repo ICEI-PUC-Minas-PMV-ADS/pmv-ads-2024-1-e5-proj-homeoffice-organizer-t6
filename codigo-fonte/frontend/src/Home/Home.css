@@ -1,0 +1,14 @@
+.home-container {
+  background-color: #DDAE3A;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #000000;
+}
