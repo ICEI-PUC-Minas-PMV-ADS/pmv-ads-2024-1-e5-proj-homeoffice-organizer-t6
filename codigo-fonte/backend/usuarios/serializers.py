@@ -1,14 +1,8 @@
 from rest_framework import serializers
-from .models import CustomUser
+from django.contrib.auth.models import User
 
-
-class CustomUserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
-
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CustomUser
-        fields = ('id', 'email', 'full_name', 'password')
-
-    def create(self, validated_data):
-        user = CustomUser.objects.create_user(**validated_data)
-        return user
+        model = User
+        fields = ('id', 'username', 'password', 'email',)
+        extra_kwargs = {'password': {'write_only': True}}  # Para garantir que a senha não seja retornada nas respostas
