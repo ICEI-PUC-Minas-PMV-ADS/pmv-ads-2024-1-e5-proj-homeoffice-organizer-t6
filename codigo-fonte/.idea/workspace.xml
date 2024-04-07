@@ -5,161 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3da5b96e-e9cf-466a-adc6-63c142c46490" name="Changes" comment="feat(auth) checkpoint autenticacao de users">
-      <change afterPath="$PROJECT_DIR$/.idea/codigo-fonte.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cab260ab4750a3a62fdb24bd643a3d5b2400e4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4f54e6383fd0c93c54b0daeae3707b87f15c617b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/606014ba1e3be2197a1fdaa734f03c36c1c39803" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8b0df05bace0a1e205002365e25ca3f3d70c10bf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd00d75c0e17c2585847f60768b4345200b6ce29" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e23a63a9f05477a70f6e75d709dbb4eae2db742d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/eaf74e783e052549b1845f9144fd5631fe5a2c46" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe60a9c381d5654395918bbcb3ce0130dcf0521d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/c/3cab260ab4750a3a62fdb24bd643a3d5b2400e4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/f/4f54e6383fd0c93c54b0daeae3707b87f15c617b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/606014ba1e3be2197a1fdaa734f03c36c1c39803" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/b/8b0df05bace0a1e205002365e25ca3f3d70c10bf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/d/dd00d75c0e17c2585847f60768b4345200b6ce29" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/2/e23a63a9f05477a70f6e75d709dbb4eae2db742d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/a/eaf74e783e052549b1845f9144fd5631fe5a2c46" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fe60a9c381d5654395918bbcb3ce0130dcf0521d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/usuarios/migrations/0002_auto_20240406_1619.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/usuarios/migrations/0003_auto_20240406_1918.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/usuarios/migrations/0004_auto_20240406_1921.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/usuarios/migrations/0005_logincredentials.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/usuarios/migrations/0006_auto_20240406_2037.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/AUTHORS.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/PyJWT-2.8.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/djangorestframework_simplejwt-5.3.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/algorithms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/api_jwk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/api_jws.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/api_jwt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/help.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/jwk_set_cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/jwks_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/types.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/jwt/warnings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt-0.0.2.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/authentication.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ar/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ar/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/cs/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/cs/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/de/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/de/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es_AR/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es_AR/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es_CL/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/es_CL/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fa/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fa/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fa_IR/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fa_IR/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/he_IL/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/he_IL/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/id_ID/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/id_ID/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/it_IT/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/it_IT/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ko_KR/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ko_KR/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/nl_NL/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/nl_NL/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/pl_PL/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/pl_PL/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/pt_BR/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/pt_BR/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ro/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ro/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ru_RU/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/ru_RU/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/sl/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/sl/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/sv/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/sv/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/tr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/tr/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/uk_UA/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/uk_UA/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/zh_Hans/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/locale/zh_Hans/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/management/commands/flushexpiredtokens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0002_outstandingtoken_jti_hex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0003_auto_20171017_2007.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0004_auto_20171017_2013.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0005_remove_outstandingtoken_jti.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0006_auto_20171017_2113.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0007_auto_20171017_2214.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0008_migrate_to_bigautofield.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0010_fix_migrate_to_bigautofield.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0011_linearizes_history.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/0012_alter_outstandingtoken_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/token_blacklist/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/rest_framework_simplejwt/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/venv/lib/python3.10/site-packages/views/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Home/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Home/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/NavBar/img/HomeOrganizerLogo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85317467db794fe20d7716fb92e9e0d4ef3bebd4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85317467db794fe20d7716fb92e9e0d4ef3bebd4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a68b9ccdbf98b7a1347b74cd6c065660c90e552b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a68b9ccdbf98b7a1347b74cd6c065660c90e552b" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/usuarios/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/usuarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Login/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Login/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Login/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cadastro/Cadastro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/Cadastro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/Cadastro.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="dev-alisson" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -178,6 +49,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2e7smM96j8dh0G1mKykWgU4waIB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -188,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "dev-vinicius",
-    "last_opened_file_path": "/home/vinicius/Documents/trabalho puc/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/codigo-fonte",
+    "last_opened_file_path": "/home/vinicius/Documents/trabalho puc/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/codigo-fonte/frontend/src/NavBar/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -199,7 +71,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/NavBar/img" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/SignUp" />
+      <recent name="$PROJECT_DIR$/src/Cadastro" />
+      <recent name="$PROJECT_DIR$/src/Cadastr" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

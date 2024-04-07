@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login/Login';
-import Cadastro from './Cadastro/Cadastro';
+import Cadastr from './SignUp/Cadastro';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/cadastro" element={<Cadastr />} />
           </Routes>
         </main>
       </div>

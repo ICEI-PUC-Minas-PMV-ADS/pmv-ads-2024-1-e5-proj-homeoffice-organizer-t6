@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Cadastro.css';
+import axios from 'axios';
 
 function Cadastro() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,8 @@ function Cadastro() {
     nome: false,
     email: false,
     senha: false,
-    confirmarSenha: false
+    confirmarSenha: false,
+    errorMessage: ''
   });
 
   const handleChange = (e) => {
@@ -32,7 +34,7 @@ function Cadastro() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let formErrors = { ...errors };
@@ -57,7 +59,25 @@ function Cadastro() {
       return;
     }
 
-    console.log('Dados do formulário:', formData);
+    try {
+      const response = await axios.post('http://seu-servidor/signup/', formData);
+      console.log('Cadastro bem-sucedido:', response.data);
+      // navegar pra home
+    } catch (error) {
+      console.error('Erro ao fazer o cadastro:', error);
+      if (error.response && error.response.data) {
+        setErrors({
+          ...errors,
+          errorMessage: error.response.data
+        });
+      } else {
+        setErrors({
+          ...errors,
+          errorMessage: 'Erro ao fazer o cadastro. Por favor, tente novamente mais tarde.'
+        });
+      }
+    }
+
     setFormData({
       nome: '',
       email: '',
@@ -73,6 +93,7 @@ function Cadastro() {
         <form className="cadastro-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <h2 className='form-text'>Fazer Cadastro</h2>
+            {errors.errorMessage && <span className="error-message">{errors.errorMessage}</span>}
             <label htmlFor="nome">Nome:</label>
             <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} className={errors.nome ? 'error' : ''} required />
             {errors.nome && <span className="error-message">Por favor, insira um nome válido.</span>}

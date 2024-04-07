@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login/Login';
-import Cadastro from './Cadastro/Cadastro';
+import SignUp from "./Cadastro/Cadastro";
+import Home from "./Home/Home";
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<Cadastro />} />
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/cadastro" element={<SignUp />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </main>
       </div>
