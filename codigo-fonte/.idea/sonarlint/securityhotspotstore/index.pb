@@ -58,3 +58,7 @@ J
 frontend/package-lock.json,7/5/75b3b81cff849b08343553e269c3327a04ab22e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+M
+frontend/public/manifest.json,c/d/cd34dec7520a7acb6883aced77aaaa93699c86ed
+<
+src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
