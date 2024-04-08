@@ -54,6 +54,25 @@ function SignUp() {
         setErrors(formErrors);
 
         if (Object.values(formErrors).some(error => error)) {
+
+            const dataToSend = {
+                username: formData.nome,
+                email: formData.email,
+                password: formData.senha
+            };
+    
+            try {
+                const response = await axios.post('http://127.0.0.1:8000/auth/signup/', dataToSend);
+                console.log('Cadastro bem-sucedido:', response.data);
+                setSuccessMessage('Sucesso! Seu cadastro foi feito com sucesso!');
+                setTimeout(() => {
+                    navigate('/login');
+                }, 2000);
+            } catch (error) {
+                console.error('Erro ao fazer o cadastro:', error);
+                // Tratamento de erro aqui, se necessário
+            }
+            
             return;
         }
     };
