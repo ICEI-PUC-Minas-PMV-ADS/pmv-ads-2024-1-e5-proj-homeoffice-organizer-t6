@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d054f660-edeb-4a58-9e19-bd362b83e0a4" name="Changes" comment="feat(auth) checkpoint autenticacao de users">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README(npm).md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUp/Cadastro.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUp/Cadastro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,4 +57,9 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public" />
+    </key>
+  </component>
 </project>

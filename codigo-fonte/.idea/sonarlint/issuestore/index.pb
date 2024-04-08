@@ -62,3 +62,8 @@ M
 frontend/public/manifest.json,c/d/cd34dec7520a7acb6883aced77aaaa93699c86ed
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+J
+frontend/public/index.html,5/3/53b461857fde9b76a1c6e79a500050ceffbd7f33
