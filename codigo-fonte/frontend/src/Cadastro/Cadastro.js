@@ -21,6 +21,7 @@ function SignUp() {
 
     const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
+    const [credentialExist, setCredentialExist] = useState(false)
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -58,8 +59,8 @@ function SignUp() {
         }
 
         const dataToSend = {
-            username: formData.nome,
-            email: formData.email,
+            username: formData.email,
+            first_name: formData.nome,
             password: formData.senha
         };
 
@@ -72,6 +73,7 @@ function SignUp() {
             }, 2000);
         } catch (error) {
             console.error('Erro ao fazer o cadastro:', error);
+            setCredentialExist(true)
         }
     };
 
@@ -79,6 +81,7 @@ function SignUp() {
         <div>
             <Navbar isLoginPage={false}/>
             <div className="cadastro-container">
+                {credentialExist && <p>Esse e-mail já existe</p>}
                 <form className="cadastro-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <h2 className='form-text'>Fazer Cadastro</h2>
