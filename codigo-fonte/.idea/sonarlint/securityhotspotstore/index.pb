@@ -70,3 +70,7 @@ G.idea/sonarlint/issuestore/6/d/6d9317539b2cd9a205026c3653e7a5ba83a545ad,3/6/36
 Q.idea/sonarlint/securityhotspotstore/0/6/066a2d09b22eb3ed9d2011b197fb30f09da284e1,a/e/ae00838679ba4736aea724b2e62d8030e2902e3d
 Å
 Q.idea/sonarlint/securityhotspotstore/6/d/6d9317539b2cd9a205026c3653e7a5ba83a545ad,a/8/a854851890deb22ac7eac45f398b944928c74bdf
+I
+backend/usuarios/admin.py,e/a/eaf74e783e052549b1845f9144fd5631fe5a2c46
+g
+7backend/usuarios/migrations/0007_collaborator_sector.py,6/c/6cade49e7be33e0003e0fefa1754913a3f64b072

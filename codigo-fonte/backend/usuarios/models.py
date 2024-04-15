@@ -36,3 +36,18 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class Sector(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Collaborator(models.Model):
+    name = models.CharField(max_length=100)
+    sector = models.ForeignKey(Sector, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

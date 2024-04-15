@@ -5,38 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d054f660-edeb-4a58-9e19-bd362b83e0a4" name="Changes" comment="feat(auth) checkpoint autenticacao de users">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e43fa63aecd2127be034b3fb9d4caa172275714" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35dcf027911d6b6c8f27edf2bea2dec5d3fbb27a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/9/3993652f6639d6bd3db3d6b7dec5e543476142db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5dc0b99a20e4440c0bbac3f1557e808694a16b8b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b2df1a635ac1284af556d946c0a5363726d74a3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c5d894debdd6ef8fbe7abbb647054cea55f4f13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96fcc1a901383ceda2f89392d94aad0726b0d4a2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3f21fab1e2b29000a55dc4e3c84f7d29d11a84a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da6a466cda5f49847149a12df4a99df677f8cea1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e512646548f5bc64e5e0fbfdca7af0e4c0ac22f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7a4a62b329e1ae29c86cef03c05de0909cecc09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f900edc44cb929c2267a16100a32851f6d5b477d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fb6ec1dc55057bc889df53599f8e039b4c334cd7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e43fa63aecd2127be034b3fb9d4caa172275714" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/5/35dcf027911d6b6c8f27edf2bea2dec5d3fbb27a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/9/3993652f6639d6bd3db3d6b7dec5e543476142db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5dc0b99a20e4440c0bbac3f1557e808694a16b8b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/b/6b2df1a635ac1284af556d946c0a5363726d74a3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8c5d894debdd6ef8fbe7abbb647054cea55f4f13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/6/96fcc1a901383ceda2f89392d94aad0726b0d4a2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a3f21fab1e2b29000a55dc4e3c84f7d29d11a84a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da6a466cda5f49847149a12df4a99df677f8cea1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/5/e512646548f5bc64e5e0fbfdca7af0e4c0ac22f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/7/f7a4a62b329e1ae29c86cef03c05de0909cecc09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f900edc44cb929c2267a16100a32851f6d5b477d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fb6ec1dc55057bc889df53599f8e039b4c334cd7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/usuarios/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/usuarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public" />
