@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './Calendar.css';
 
 const MyCalendar = () => {
-  const [date, setDate] = useState(new Date());
   const [year, setYear] = useState(new Date().getFullYear());
-  const [holidays, setHolidays] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Função para buscar os feriados na API
     const fetchHolidays = async () => {
       try {
         const response = await fetch(`https://www.calendario.com.br/feriados-belo_horizonte-mg.php?ano=${year}`);
         const data = await response.json();
-        setHolidays(data);
+        const holidayEvents = data.map(holiday => ({
+          title: holiday.name,
+          start: new Date(holiday.date),
+          end: new Date(holiday.date),
+          allDay: true
+        }));
+        setEvents(holidayEvents);
       } catch (error) {
         console.error('Erro ao buscar feriados:', error);
       }
@@ -23,34 +28,12 @@ const MyCalendar = () => {
     fetchHolidays();
   }, [year]);
 
-  const onChange = (newDate) => {
-    setDate(newDate);
-  };
-
-  // Função para verificar se um dia é feriado
-  const isHoliday = (date) => {
-    const dateString = date.toISOString().split('T')[0];
-    return holidays.some(holiday => holiday.date === dateString);
-  };
-
-  // Função para aplicar estilos aos dias do calendário
-  const tileClassName = ({ date, view }) => {
-    if (view === 'month') {
-      if (isHoliday(date)) {
-        return 'holiday';
-      }
-      const dayOfWeek = date.getDay();
-      if (dayOfWeek === 0 || dayOfWeek === 6) {
-        return 'weekend';
-      }
-    }
-    return null;
-  };
-
   const handleYearChange = (e) => {
     const selectedYear = parseInt(e.target.value);
     setYear(selectedYear);
   };
+
+  const localizer = momentLocalizer(moment);
 
   return (
     <div className="calendar">
@@ -65,10 +48,11 @@ const MyCalendar = () => {
       </div>
       <div className="calendar-container">
         <Calendar
-          onChange={onChange}
-          value={date}
-          className="custom-calendar"
-          tileClassName={tileClassName} // Aplicando a função para definir a classe dos dias
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ height: 800 }}
         />
       </div>
     </div>
@@ -76,4 +60,3 @@ const MyCalendar = () => {
 };
 
 export default MyCalendar;
-

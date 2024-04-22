@@ -1,44 +1,50 @@
 .calendar {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .calendar h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .calendar-controls {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .calendar-container {
-  border: 1px solid #000;
-  border-radius: 8px;
-  overflow: hidden;
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
 }
 
-.custom-calendar .react-calendar__tile {
-  border: 1px solid #000;
-  padding: 10px;
-  text-align: center;
-  color: #000; /* Adicionando cor preta para os números */
+.rbc-calendar {
+    height: 600px;
+    background-color: white;
 }
 
-.custom-calendar .react-calendar__tile--now {
-  background-color: #f0f0f0;
+.rbc-event {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 2px 5px;
 }
 
-.custom-calendar .react-calendar__tile--active {
-  background-color: #007bff;
-  color: white;
+.rbc-today {
+    background-color: #ffc26c;
 }
 
-.custom-calendar .react-calendar__tile--weekend {
-  background-color: #ffff99;
+.rbc-off-range {
+    background-color: #ffe0b5;
 }
 
-.custom-calendar .react-calendar__tile--holiday {
-  background-color: #ff9999;
+.rbc-weekend {
+    background-color: #ffe0b5;
+}
+
+.rbc-holiday {
+    background-color: #ff9999;
 }

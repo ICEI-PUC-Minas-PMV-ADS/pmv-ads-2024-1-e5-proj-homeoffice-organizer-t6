@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login/Login';
 import SignUp from "./Cadastro/Cadastro";
 import Home from "./Home/Home";
+import MyCalendar from './Calendar/Calendar';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<SignUp />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/calendar" element={<MyCalendar />} />
           </Routes>
         </main>
       </div>
