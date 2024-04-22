@@ -1,0 +1,44 @@
+.calendar {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.calendar h2 {
+  text-align: center;
+}
+
+.calendar-controls {
+  margin-bottom: 20px;
+}
+
+.calendar-container {
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-calendar .react-calendar__tile {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  color: #000; /* Adicionando cor preta para os números */
+}
+
+.custom-calendar .react-calendar__tile--now {
+  background-color: #f0f0f0;
+}
+
+.custom-calendar .react-calendar__tile--active {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-calendar .react-calendar__tile--weekend {
+  background-color: #ffff99;
+}
+
+.custom-calendar .react-calendar__tile--holiday {
+  background-color: #ff9999;
+}
