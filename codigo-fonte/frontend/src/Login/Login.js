@@ -34,7 +34,7 @@ function Login() {
           <h2>Fazer Login</h2>
           {error && <p>{error}</p>}
           <div className="form-group">
-            <input type="email" id="email" name="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" id="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="form-group">
             <input type="password" id="password" name="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
