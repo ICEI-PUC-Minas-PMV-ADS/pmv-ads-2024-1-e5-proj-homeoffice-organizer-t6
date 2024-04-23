@@ -87,19 +87,3 @@
     color: white;
     padding: 2px 5px;
 }
-
-.rbc-today {
-    background-color: #ffc26c;
-}
-
-.rbc-off-range {
-    background-color: #ffe0b5;
-}
-
-.rbc-weekend {
-    background-color: #ffe0b5;
-}
-
-.rbc-holiday {
-    background-color: #ff9999;
-}

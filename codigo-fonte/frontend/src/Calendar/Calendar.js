@@ -55,7 +55,7 @@ const MyCalendar = () => {
     if (view === Views.WEEK) {
       const startOfWeek = moment(date).startOf('week').format('DD/MM/YYYY');
       const endOfWeek = moment(date).endOf('week').format('DD/MM/YYYY');
-      return `${startOfWeek} - ${endOfWeek}`;
+      return `${startOfWeek} a ${endOfWeek}`;
     }
     if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
     return '';
