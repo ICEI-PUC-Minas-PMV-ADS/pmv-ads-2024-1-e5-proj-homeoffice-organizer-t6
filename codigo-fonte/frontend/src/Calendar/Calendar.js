@@ -4,12 +4,15 @@ import moment from 'moment-timezone';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './Calendar.css';
+import NewCollaboratorButton from "../NewCollaborator/NewCollaboratorButton";
+import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
     const [view, setView] = useState(Views.MONTH);
     const [date, setDate] = useState(moment().toDate());
     const [currentNavigation, setCurrentNavigation] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -49,6 +52,9 @@ const MyCalendar = () => {
         if (view === Views.MONTH) setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
     }, [view]);
 
+    const openModal = () => setShowModal(true);
+    const closeModal = () => setShowModal(false);
+
     const getCurrentNavigation = (view, date) => {
         if (view === Views.DAY) return moment(date).format('dddd, DD/MM/YYYY');
         if (view === Views.WEEK) {
@@ -65,27 +71,30 @@ const MyCalendar = () => {
             <h2>Calendário</h2>
             <div className="toolbar-container">
                 <div className="toolbar">
-                    <button className="toolbar-button" onClick={onPrevClick}>{'<'}</button>
-                    <div className="navigation-info">{currentNavigation}</div>
-                    <button className="toolbar-button" onClick={onNextClick}>{'>'}</button>
-                    <button
-                        className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
-                        onClick={() => setView(Views.DAY)}
-                    >
-                        Dia
-                    </button>
-                    <button
-                        className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
-                        onClick={() => setView(Views.WEEK)}
-                    >
-                        Semana
-                    </button>
-                    <button
-                        className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
-                        onClick={() => setView(Views.MONTH)}
-                    >
-                        Mês
-                    </button>
+                    <NewCollaboratorButton onClick={openModal} className="left-button"/>
+                    <div className="right-buttons">
+                        <button className="toolbar-button" onClick={onPrevClick}>{'<'}</button>
+                        <div className="navigation-info">{currentNavigation}</div>
+                        <button className="toolbar-button" onClick={onNextClick}>{'>'}</button>
+                        <button
+                            className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
+                            onClick={() => setView(Views.DAY)}
+                        >
+                            Dia
+                        </button>
+                        <button
+                            className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
+                            onClick={() => setView(Views.WEEK)}
+                        >
+                            Semana
+                        </button>
+                        <button
+                            className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
+                            onClick={() => setView(Views.MONTH)}
+                        >
+                            Mês
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="calendar-container">
@@ -100,6 +109,7 @@ const MyCalendar = () => {
                     date={date}
                 />
             </div>
+            {showModal && <ModalCollaborator closeModal={closeModal}/>}
         </div>
     );
 };

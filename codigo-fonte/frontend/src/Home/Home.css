@@ -12,3 +12,10 @@ h1 {
   font-size: 2rem;
   color: #000000;
 }
+
+.top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px; /* Ajuste o espaçamento conforme necessário */
+}

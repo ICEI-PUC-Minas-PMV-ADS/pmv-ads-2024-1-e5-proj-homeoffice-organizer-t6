@@ -1,8 +1,17 @@
 .toolbar-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+.left-button {
+    margin-right: auto;
+}
+
+.right-buttons {
+    display: flex;
+    align-items: center;
 }
 
 .toolbar {
@@ -18,7 +27,7 @@
     margin-right: 8px;
     font-weight: bold;
     white-space: nowrap;
-  }  
+  }
 
 .toolbar-button {
     padding: 12px 24px;
