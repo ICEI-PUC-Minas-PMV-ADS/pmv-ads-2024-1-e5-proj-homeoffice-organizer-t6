@@ -66,36 +66,45 @@ const MyCalendar = () => {
       <h2>Calendário</h2>
       <div className="toolbar-container">
         <div className="toolbar">
-          <button className="toolbar-button" onClick={onPrevClick}>{'<'}</button>
-          <div className="navigation-info">{currentNavigation}</div>
-          <button className="toolbar-button" onClick={onNextClick}>{'>'}</button>
-          <button
-            className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
-            onClick={() => setView(Views.DAY)}
-          >
-            Dia
-          </button>
-          <button
-            className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
-            onClick={() => setView(Views.WEEK)}
-          >
-            Semana
-          </button>
-          <button
-            className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
-            onClick={() => setView(Views.MONTH)}
-          >
-            Mês
-          </button>
+          <div className="navigation-container">
+            <button className="toolbar-button" onClick={onPrevClick}>{'←'}</button>
+            <div className="navigation-info">{currentNavigation}</div>
+            <button className="toolbar-button" onClick={onNextClick}>{'→'}</button>
+          </div>
+
+          <div className="date-container">
+            <button className="toolbar-button" onClick={() => setDate(moment().toDate())}>
+              Hoje
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
+              onClick={() => setView(Views.DAY)}
+            >
+              Dia
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
+              onClick={() => setView(Views.WEEK)}
+            >
+              Semana
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
+              onClick={() => setView(Views.MONTH)}
+            >
+              Mês
+            </button>
+          </div>
         </div>
       </div>
+
       <div className="calendar-container">
         <Calendar
           localizer={localizer}
           events={events}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: 800 }}
+          style={{ height: 900 }}
           toolbar={false}
           view={view}
           date={date}
