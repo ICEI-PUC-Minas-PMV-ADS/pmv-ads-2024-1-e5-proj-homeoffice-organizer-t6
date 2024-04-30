@@ -61,6 +61,21 @@ const MyCalendar = () => {
     return '';
   };
 
+  const getDayProp = (date) => {
+    const dayOfWeek = date.getDay();
+    const isCurrentMonth = moment(date).isSame(date, 'month');
+    
+    if (isCurrentMonth && (dayOfWeek === 0 || dayOfWeek === 6)) {
+      return {
+        style: {
+          backgroundColor: '#FAFAD2',
+        },
+      };
+    }
+    
+    return null;
+  };
+
   return (
     <div className="calendar">
       <h2>Calendário</h2>
@@ -108,6 +123,7 @@ const MyCalendar = () => {
           toolbar={false}
           view={view}
           date={date}
+          dayPropGetter={getDayProp}
         />
       </div>
     </div>

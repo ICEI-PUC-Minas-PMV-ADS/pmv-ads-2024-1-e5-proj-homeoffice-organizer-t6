@@ -85,7 +85,7 @@
     align-items: center;
     justify-content: center;
     height: 36px !important;
-    background: black;
+    background: black !important;
 }
 
 .rbc-calendar {
@@ -99,4 +99,14 @@
     border-radius: 5px;
     color: white;
     padding: 2px 5px;
+}
+
+.rbc-time-view .rbc-allday-cell {
+    box-sizing: content-box;
+    width: 100%;
+    position: relative;
+}
+
+.rbc-off-range-bg {
+    background: #e6e6e6 !important;
 }
