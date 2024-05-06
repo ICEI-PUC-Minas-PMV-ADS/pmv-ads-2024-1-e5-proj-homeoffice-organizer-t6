@@ -45,9 +45,9 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 |RF-001| O sistema deve possuir autenticação simples para os gestores. | ALTA |
 |RF-002| O sistema deve permitir que somente gestores autenticados realizem adição/remoção de colaboradores. | ALTA |
 |RF-003| O gestor deve conseguir adicionar ao calendário um novo colaborador. | ALTA |
-|RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar apenas o nome e o setor, sem a necessidade de informações adicionais. | ALTA |
+|RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar nome, setor e e-mail do colaborador | ALTA |
 |RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores, marcando um dia do calendário com o nome desse respectivo colaborador. | ALTA | 
-|RF-006| Para agendar o dia, o método deve ser arrastando o nome do colaborador até esse dia. | MÉDIA |
+|RF-006| Para agendar o dia, o método deve ser arrastando o nome do colaborador até esse dia. | ALTA |
 |RF-007| Deve existir um filtro por setor no calendário que, quando usado, filtra apenas por membros daquele determinado setor. | ALTA |
 |RF-008| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
 |RF-009| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
@@ -55,8 +55,10 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 |RF-011| O sistema não deve permitir que um colaborador faça home office na segunda e na sexta. Apenas em um dos dois dias. | ALTA |
 |RF-012| O sistema deve informar quantos dias de home office serão permitidos por colaborador no mês. | ALTA |
 |RF-013| Se houver dia de feriado em uma semana, deve ser decrescido um número nos dias de home office do colaborador de forma automática e nessa semana o sistema deve possibiltar apenas a marcação de um dia.  | ALTA |
-|RF-014| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | ALTA |
+|RF-014| O sistema deve permitir que os gestores baixem um relatório em pdf dos dias de home office de um colaborador em um determinado mês. | MÉDIA |
 |RF-015| O gestor deve conseguir remover um colaborador do calendário com confirmação adicional | ALTA |
+|RF-016| O sistema deve possibilitar o gestor de adicionar eventos no calendário | ALTA |
+|RF-017| Ao ser adicionado um evento no calendário, os colaboradores que estão na plataforma devem receber um e-mail | BAIXA |
 
 
 
