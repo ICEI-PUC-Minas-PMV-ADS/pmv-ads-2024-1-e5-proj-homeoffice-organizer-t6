@@ -29,7 +29,7 @@ Para armazenar os dados dos colaboradores, sugerimos o uso de arquivos JSON, gar
 
 ## Project Model Canvas
 
-![ProjectModelCanvasA1 (1)_page-0001 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/4854aefb-b70c-4737-9a43-7027d1866294)
+![Project-model-canvaas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/72148481-1ab0-4b9d-80bf-7209a7534401)
 
 ## Requisitos
 
