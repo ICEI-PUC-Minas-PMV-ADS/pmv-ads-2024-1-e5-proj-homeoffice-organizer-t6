@@ -15,4 +15,9 @@ Nessa parte da documentação apresentaremos o nosso projeto de interface com as
 
 ## Tela de Calendário
 
-![templateCalendar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/61e8a512-329c-4e9e-a88d-8e049337415a)
+![template-calendar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/86083d0f-ad13-4cf4-825d-978c3d5fe3f6)
+
+### Modal de Adicionar Colaborador
+
+![modal-Add-Colaborador](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/143ad447-5ddc-486c-8210-2ab4751ab998)
+
