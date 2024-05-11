@@ -12,3 +12,7 @@ Após o cadastro bem-sucedido, realizamos o teste de login utilizando as credenc
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/ef35be87-55c5-4828-b42a-8ff2fbc08fa2
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/cb479a05-e246-478c-b2b6-70864c5eeca7
+
+
+
