@@ -1,8 +1,11 @@
+// MyCalendar.js
 import React, { useState, useEffect, useCallback } from 'react';
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import EventModal from './EventModal';
+import EventDetailModal from './EventDetailModal';
 import './Calendar.css';
 
 const MyCalendar = () => {
@@ -10,6 +13,9 @@ const MyCalendar = () => {
   const [view, setView] = useState(Views.MONTH);
   const [date, setDate] = useState(moment().toDate());
   const [currentNavigation, setCurrentNavigation] = useState('');
+  const [isEventFormModalOpen, setIsEventFormModalOpen] = useState(false);
+  const [isEventDetailModalOpen, setIsEventDetailModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
     const fetchHolidays = async () => {
@@ -76,6 +82,24 @@ const MyCalendar = () => {
     return null;
   };
 
+  const handleOpenEventFormModal = () => {
+    setIsEventFormModalOpen(true);
+  };
+
+  const handleCloseEventFormModal = () => {
+    setIsEventFormModalOpen(false);
+  };
+
+  const handleSaveEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+    setIsEventFormModalOpen(false);
+  };
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    setIsEventDetailModalOpen(true);
+  };
+
   return (
     <div className="calendar">
       <h2>Calendário</h2>
@@ -109,6 +133,9 @@ const MyCalendar = () => {
             >
               Mês
             </button>
+            <button className="toolbar-button" onClick={handleOpenEventFormModal}>
+              Criar Evento
+            </button>
           </div>
         </div>
       </div>
@@ -124,8 +151,11 @@ const MyCalendar = () => {
           view={view}
           date={date}
           dayPropGetter={getDayProp}
+          onSelectEvent={handleSelectEvent}
         />
       </div>
+      <EventModal isOpen={isEventFormModalOpen} onClose={handleCloseEventFormModal} onSave={handleSaveEvent} selectedEvent={selectedEvent} />
+      <EventDetailModal isOpen={isEventDetailModalOpen} onClose={() => setIsEventDetailModalOpen(false)} event={selectedEvent} />
     </div>
   );
 };
