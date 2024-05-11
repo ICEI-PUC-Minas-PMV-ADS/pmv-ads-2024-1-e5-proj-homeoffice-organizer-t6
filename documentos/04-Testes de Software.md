@@ -6,7 +6,11 @@ Primeiro, realizamos um teste de cadastro. Enviamos informações como nome, e-m
 ## Teste de Login
 Após o cadastro bem-sucedido, realizamos o teste de login utilizando as credenciais cadastradas anteriormente. Novamente, mostramos a chamada de login, que retorna um status 200, indicando sucesso. Então, é redirecionado para a tela do calendário, confirmando que o login foi efetuado com êxito.
 
+## Teste de Cadastro (Em andamento)
 
+Na tela de do Calendário é possível ver os feriados sendo indicados nas datas com modal de Adicionar Colaborador ainda sem fazer chamada na API adicionando usuário.
+
+API usada para feriados nacionais: https://brasilapi.com.br/api/feriados/v1/2024
  
 # Evidências de Testes de Software
 
