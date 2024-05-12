@@ -1,21 +1,22 @@
 .toolbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
-    margin-right: 20px;
 }
 
-.left-button {
+.left-buttons {
     margin-right: auto;
 }
 
 .right-buttons {
     display: flex;
-    align-items: center;
 }
 
 .toolbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .navigation-info {

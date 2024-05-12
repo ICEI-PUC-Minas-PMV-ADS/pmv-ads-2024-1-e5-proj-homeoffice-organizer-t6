@@ -71,7 +71,9 @@ const MyCalendar = () => {
             <h2>Calendário</h2>
             <div className="toolbar-container">
                 <div className="toolbar">
-                    <NewCollaboratorButton onClick={openModal} className="left-button"/>
+                    <div className="left-buttons">
+                        <NewCollaboratorButton onClick={openModal} className="left-button"/>
+                    </div>
                     <div className="right-buttons">
                         <button className="toolbar-button" onClick={onPrevClick}>{'<'}</button>
                         <div className="navigation-info">{currentNavigation}</div>
