@@ -4,42 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d054f660-edeb-4a58-9e19-bd362b83e0a4" name="Changes" comment="feat(auth) checkpoint autenticacao de users">
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/holidays/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_7_24,_10_16_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_7_24__10_16_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="add botao de add colaborador">
+      <change afterPath="$PROJECT_DIR$/frontend/src/ToastContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codigo-fonte.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codigo-fonte.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c27bdb7ddd6f1168532d5842662458e3e2b28cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cab260ab4750a3a62fdb24bd643a3d5b2400e4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/597f68926853d7b76ea159bc0159669d67096408" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/611470f7439a2ba36e003ec738e01fc4d55bb610" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c5506c05714bfec826e3957fa634bdb03f3a6fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6cade49e7be33e0003e0fefa1754913a3f64b072" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6e8601b1a6ea08473542006f71fe100597939ad3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e88b881d1a84c9f1599fe7b80482876b39dfeb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a48b0da5049773865c3fc9951c3d92a8932d5852" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5a9751faeb57c929f3bb8ee953ba1a9e2105071" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/c/1c27bdb7ddd6f1168532d5842662458e3e2b28cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/c/3cab260ab4750a3a62fdb24bd643a3d5b2400e4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/9/597f68926853d7b76ea159bc0159669d67096408" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/1/611470f7439a2ba36e003ec738e01fc4d55bb610" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/c/6c5506c05714bfec826e3957fa634bdb03f3a6fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/c/6cade49e7be33e0003e0fefa1754913a3f64b072" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/e/6e8601b1a6ea08473542006f71fe100597939ad3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e88b881d1a84c9f1599fe7b80482876b39dfeb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/4/a48b0da5049773865c3fc9951c3d92a8932d5852" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5a9751faeb57c929f3bb8ee953ba1a9e2105071" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0002_auto_20240406_1619.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0003_auto_20240406_1918.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0004_auto_20240406_1921.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0005_logincredentials.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/migrations/0006_auto_20240406_2037.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/usuarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/usuarios/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/NewCollaborator/NewCollaboratorButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NewCollaborator/NewCollaboratorButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-vinicius" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -57,7 +53,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2eoZi9rtD3CMQSp5A2Cus7jbdgO" />
+  <component name="ProjectId" id="2fV7iRKicSifiCOyUX5UBrlN3Y3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -68,29 +64,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/dev-vinicius&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
-    ]
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/public" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(auth) checkpoint autenticacao de users" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(auth) checkpoint autenticacao de users" />
+    <MESSAGE value="checkpoint chamada de feriados" />
+    <MESSAGE value="add botao de add colaborador" />
+    <option name="LAST_COMMIT_MESSAGE" value="add botao de add colaborador" />
   </component>
 </project>

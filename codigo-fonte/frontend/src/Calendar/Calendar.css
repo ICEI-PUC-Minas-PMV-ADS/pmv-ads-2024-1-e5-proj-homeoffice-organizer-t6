@@ -1,25 +1,22 @@
 .toolbar-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.left-buttons {
+    margin-right: auto;
+}
+
+.right-buttons {
+    display: flex;
 }
 
 .toolbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-}
-
-.navigation-container {
-    display: flex;
-    align-items: center;
-}
-
-.date-container {
-    display: flex;
-    align-items: center;
 }
 
 .navigation-info {
@@ -59,7 +56,7 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 80%;
+    max-width: 90%;;
     margin: 0 auto;
     padding: 20px;
 }

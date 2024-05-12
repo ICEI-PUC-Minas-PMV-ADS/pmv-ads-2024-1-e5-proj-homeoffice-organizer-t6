@@ -1,0 +1,28 @@
+.new-collaborator-button {
+    background-color: #ccc;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+}
+
+.new-collaborator-button .icon {
+    margin-right: 8px;
+}
+
+.new-collaborator-button .text {
+    font-size: 12px;
+}
+
+
+.new-collaborator-button:hover {
+    background-color: #999;
+}
+
+.new-collaborator-button .fas {
+    margin-right: 6px;
+}
