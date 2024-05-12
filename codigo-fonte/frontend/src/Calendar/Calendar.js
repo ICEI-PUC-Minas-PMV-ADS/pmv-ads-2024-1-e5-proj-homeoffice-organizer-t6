@@ -7,9 +7,24 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import EventModal from './EventModal';
 import EventDetailModal from './EventDetailModal';
 import './Calendar.css';
+import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+
+const DragAndDropCalendar = withDragAndDrop (Calendar);
 
 const MyCalendar = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([{
+    id: 1,
+    title: 'Lucas',
+    start: new Date(2024,4,11,23,30),
+    end: new Date(2024,4,12,10,0),
+    desc: 'testando',
+    color: 'blue',
+    tipo: 'Colaborador',
+ },
+{ 
+  
+
+}])
   const [view, setView] = useState(Views.MONTH);
   const [date, setDate] = useState(moment().toDate());
   const [currentNavigation, setCurrentNavigation] = useState('');
@@ -91,16 +106,17 @@ const MyCalendar = () => {
   };
 
   const handleSaveEvent = (newEvent) => {
-    setEvents([...events, newEvent]);
+   setEvents([...events, newEvent]);
     setIsEventFormModalOpen(false);
   };
 
   const handleSelectEvent = (event) => {
     setSelectedEvent(event);
     setIsEventDetailModalOpen(true);
-  };
+ };
 
   return (
+    
     <div className="calendar">
       <h2>Calendário</h2>
       <div className="toolbar-container">
@@ -151,13 +167,12 @@ const MyCalendar = () => {
           view={view}
           date={date}
           dayPropGetter={getDayProp}
-          onSelectEvent={handleSelectEvent}
+         onSelectEvent={handleSelectEvent}
         />
       </div>
-      <EventModal isOpen={isEventFormModalOpen} onClose={handleCloseEventFormModal} onSave={handleSaveEvent} selectedEvent={selectedEvent} />
+       <EventModal isOpen={isEventFormModalOpen} onClose={handleCloseEventFormModal} onSave={handleSaveEvent} selectedEvent={selectedEvent} />
       <EventDetailModal isOpen={isEventDetailModalOpen} onClose={() => setIsEventDetailModalOpen(false)} event={selectedEvent} />
     </div>
   );
 };
-
 export default MyCalendar;
