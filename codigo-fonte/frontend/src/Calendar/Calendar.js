@@ -3,6 +3,8 @@ import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
 import moment from 'moment-timezone';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import EventModal from './EventModal';
+import EventDetailModal from './EventDetailModal';
 import './Calendar.css';
 import NewCollaboratorButton from "../NewCollaborator/NewCollaboratorButton";
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
@@ -13,6 +15,9 @@ const MyCalendar = () => {
     const [date, setDate] = useState(moment().toDate());
     const [currentNavigation, setCurrentNavigation] = useState('');
     const [showModal, setShowModal] = useState(false);
+    const [isEventFormModalOpen, setIsEventFormModalOpen] = useState(false);
+    const [isEventDetailModalOpen, setIsEventDetailModalOpen] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -55,6 +60,7 @@ const MyCalendar = () => {
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
 
+
     const getCurrentNavigation = (view, date) => {
         if (view === Views.DAY) return moment(date).format('dddd, DD/MM/YYYY');
         if (view === Views.WEEK) {
@@ -65,6 +71,39 @@ const MyCalendar = () => {
         if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
         return '';
     };
+
+    const getDayProp = (date) => {
+      const dayOfWeek = date.getDay();
+      const isCurrentMonth = moment(date).isSame(date, 'month');
+
+      if (isCurrentMonth && (dayOfWeek === 0 || dayOfWeek === 6)) {
+        return {
+          style: {
+            backgroundColor: '#FAFAD2',
+          },
+        };
+      }
+
+      return null;
+    };
+
+  const handleOpenEventFormModal = () => {
+    setIsEventFormModalOpen(true);
+  };
+
+  const handleCloseEventFormModal = () => {
+    setIsEventFormModalOpen(false);
+  };
+
+  const handleSaveEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+    setIsEventFormModalOpen(false);
+  };
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    setIsEventDetailModalOpen(true);
+  };
 
     return (
         <div className="calendar">
@@ -95,25 +134,34 @@ const MyCalendar = () => {
                             onClick={() => setView(Views.MONTH)}
                         >
                             Mês
-                        </button>
+                            </button>
+                            <button className="toolbar-button" onClick={handleOpenEventFormModal}>
+                              Criar Evento
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="calendar-container">
+                        <Calendar
+                          localizer={localizer}
+                          events={events}
+                          startAccessor="start"
+                          endAccessor="end"
+                          style={{ height: 900 }}
+                          toolbar={false}
+                          view={view}
+                          date={date}
+                          dayPropGetter={getDayProp}
+                          onSelectEvent={handleSelectEvent}
+                        />
+                      </div>
+                      <EventModal isOpen={isEventFormModalOpen} onClose={handleCloseEventFormModal} onSave={handleSaveEvent} selectedEvent={selectedEvent} />
+                      <EventDetailModal isOpen={isEventDetailModalOpen} onClose={() => setIsEventDetailModalOpen(false)} event={selectedEvent} />
                     </div>
-                </div>
-            </div>
-            <div className="calendar-container">
-                <Calendar
-                    localizer={localizer}
-                    events={events}
-                    startAccessor="start"
-                    endAccessor="end"
-                    style={{height: 600, width: '90vw'}}
-                    toolbar={false}
-                    view={view}
-                    date={date}
-                />
-            </div>
-            {showModal && <ModalCollaborator closeModal={closeModal}/>}
-        </div>
-    );
+                  );
+
+  
 };
 
 export default MyCalendar;

@@ -28,7 +28,7 @@
     margin-right: 8px;
     font-weight: bold;
     white-space: nowrap;
-  }
+}
 
 .toolbar-button {
     padding: 12px 24px;
@@ -82,11 +82,11 @@
     align-items: center;
     justify-content: center;
     height: 36px !important;
-    background: black;
+    background: black !important;
 }
 
 .rbc-calendar {
-    height: 600px;
+    height: 100%;
     background-color: white;
 }
 
@@ -98,18 +98,13 @@
     padding: 2px 5px;
 }
 
-.rbc-today {
-    background-color: #ffc26c;
+.rbc-time-view .rbc-allday-cell {
+    box-sizing: content-box;
+    width: 100%;
+    height: 50% !important;
+    position: relative;
 }
 
-.rbc-off-range {
-    background-color: #ffe0b5;
-}
-
-.rbc-weekend {
-    background-color: #ffe0b5;
-}
-
-.rbc-holiday {
-    background-color: #ff9999;
+.rbc-off-range-bg {
+    background: #e6e6e6 !important;
 }
