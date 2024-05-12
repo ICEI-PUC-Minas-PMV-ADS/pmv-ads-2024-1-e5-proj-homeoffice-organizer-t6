@@ -1,11 +1,9 @@
-/* Fontes */
 h2 {
   font-family: Zen Kaku Gothic Antique, sans-serif;
   font-size: 31.25px;
   font-weight: 700;
   line-height: 37.5px;
   text-align: center;
-  ;
   }
   
   .fs-14 {
@@ -18,8 +16,7 @@ h2 {
     text-align: right; 
     margin-right: 80px;
   }
-  
-  /* Modificação de elementos */
+
   body {
     background-color: #DDAE3A; 
     margin: 0;
@@ -71,12 +68,11 @@ h2 {
   }
   
   .login-form {
-    text-align: center;
-    background-color: #FFFFFF ;
-    width: 592px;
-    padding: 20px;
-    border: 1px;
-    border-radius: 2px;
+    background-color: #fff;
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
   }
   
   .form-group { 
@@ -85,8 +81,8 @@ h2 {
   
   input[type="email"],
   input[type="password"] {
-    width: 70%;
-    padding: 10px;
+    width: calc(100% - 22px);
+    padding: 20px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }

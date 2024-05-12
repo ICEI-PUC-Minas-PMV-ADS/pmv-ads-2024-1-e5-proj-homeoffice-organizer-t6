@@ -14,9 +14,9 @@ def signup(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         username = serializer.validated_data.get('username')
-        email = serializer.validated_data.get('email')
+        first_name = serializer.validated_data.get('first_name', 'No First Name')
         password = serializer.validated_data.get('password')
-        user = User.objects.create_user(username=username, email=email, password=password)
+        user = User.objects.create_user(username=username, first_name=first_name, password=password, email=username)
         token, created = Token.objects.get_or_create(user=user)
         return Response({'token': token.key, 'user': serializer.data}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
