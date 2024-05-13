@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
 import Navbar from "../NavBar/NavBar";
-import { useNavigate } from 'react-router-dom';
-import {showToast} from "../ToastContainer";
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -19,10 +18,10 @@ function Login() {
         email,
         password
       });
-      showToast('Operação realizada com sucesso!', 'success');
+      console.log('Login bem-sucedido:', response.data);
       navigate('/home');
     } catch (error) {
-      showToast('Credenciais inválidas!', 'error');
+      setError('Credenciais inválidas');
     }
 
   };

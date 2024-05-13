@@ -1,22 +1,25 @@
 .toolbar-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.left-buttons {
-    margin-right: auto;
-}
-
-.right-buttons {
-    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
 .toolbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
+}
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
 }
 
 .navigation-info {
@@ -56,7 +59,7 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 90%;;
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -107,8 +110,4 @@
 
 .rbc-off-range-bg {
     background: #e6e6e6 !important;
-}
-
-.current-day {
-    background-color: #e6f7ff;
 }

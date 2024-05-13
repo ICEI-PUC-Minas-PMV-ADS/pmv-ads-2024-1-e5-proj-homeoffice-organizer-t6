@@ -1,252 +1,163 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
-import moment from 'moment-timezone';
+// MyCalendar.js
+import React, { useState, useEffect, useCallback } from 'react';
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
+import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import EventModal from './EventModal';
+import EventDetailModal from './EventDetailModal';
 import './Calendar.css';
-import NewCollaboratorButton from "../NewCollaborator/NewCollaboratorButton";
-import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
-import {showToast} from "../ToastContainer";
-// import EventModal from "../EventModal/EventModal";
-// import EventDetailModal from "../EventModal/EventDetailModal";
-import './Select.css'
 
 const MyCalendar = () => {
-    const [events, setEvents] = useState([]);
-    const [view, setView] = useState(Views.MONTH);
-    const [date, setDate] = useState(moment().toDate());
-    const [currentNavigation, setCurrentNavigation] = useState('');
-    const [showModal, setShowModal] = useState(false);
-    const [modalType, setModalType] = useState('');
-    const [selectedEvent, setSelectedEvent] = useState(null);
-    const [collaborators, setCollaborators] = useState([]);
-    const [selectedSector, setSelectedSector] = useState('');
-    const [selectedCollaborator, setSelectedCollaborator] = useState('');
+  const [events, setEvents] = useState([]);
+  const [view, setView] = useState(Views.MONTH);
+  const [date, setDate] = useState(moment().toDate());
+  const [currentNavigation, setCurrentNavigation] = useState('');
+  const [isEventFormModalOpen, setIsEventFormModalOpen] = useState(false);
+  const [isEventDetailModalOpen, setIsEventDetailModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
-    useEffect(() => {
-        const fetchHolidays = async () => {
-            try {
-                const response = await fetch(`https://brasilapi.com.br/api/feriados/v1/2024`);
-                const data = await response.json();
-                const holidayEvents = data.map(holiday => ({
-                    title: holiday.name,
-                    start: moment(holiday.date).toDate(),
-                    end: moment(holiday.date).toDate(),
-                    allDay: true
-                }));
-                setEvents(holidayEvents);
-            } catch (error) {
-                console.error('Erro ao buscar feriados:', error);
-            }
-        };
-
-        fetchHolidays();
-    }, []);
-
-    const fetchCollaborators = async (sector) => {
-        try {
-            let url = 'http://127.0.0.1:8000/collaborator/collaborators/';
-            if (sector) {
-                url += `?sector=${sector}`;
-            }
-            const response = await fetch(url);
-            if (!response.ok) {
-                showToast('Erro ao buscar colaboradores.', 'error');
-            }
-            const data = await response.json();
-            setCollaborators(data);
-        } catch (error) {
-            console.error('Erro:', error);
-            showToast('Erro ao buscar colaboradores.', 'error');
-        }
+  useEffect(() => {
+    const fetchHolidays = async () => {
+      try {
+        const year = new Date().getFullYear();
+        const response = await fetch(`https://www.calendario.com.br/feriados-belo_horizonte-mg.php?ano=${year}`);
+        const data = await response.json();
+        const holidayEvents = data.map(holiday => ({
+          title: holiday.name,
+          start: new Date(holiday.date),
+          end: new Date(holiday.date),
+          allDay: true
+        }));
+        setEvents(holidayEvents);
+      } catch (error) {
+        console.error('Erro ao buscar feriados:', error);
+      }
     };
 
-    useEffect(() => {
-        fetchCollaborators(selectedSector);
-    }, [selectedSector]);
+    fetchHolidays();
+  }, []);
 
-    useEffect(() => {
-        setCurrentNavigation(getCurrentNavigation(view, date));
-    }, [view, date]);
+  useEffect(() => {
+    setCurrentNavigation(getCurrentNavigation(view, date));
+  }, [view, date]);
 
-    const localizer = momentLocalizer(moment);
+  const localizer = momentLocalizer(moment);
 
-    const onNextClick = useCallback(() => {
-        if (view === Views.DAY) setDate(prevDate => moment(prevDate).add(1, 'd').toDate());
-        if (view === Views.WEEK) setDate(prevDate => moment(prevDate).add(1, 'w').toDate());
-        if (view === Views.MONTH) setDate(prevDate => moment(prevDate).add(1, 'M').toDate());
-    }, [view]);
+  const onNextClick = useCallback(() => {
+    if (view === Views.DAY) setDate(prevDate => moment(prevDate).add(1, 'd').toDate());
+    if (view === Views.WEEK) setDate(prevDate => moment(prevDate).add(1, 'w').toDate());
+    if (view === Views.MONTH) setDate(prevDate => moment(prevDate).add(1, 'M').toDate());
+  }, [view]);
 
-    const onPrevClick = useCallback(() => {
-        if (view === Views.DAY) setDate(prevDate => moment(prevDate).subtract(1, 'd').toDate());
-        if (view === Views.WEEK) setDate(prevDate => moment(prevDate).subtract(1, 'w').toDate());
-        if (view === Views.MONTH) setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
-    }, [view]);
+  const onPrevClick = useCallback(() => {
+    if (view === Views.DAY) setDate(prevDate => moment(prevDate).subtract(1, 'd').toDate());
+    if (view === Views.WEEK) setDate(prevDate => moment(prevDate).subtract(1, 'w').toDate());
+    if (view === Views.MONTH) setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
+  }, [view]);
 
-    const openModal = (type) => {
-        setModalType(type);
-        setShowModal(true);
-    };
+  const getCurrentNavigation = (view, date) => {
+    if (view === Views.DAY) return moment(date).format('dddd, DD/MM/YYYY');
+    if (view === Views.WEEK) {
+      const startOfWeek = moment(date).startOf('week').format('DD/MM/YYYY');
+      const endOfWeek = moment(date).endOf('week').format('DD/MM/YYYY');
+      return `${startOfWeek} a ${endOfWeek}`;
+    }
+    if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
+    return '';
+  };
 
-    const closeModal = () => {
-        setShowModal(false);
-    };
+  const getDayProp = (date) => {
+    const dayOfWeek = date.getDay();
+    const isCurrentMonth = moment(date).isSame(date, 'month');
+    
+    if (isCurrentMonth && (dayOfWeek === 0 || dayOfWeek === 6)) {
+      return {
+        style: {
+          backgroundColor: '#FAFAD2',
+        },
+      };
+    }
+    
+    return null;
+  };
 
-    const getCurrentNavigation = (view, date) => {
-        if (view === Views.DAY) return moment(date).format('dddd, DD/MM/YYYY');
-        if (view === Views.WEEK) {
-            const startOfWeek = moment(date).startOf('week').format('DD/MM/YYYY');
-            const endOfWeek = moment(date).endOf('week').format('DD/MM/YYYY');
-            return `${startOfWeek} - ${endOfWeek}`;
-        }
-        if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
-        return '';
-    };
+  const handleOpenEventFormModal = () => {
+    setIsEventFormModalOpen(true);
+  };
 
-    const getDayProp = (date) => {
-        const dayOfWeek = date.getDay();
-        const isCurrentMonth = moment(date).isSame(date, 'month');
-        const isToday = moment(date).isSame(moment(), 'day'); // Verifica se é o dia atual
+  const handleCloseEventFormModal = () => {
+    setIsEventFormModalOpen(false);
+  };
 
-        const dayProp = {};
+  const handleSaveEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+    setIsEventFormModalOpen(false);
+  };
 
-        if (!isCurrentMonth) {
-            dayProp.className = 'other-month-day'; // Adiciona uma classe para dias fora do mês atual
-        }
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    setIsEventDetailModalOpen(true);
+  };
 
-        if (isToday) {
-            dayProp.className = (dayProp.className || '') + ' current-day'; // Adiciona a classe para o dia atual
-        }
+  return (
+    <div className="calendar">
+      <h2>Calendário</h2>
+      <div className="toolbar-container">
+        <div className="toolbar">
+          <div className="navigation-container">
+            <button className="toolbar-button" onClick={onPrevClick}>{'←'}</button>
+            <div className="navigation-info">{currentNavigation}</div>
+            <button className="toolbar-button" onClick={onNextClick}>{'→'}</button>
+          </div>
 
-        return dayProp;
-    };
-
-    const handleSaveEvent = (newEvent) => {
-        setEvents([...events, newEvent]);
-        closeModal();
-    };
-
-    const handleSelectEvent = (event) => {
-        setSelectedEvent(event);
-        openModal('detail');
-    };
-
-    const handleSectorChange = (e) => {
-        setSelectedSector(e.target.value);
-    };
-
-    const handleCollaboratorChange = (e) => {
-        setSelectedCollaborator(e.target.value);
-    };
-
-
-    return (
-        <div className="calendar">
-            <h2>Calendário</h2>
-            <div className="toolbar-container">
-                <div className="toolbar">
-                    <div className="left-buttons">
-                        <div className="collaborator-container">
-                            <NewCollaboratorButton
-                                onClick={() => openModal('collaborator')}
-                                className="left-button"
-                            />
-                            <div className="select-container">
-                                <select
-                                    className="select"
-                                    value={selectedSector}
-                                    onChange={handleSectorChange}
-                                >
-                                    <option value="">Selecione um setor</option>
-                                    <option value="atendimento">Atendimento</option>
-                                    <option value="comunicação">Comunicação</option>
-                                    <option value="conteúdo">Conteúdo</option>
-                                    <option value="financeiro">Financeiro</option>
-                                    <option value="onidevs">Onidevs</option>
-                                    <option value="qh4">QH4</option>
-                                    <option value="rh">RH</option>
-                                </select>
-                                <div className="select-arrow"></div>
-                            </div>
-                            <div className="select-container">
-                                <select
-                                    className="select"
-                                    value={selectedCollaborator}
-                                    onChange={handleCollaboratorChange}
-                                >
-                                    <option value="">Selecione um colaborador</option>
-                                    {selectedSector &&
-                                        collaborators
-                                            .filter(
-                                                collaborator =>
-                                                    collaborator.sector === selectedSector
-                                            )
-                                            .map(collaborator => (
-                                                <option key={collaborator.id} value={collaborator.name}>
-                                                    {collaborator.name}
-                                                </option>
-                                            ))}
-                                </select>
-                                <div className="select-arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="right-buttons">
-                        <button className="toolbar-button" onClick={onPrevClick}>
-                            {'<'}
-                        </button>
-                        <div className="navigation-info">{currentNavigation}</div>
-                        <button className="toolbar-button" onClick={onNextClick}>
-                            {'>'}
-                        </button>
-                        <button
-                            className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
-                            onClick={() => setView(Views.DAY)}
-                        >
-                            Dia
-                        </button>
-                        <button
-                            className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
-                            onClick={() => setView(Views.WEEK)}
-                        >
-                            Semana
-                        </button>
-                        <button
-                            className={`toolbar-button ${
-                                view === Views.MONTH ? 'selected' : ''
-                            }`}
-                            onClick={() => setView(Views.MONTH)}
-                        >
-                            Mês
-                        </button>
-                        <button className="toolbar-button" onClick={() => openModal('event')}>
-                            Criar Evento
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div className="calendar-container">
-                <Calendar
-                    localizer={localizer}
-                    events={events}
-                    startAccessor="start"
-                    endAccessor="end"
-                    style={{height: 600, width: '90vw'}}
-                    toolbar={false}
-                    view={view}
-                    date={date}
-                    dayPropGetter={getDayProp}
-                    onSelectEvent={handleSelectEvent}
-                />
-            </div>
-            {showModal && modalType === 'collaborator' && (
-                <ModalCollaborator closeModal={closeModal}/>
-            )}
-            {/* {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>} */}{' '}
-            {/* {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>} */}{' '}
+          <div className="date-container">
+            <button className="toolbar-button" onClick={() => setDate(moment().toDate())}>
+              Hoje
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
+              onClick={() => setView(Views.DAY)}
+            >
+              Dia
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.WEEK ? 'selected' : ''}`}
+              onClick={() => setView(Views.WEEK)}
+            >
+              Semana
+            </button>
+            <button
+              className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
+              onClick={() => setView(Views.MONTH)}
+            >
+              Mês
+            </button>
+            <button className="toolbar-button" onClick={handleOpenEventFormModal}>
+              Criar Evento
+            </button>
+          </div>
         </div>
-    );
+      </div>
+
+      <div className="calendar-container">
+        <Calendar
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ height: 900 }}
+          toolbar={false}
+          view={view}
+          date={date}
+          dayPropGetter={getDayProp}
+          onSelectEvent={handleSelectEvent}
+        />
+      </div>
+      <EventModal isOpen={isEventFormModalOpen} onClose={handleCloseEventFormModal} onSave={handleSaveEvent} selectedEvent={selectedEvent} />
+      <EventDetailModal isOpen={isEventDetailModalOpen} onClose={() => setIsEventDetailModalOpen(false)} event={selectedEvent} />
+    </div>
+  );
 };
 
 export default MyCalendar;
