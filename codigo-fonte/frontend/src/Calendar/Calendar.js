@@ -106,16 +106,19 @@ const MyCalendar = () => {
     const getDayProp = (date) => {
         const dayOfWeek = date.getDay();
         const isCurrentMonth = moment(date).isSame(date, 'month');
+        const isToday = moment(date).isSame(moment(), 'day'); // Verifica se é o dia atual
 
-        if (isCurrentMonth && (dayOfWeek === 0 || dayOfWeek === 6)) {
-            return {
-                style: {
-                    backgroundColor: '#FAFAD2',
-                },
-            };
+        const dayProp = {};
+
+        if (!isCurrentMonth) {
+            dayProp.className = 'other-month-day'; // Adiciona uma classe para dias fora do mês atual
         }
 
-        return null;
+        if (isToday) {
+            dayProp.className = (dayProp.className || '') + ' current-day'; // Adiciona a classe para o dia atual
+        }
+
+        return dayProp;
     };
 
     const handleSaveEvent = (newEvent) => {

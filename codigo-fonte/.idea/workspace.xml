@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="resolvendo alguns conflitos">
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/collaborator/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Calendar/Select.css" afterDir="false" />
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="front e backend de criar colaborador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/NewCollaborator/ModalCollaborator.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NewCollaborator/ModalCollaborator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/NewCollaborator/NewCollaboratorButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NewCollaborator/NewCollaboratorButton.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +53,7 @@
     <MESSAGE value="add botao de add colaborador" />
     <MESSAGE value="apagando sonarlint" />
     <MESSAGE value="resolvendo alguns conflitos" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolvendo alguns conflitos" />
+    <MESSAGE value="front e backend de criar colaborador" />
+    <option name="LAST_COMMIT_MESSAGE" value="front e backend de criar colaborador" />
   </component>
 </project>

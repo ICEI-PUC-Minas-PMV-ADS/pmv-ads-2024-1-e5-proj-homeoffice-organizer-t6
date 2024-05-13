@@ -108,3 +108,7 @@
 .rbc-off-range-bg {
     background: #e6e6e6 !important;
 }
+
+.current-day {
+    background-color: #e6f7ff;
+}
