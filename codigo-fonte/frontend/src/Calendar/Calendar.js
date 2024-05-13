@@ -6,8 +6,10 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './Calendar.css';
 import NewCollaboratorButton from "../NewCollaborator/NewCollaboratorButton";
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
-// import EventModal from "../EventModal/EventModal"; // Comentei esta linha
-// import EventDetailModal from "../EventModal/EventDetailModal"; // Comentei esta linha
+import {showToast} from "../ToastContainer";
+// import EventModal from "../EventModal/EventModal";
+// import EventDetailModal from "../EventModal/EventDetailModal";
+import './Select.css'
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -17,6 +19,9 @@ const MyCalendar = () => {
     const [showModal, setShowModal] = useState(false);
     const [modalType, setModalType] = useState('');
     const [selectedEvent, setSelectedEvent] = useState(null);
+    const [collaborators, setCollaborators] = useState([]);
+    const [selectedSector, setSelectedSector] = useState('');
+    const [selectedCollaborator, setSelectedCollaborator] = useState('');
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -37,6 +42,28 @@ const MyCalendar = () => {
 
         fetchHolidays();
     }, []);
+
+    const fetchCollaborators = async (sector) => {
+        try {
+            let url = 'http://127.0.0.1:8000/collaborator/collaborators/';
+            if (sector) {
+                url += `?sector=${sector}`;
+            }
+            const response = await fetch(url);
+            if (!response.ok) {
+                showToast('Erro ao buscar colaboradores.', 'error');
+            }
+            const data = await response.json();
+            setCollaborators(data);
+        } catch (error) {
+            console.error('Erro:', error);
+            showToast('Erro ao buscar colaboradores.', 'error');
+        }
+    };
+
+    useEffect(() => {
+        fetchCollaborators(selectedSector);
+    }, [selectedSector]);
 
     useEffect(() => {
         setCurrentNavigation(getCurrentNavigation(view, date));
@@ -101,18 +128,74 @@ const MyCalendar = () => {
         openModal('detail');
     };
 
+    const handleSectorChange = (e) => {
+        setSelectedSector(e.target.value);
+    };
+
+    const handleCollaboratorChange = (e) => {
+        setSelectedCollaborator(e.target.value);
+    };
+
+
     return (
         <div className="calendar">
             <h2>Calendário</h2>
             <div className="toolbar-container">
                 <div className="toolbar">
                     <div className="left-buttons">
-                        <NewCollaboratorButton onClick={() => openModal('collaborator')} className="left-button"/>
+                        <div className="collaborator-container">
+                            <NewCollaboratorButton
+                                onClick={() => openModal('collaborator')}
+                                className="left-button"
+                            />
+                            <div className="select-container">
+                                <select
+                                    className="select"
+                                    value={selectedSector}
+                                    onChange={handleSectorChange}
+                                >
+                                    <option value="">Selecione um setor</option>
+                                    <option value="atendimento">Atendimento</option>
+                                    <option value="comunicação">Comunicação</option>
+                                    <option value="conteúdo">Conteúdo</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="onidevs">Onidevs</option>
+                                    <option value="qh4">QH4</option>
+                                    <option value="rh">RH</option>
+                                </select>
+                                <div className="select-arrow"></div>
+                            </div>
+                            <div className="select-container">
+                                <select
+                                    className="select"
+                                    value={selectedCollaborator}
+                                    onChange={handleCollaboratorChange}
+                                >
+                                    <option value="">Selecione um colaborador</option>
+                                    {selectedSector &&
+                                        collaborators
+                                            .filter(
+                                                collaborator =>
+                                                    collaborator.sector === selectedSector
+                                            )
+                                            .map(collaborator => (
+                                                <option key={collaborator.id} value={collaborator.name}>
+                                                    {collaborator.name}
+                                                </option>
+                                            ))}
+                                </select>
+                                <div className="select-arrow"></div>
+                            </div>
+                        </div>
                     </div>
                     <div className="right-buttons">
-                        <button className="toolbar-button" onClick={onPrevClick}>{'<'}</button>
+                        <button className="toolbar-button" onClick={onPrevClick}>
+                            {'<'}
+                        </button>
                         <div className="navigation-info">{currentNavigation}</div>
-                        <button className="toolbar-button" onClick={onNextClick}>{'>'}</button>
+                        <button className="toolbar-button" onClick={onNextClick}>
+                            {'>'}
+                        </button>
                         <button
                             className={`toolbar-button ${view === Views.DAY ? 'selected' : ''}`}
                             onClick={() => setView(Views.DAY)}
@@ -126,7 +209,9 @@ const MyCalendar = () => {
                             Semana
                         </button>
                         <button
-                            className={`toolbar-button ${view === Views.MONTH ? 'selected' : ''}`}
+                            className={`toolbar-button ${
+                                view === Views.MONTH ? 'selected' : ''
+                            }`}
                             onClick={() => setView(Views.MONTH)}
                         >
                             Mês
@@ -152,9 +237,11 @@ const MyCalendar = () => {
                     onSelectEvent={handleSelectEvent}
                 />
             </div>
-            {showModal && modalType === 'collaborator' && <ModalCollaborator closeModal={closeModal}/>}
-            {/* {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>} */} {/* Comentei esta linha */}
-            {/* {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>} */} {/* Comentei esta linha */}
+            {showModal && modalType === 'collaborator' && (
+                <ModalCollaborator closeModal={closeModal}/>
+            )}
+            {/* {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>} */}{' '}
+            {/* {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>} */}{' '}
         </div>
     );
 };

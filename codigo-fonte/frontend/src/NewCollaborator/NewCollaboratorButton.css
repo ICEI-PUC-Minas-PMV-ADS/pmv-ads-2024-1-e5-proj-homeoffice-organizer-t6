@@ -1,5 +1,5 @@
 .new-collaborator-button {
-    background-color: #ccc;
+    background-color: #fff;
     color: #fff;
     padding: 8px 16px;
     border: none;
@@ -12,10 +12,12 @@
 
 .new-collaborator-button .icon {
     margin-right: 8px;
+    color: #0f0f0f;
 }
 
 .new-collaborator-button .text {
     font-size: 12px;
+    color: #0f0f0f;
 }
 
 
