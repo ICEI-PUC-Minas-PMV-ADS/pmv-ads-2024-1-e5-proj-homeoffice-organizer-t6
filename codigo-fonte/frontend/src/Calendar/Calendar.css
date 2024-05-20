@@ -1,30 +1,56 @@
 .toolbar-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.left-buttons {
+    margin-right: auto;
+}
+
+.right-buttons {
+    display: flex;
 }
 
 .toolbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
-.navigation-container {
-    display: flex;
-    align-items: center;
+.new-collaborator-button {
+    padding: 12px 24px;
+    background-color: #DDAE3A !important;
+    font-size: 12px;
+    color: #212121;
+    border: 2px solid #212121 !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    transition: background-color 0.3s ease !important;
+    font-weight: bold;
 }
 
-.date-container {
-    display: flex;
-    align-items: center;
+.select {
+    padding: 12px 24px;
+    background-color: #DDAE3A !important;
+    font-size: 12px !important;
+    color: #212121 !important;
+    border: 2px solid #212121 !important;
+    border-radius: 5px !important;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease !important;
+    font-weight: bold;
+    height: 100% !important;
 }
 
 .navigation-info {
     padding: 12px 24px;
     background-color: #DDAE3A;
+    font-size: 12px;
+    text-transform: uppercase;
+    place-content: center;
     color: #212121;
     border: 2px solid #212121;
     border-radius: 5px;
@@ -35,6 +61,7 @@
 
 .toolbar-button {
     padding: 12px 24px;
+    font-size: 12px;
     background-color: #DDAE3A;
     color: #212121;
     border: 2px solid #212121;
@@ -59,7 +86,8 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 80%;
+    max-width: 90%;
+    ;
     margin: 0 auto;
     padding: 20px;
 }
@@ -110,4 +138,8 @@
 
 .rbc-off-range-bg {
     background: #e6e6e6 !important;
+}
+
+.current-day {
+    background-color: #e6f7ff;
 }
