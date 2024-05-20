@@ -6,7 +6,7 @@ function Navbar({ isLoginPage }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img src={logoImg} alt="Logo" style={{ width: '300px', heigth: 'auto' }} />
+        <a href="/Calendar"><img src={logoImg} alt="Logo" style={{ width: '300px', heigth: 'auto' }} /></a>
       </div>
       <div className="navbar-right">
         {isLoginPage ? (
