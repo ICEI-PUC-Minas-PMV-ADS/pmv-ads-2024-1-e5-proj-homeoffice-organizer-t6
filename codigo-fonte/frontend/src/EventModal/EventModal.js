@@ -1,26 +1,46 @@
-import React from 'react';
-import './EventModal.css';
+import React, { useState } from 'react';
 
-const EventModal = ({ closeModal }) => {
-    return (
-        <div className="modal-overlay">
-            <div className="modal">
-                <span className="close" onClick={closeModal}>&times;</span>
-                <h2>Adicionar Colaborador</h2>
-                <form>
-                    <label htmlFor="collaboratorName">Nome:</label>
-                    <input type="text" id="collaboratorName" name="collaboratorName" />
-                    <label htmlFor="department">Departamento:</label>
-                    <select id="department" name="department">
-                        <option value="department1">Departamento 1</option>
-                        <option value="department2">Departamento 2</option>
-                        <option value="department3">Departamento 3</option>
-                    </select>
-                    <button type="submit">Adicionar</button>
-                </form>
-            </div>
-        </div>
-    );
+const EventModal = ({ isOpen, onClose, onSave }) => {
+  const [eventData, setEventData] = useState({
+    title: '',
+    description: '',
+    start: '',
+    end: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEventData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSave(eventData);
+    onClose();
+  };
+
+  return (
+    <div className={`modal ${isOpen ? 'open' : ''}`}>
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>&times;</span>
+        <h2>Criar Evento</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">Título:</label>
+          <input type="text" id="title" name="title" value={eventData.title} onChange={handleChange} required />
+          <label htmlFor="description">Descrição:</label>
+          <textarea id="description" name="description" value={eventData.description} onChange={handleChange} />
+          <label htmlFor="start">Início:</label>
+          <input type="datetime-local" id="start" name="start" value={eventData.start} onChange={handleChange} required />
+          <label htmlFor="end">Fim:</label>
+          <input type="datetime-local" id="end" name="end" value={eventData.end} onChange={handleChange} required />
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default EventModal;

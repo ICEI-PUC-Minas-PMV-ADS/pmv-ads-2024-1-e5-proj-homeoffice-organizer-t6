@@ -1,26 +1,21 @@
 import React from 'react';
 import './EventModal.css';
 
-const EventDetailsModal = ({ closeModal }) => {
-    return (
-        <div className="modal-overlay">
-            <div className="modal">
-                <span className="close" onClick={closeModal}>&times;</span>
-                <h2>Adicionar Colaborador</h2>
-                <form>
-                    <label htmlFor="collaboratorName">Nome:</label>
-                    <input type="text" id="collaboratorName" name="collaboratorName" />
-                    <label htmlFor="department">Departamento:</label>
-                    <select id="department" name="department">
-                        <option value="department1">Departamento 1</option>
-                        <option value="department2">Departamento 2</option>
-                        <option value="department3">Departamento 3</option>
-                    </select>
-                    <button type="submit">Adicionar</button>
-                </form>
-            </div>
-        </div>
-    );
+const EventDetailsModal = ({ isOpen, onClose, event }) => {
+  if (!isOpen || !event) return null;
+
+  return (
+    <div className={`modal ${isOpen ? 'open' : ''}`}>
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>&times;</span>
+        <h2>Detalhes do Evento</h2>
+        <p><strong>Título:</strong> {event.title}</p>
+        <p><strong>Descrição:</strong> {event.description}</p>
+        <p><strong>Início:</strong> {event.start}</p>
+        <p><strong>Fim:</strong> {event.end}</p>
+      </div>
+    </div>
+  );
 };
 
 export default EventDetailsModal;
