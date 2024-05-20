@@ -232,7 +232,7 @@ const MyCalendar = () => {
                     events={events}
                     startAccessor="start"
                     endAccessor="end"
-                    style={{height: 600, width: '90vw'}}
+                    style={{height: 900, width: '90vw'}}
                     toolbar={false}
                     view={view}
                     date={date}
