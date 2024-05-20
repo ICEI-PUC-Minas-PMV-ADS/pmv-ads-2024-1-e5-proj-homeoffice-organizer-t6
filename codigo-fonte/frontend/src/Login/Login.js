@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import Navbar from "../NavBar/NavBar";
 import { useNavigate } from 'react-router-dom';
-import {showToast} from "../ToastContainer";
+import { showToast } from "../ToastContainer";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    
+
     e.preventDefault();
     try {
       const response = await axios.post('http://127.0.0.1:8000/auth/login/', {
@@ -40,8 +40,9 @@ function Login() {
           <div className="form-group">
             <input type="password" id="password" name="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
             <ul>
-              <a className="fs-14" >Esqueceu a senha?</a>
+                <a className="fs-14" href="#">Esqueci minha senha</a>
             </ul>
+
           </div>
           <button type="submit">Entrar</button>
         </form>

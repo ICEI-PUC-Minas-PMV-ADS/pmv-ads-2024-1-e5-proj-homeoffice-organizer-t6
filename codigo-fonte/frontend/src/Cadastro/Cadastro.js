@@ -106,7 +106,7 @@ function SignUp() {
                             onChange={handleChange} className={errors.confirmarSenha ? 'error' : ''} required />
                         {errors.confirmarSenha && <span className="error-message">As senhas não correspondem.</span>}
                         <ul>
-                            <a className="fs-14" >Já possui uma conta?</a>
+                            <a className="fs-14" href="/Login" >Já tenho uma conta</a>
                         </ul>
                     </div>
                     <button className="form-submit" type="submit">Criar Conta</button>
