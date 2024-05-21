@@ -1,7 +1,8 @@
 .select-container {
     position: relative;
     display: inline-block;
-    margin-left: 10px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 .select {
@@ -66,9 +67,4 @@
 
 .select-option:hover {
     background-color: #f8f9fa;
-}
-
-.collaborator-container {
-    display: flex;
-
 }

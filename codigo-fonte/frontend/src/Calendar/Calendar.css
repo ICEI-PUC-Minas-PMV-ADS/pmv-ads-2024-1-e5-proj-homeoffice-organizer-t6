@@ -19,18 +19,6 @@
     width: 100%;
 }
 
-.new-collaborator-button {
-    padding: 12px 24px;
-    background-color: #DDAE3A !important;
-    font-size: 12px;
-    color: #212121;
-    border: 2px solid #212121 !important;
-    border-radius: 5px !important;
-    cursor: pointer;
-    transition: background-color 0.3s ease !important;
-    font-weight: bold;
-}
-
 .select {
     padding: 12px 24px;
     background-color: #DDAE3A !important;
@@ -42,6 +30,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease !important;
     font-weight: bold;
+    margin: 0;
     height: 100% !important;
 }
 
@@ -60,15 +49,21 @@
 }
 
 .toolbar-button {
-    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    background-color: #DDAE3A !important;
     font-size: 12px;
-    background-color: #DDAE3A;
     color: #212121;
-    border: 2px solid #212121;
-    border-radius: 5px;
+    border: 2px solid #212121 !important;
+    border-radius: 5px !important;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease !important;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 10px;
+    place-content: center;
 }
 
 .toolbar-button:not(:last-child) {
@@ -86,8 +81,7 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 90%;
-    ;
+    max-width: 90%;;
     margin: 0 auto;
     padding: 20px;
 }
@@ -132,7 +126,6 @@
 .rbc-time-view .rbc-allday-cell {
     box-sizing: content-box;
     width: 100%;
-    height: 50% !important;
     position: relative;
 }
 
@@ -142,4 +135,12 @@
 
 .current-day {
     background-color: #e6f7ff;
+}
+
+.collaborator-container {
+    display: flex;
+}
+
+.options-container {
+    display: flex;
 }
