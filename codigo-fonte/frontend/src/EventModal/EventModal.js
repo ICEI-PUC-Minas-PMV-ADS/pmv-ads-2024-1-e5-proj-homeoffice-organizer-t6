@@ -1,46 +1,33 @@
 import React, { useState } from 'react';
+import './EventModal.css';
 
-const EventModal = ({ isOpen, onClose, onSave }) => {
-  const [eventData, setEventData] = useState({
-    title: '',
-    description: '',
-    start: '',
-    end: '',
-  });
+const EventModal = ({ closeModal, onSave }) => {
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setEventData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+    const handleSave = () => {
+        const newEvent = {
+            title,
+            start: new Date(date),
+            end: new Date(date),
+        };
+        onSave(newEvent);
+        closeModal();
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSave(eventData);
-    onClose();
-  };
-
-  return (
-    <div className={`modal ${isOpen ? 'open' : ''}`}>
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
-        <h2>Criar Evento</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Título:</label>
-          <input type="text" id="title" name="title" value={eventData.title} onChange={handleChange} required />
-          <label htmlFor="description">Descrição:</label>
-          <textarea id="description" name="description" value={eventData.description} onChange={handleChange} />
-          <label htmlFor="start">Início:</label>
-          <input type="datetime-local" id="start" name="start" value={eventData.start} onChange={handleChange} required />
-          <label htmlFor="end">Fim:</label>
-          <input type="datetime-local" id="end" name="end" value={eventData.end} onChange={handleChange} required />
-          <button type="submit">Salvar</button>
-        </form>
-      </div>
-    </div>
-  );
+    return (
+        <div className="modal">
+            <div className="modal-content">
+                <span className="close" onClick={closeModal}>&times;</span>
+                <h2>Criar Evento</h2>
+                <label>Título:</label>
+                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <label>Data:</label>
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <button onClick={handleSave}>Salvar</button>
+            </div>
+        </div>
+    );
 };
 
 export default EventModal;

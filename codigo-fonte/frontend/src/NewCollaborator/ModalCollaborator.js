@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './Modal.css';
 import {showToast} from "../ToastContainer";
 
-const Modal = ({ closeModal }) => {
+const ModalCollaborator = ({closeModal}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [sector, setSector] = useState('');
@@ -23,7 +23,7 @@ const Modal = ({ closeModal }) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name: name, email, sector }),
+                body: JSON.stringify({name: name, email, sector}),
             });
 
             if (!response.ok) {
@@ -43,15 +43,15 @@ const Modal = ({ closeModal }) => {
         closeModal();
     };
 
+
     return (
-        <div className="modal-overlay">
-            <div className="modal">
+        <div className="modal">
+            <div className="modal-content">
                 <span className="close" onClick={closeModal}>&times;</span>
                 <h2>Adicionar Colaborador</h2>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="collaboratorName">Nome:</label>
+                    <label>Nome:</label>
                     <input
-                        type="text"
                         id="collaboratorName"
                         name="collaboratorName"
                         value={name}
@@ -59,7 +59,6 @@ const Modal = ({ closeModal }) => {
                     />
                     <label htmlFor="email">Email:</label>
                     <input
-                        type="email"
                         id="email"
                         name="email"
                         value={email}
@@ -88,4 +87,4 @@ const Modal = ({ closeModal }) => {
     );
 };
 
-export default Modal;
+export default ModalCollaborator;
