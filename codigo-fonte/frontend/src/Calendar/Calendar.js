@@ -9,7 +9,7 @@ import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import {showToast} from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
-import './Select.css'
+import './Select.css';
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -72,16 +72,12 @@ const MyCalendar = () => {
     const localizer = momentLocalizer(moment);
 
     const onNextClick = useCallback(() => {
-        if (view === Views.DAY) setDate(prevDate => moment(prevDate).add(1, 'd').toDate());
-        if (view === Views.WEEK) setDate(prevDate => moment(prevDate).add(1, 'w').toDate());
-        if (view === Views.MONTH) setDate(prevDate => moment(prevDate).add(1, 'M').toDate());
-    }, [view]);
+        setDate(prevDate => moment(prevDate).add(1, 'M').toDate());
+    }, []);
 
     const onPrevClick = useCallback(() => {
-        if (view === Views.DAY) setDate(prevDate => moment(prevDate).subtract(1, 'd').toDate());
-        if (view === Views.WEEK) setDate(prevDate => moment(prevDate).subtract(1, 'w').toDate());
-        if (view === Views.MONTH) setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
-    }, [view]);
+        setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
+    }, []);
 
     const openModal = (type) => {
         setModalType(type);
@@ -93,29 +89,22 @@ const MyCalendar = () => {
     };
 
     const getCurrentNavigation = (view, date) => {
-        if (view === Views.DAY) return moment(date).format('dddd, DD/MM/YYYY');
-        if (view === Views.WEEK) {
-            const startOfWeek = moment(date).startOf('week').format('DD/MM/YYYY');
-            const endOfWeek = moment(date).endOf('week').format('DD/MM/YYYY');
-            return `${startOfWeek} - ${endOfWeek}`;
-        }
         if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
         return '';
     };
 
     const getDayProp = (date) => {
-        const dayOfWeek = date.getDay();
         const isCurrentMonth = moment(date).isSame(date, 'month');
-        const isToday = moment(date).isSame(moment(), 'day'); // Verifica se é o dia atual
+        const isToday = moment(date).isSame(moment(), 'day');
 
         const dayProp = {};
 
         if (!isCurrentMonth) {
-            dayProp.className = 'other-month-day'; // Adiciona uma classe para dias fora do mês atual
+            dayProp.className = 'other-month-day';
         }
 
         if (isToday) {
-            dayProp.className = (dayProp.className || '') + ' current-day'; // Adiciona a classe para o dia atual
+            dayProp.className = (dayProp.className || '') + ' current-day';
         }
 
         return dayProp;
@@ -138,7 +127,6 @@ const MyCalendar = () => {
     const handleCollaboratorChange = (e) => {
         setSelectedCollaborator(e.target.value);
     };
-
 
     return (
         <div className="calendar">
@@ -168,6 +156,7 @@ const MyCalendar = () => {
                     date={date}
                     dayPropGetter={getDayProp}
                     onSelectEvent={handleSelectEvent}
+                    views={['month']}
                 />
             </div>
             {showModal && modalType === 'collaborator' && (
