@@ -1,12 +1,13 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
 import CalendarToolbar from './CalendarToolbar';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
-import {showToast} from "../ToastContainer";
+import { showToast } from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
 import './Select.css';
@@ -130,7 +131,7 @@ const MyCalendar = () => {
 
     return (
         <div className="calendar">
-            <h2>Calendário</h2>
+            <Navbar />
             <CalendarToolbar
                 selectedSector={selectedSector}
                 selectedCollaborator={selectedCollaborator}
@@ -150,7 +151,7 @@ const MyCalendar = () => {
                     events={events}
                     startAccessor="start"
                     endAccessor="end"
-                    style={{height: 700, width: '90vw'}}
+                    style={{ height: 700, width: '90vw' }}
                     toolbar={false}
                     view={view}
                     date={date}
@@ -160,10 +161,10 @@ const MyCalendar = () => {
                 />
             </div>
             {showModal && modalType === 'collaborator' && (
-                <ModalCollaborator closeModal={closeModal}/>
+                <ModalCollaborator closeModal={closeModal} />
             )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>}
-            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
+            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
+            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
         </div>
     );
 };

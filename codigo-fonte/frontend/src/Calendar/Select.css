@@ -7,12 +7,12 @@
 
 .select {
     appearance: none;
-    background-color: #ffffff;
-    border: 1px solid #ced4da;
+    background-color: #DDAE3A;
+    border: 2px solid #212121;
     border-radius: 5px;
     padding: 8px 40px 8px 16px;
-    font-size: 16px;
-    color: #495057;
+    font-size: 12px;
+    color: #212121;
     cursor: pointer;
     width: 260px;
     height: 45px;
@@ -38,7 +38,7 @@
 .select-arrow::before {
     content: '\25BC';
     font-size: 12px;
-    color: #6c757d;
+    color: #212121;
 }
 
 .select-options {
@@ -61,7 +61,7 @@
 .select-option {
     padding: 10px;
     font-size: 16px;
-    color: #495057;
+    color: #212121;
     cursor: pointer;
 }
 

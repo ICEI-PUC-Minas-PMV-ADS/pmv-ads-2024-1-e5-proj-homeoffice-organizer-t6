@@ -109,7 +109,7 @@ function SignUp() {
                             <a className="fs-14" href="/Login" >Já tenho uma conta</a>
                         </ul>
                     </div>
-                    <button className="form-submit" type="submit">Criar Conta</button>
+                    <button className="form-button" type="submit">Criar Conta</button>
                 </form>
                 {successMessage && <p className="bottom-success-message">{successMessage}</p>}
             </div>

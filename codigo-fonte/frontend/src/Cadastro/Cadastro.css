@@ -65,7 +65,7 @@ input.error {
   font-size: 14px;
 }
 
-button {
+.form-button {
   width: 100%;
   padding: 20px;
   text-transform: uppercase;
@@ -77,6 +77,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.form-button:hover {
   background-color: #696969;
 }

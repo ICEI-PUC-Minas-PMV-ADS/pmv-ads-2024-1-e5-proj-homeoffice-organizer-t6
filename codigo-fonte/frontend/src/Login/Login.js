@@ -44,7 +44,7 @@ function Login() {
             </ul>
 
           </div>
-          <button type="submit">Entrar</button>
+          <button className="form-button" type="submit">Entrar</button>
         </form>
       </div>
     </div>
