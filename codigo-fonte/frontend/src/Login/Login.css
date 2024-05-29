@@ -81,7 +81,7 @@ h2 {
   
   input[type="email"],
   input[type="password"] {
-    width: calc(100% - 22px);
+    width: 100%;
     padding: 20px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
