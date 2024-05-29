@@ -21,17 +21,17 @@
 
 .select {
     padding: 12px 24px;
-    background-color: #DDAE3A !important;
-    font-size: 12px !important;
-    color: #212121 !important;
-    border: 2px solid #212121 !important;
-    border-radius: 5px !important;
+    background-color: #DDAE3A;
+    font-size: 12px;
+    color: #212121;
+    border: 2px solid #212121;
+    border-radius: 5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s ease !important;
+    transition: background-color 0.3s ease;
     font-weight: bold;
     margin: 0;
-    height: 100% !important;
+    height: 100%;
 }
 
 .navigation-info {
@@ -52,13 +52,14 @@
     display: flex;
     align-items: center;
     width: 100px;
-    background-color: #DDAE3A !important;
+    background-color: #DDAE3A;
     font-size: 12px;
+    text-transform: uppercase;
     color: #212121;
-    border: 2px solid #212121 !important;
-    border-radius: 5px !important;
+    border: 2px solid #212121;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease !important;
+    transition: background-color 0.3s ease;
     font-weight: bold;
     margin-bottom: 0;
     margin-top: 0;
@@ -106,8 +107,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 36px !important;
-    background: black !important;
+    height: 36px;
+    background: black;
 }
 
 .rbc-calendar {
@@ -130,7 +131,7 @@
 }
 
 .rbc-off-range-bg {
-    background: #e6e6e6 !important;
+    background: #e6e6e6;
 }
 
 .current-day {

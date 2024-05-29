@@ -95,14 +95,18 @@ h2 {
   
   }
   
-  button {
+  .form-button {
+    width: 100%;
     padding: 20px;
+    text-transform: uppercase;
+    background-color: #212121;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    width: 60vh;
-    background-color: black;
-    
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
-  button:hover {
-    background-color: rgba(0, 0, 0, 0.76);
+  .form-button:hover {
+    background-color: #696969;
   }
