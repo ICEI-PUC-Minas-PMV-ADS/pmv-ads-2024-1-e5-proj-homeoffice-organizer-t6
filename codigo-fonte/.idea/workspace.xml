@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="front e backend de criar colaborador">
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="alinhando botoes">
+      <change afterPath="$PROJECT_DIR$/frontend/src/Calendar/CollaboratorModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codigo-fonte.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codigo-fonte.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/CalendarToolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/CalendarToolbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/NewCollaborator/ModalCollaborator.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NewCollaborator/ModalCollaborator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,18 +38,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-vinicius&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -54,6 +60,7 @@
     <MESSAGE value="apagando sonarlint" />
     <MESSAGE value="resolvendo alguns conflitos" />
     <MESSAGE value="front e backend de criar colaborador" />
-    <option name="LAST_COMMIT_MESSAGE" value="front e backend de criar colaborador" />
+    <MESSAGE value="alinhando botoes" />
+    <option name="LAST_COMMIT_MESSAGE" value="alinhando botoes" />
   </component>
 </project>

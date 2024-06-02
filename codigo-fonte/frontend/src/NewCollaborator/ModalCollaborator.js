@@ -80,7 +80,7 @@ const ModalCollaborator = ({closeModal}) => {
                         <option value="qh4">QH4</option>
                         <option value="rh">RH</option>
                     </select>
-                    <button type="submit">Adicionar</button>
+                    <button type="submit" style={{ backgroundColor: '#4CAF50' }}>Adicionar</button>
                 </form>
             </div>
         </div>

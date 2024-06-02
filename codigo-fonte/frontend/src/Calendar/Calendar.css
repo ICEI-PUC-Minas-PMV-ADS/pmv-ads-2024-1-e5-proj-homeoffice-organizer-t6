@@ -1,3 +1,7 @@
+.content-page {
+    margin-left: 20px;
+}
+
 .toolbar-container {
     display: flex;
     justify-content: center;
@@ -82,7 +86,7 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 90%;;
+    max-width: 100%;;
     margin: 0 auto;
     padding: 20px;
 }
@@ -96,10 +100,35 @@
 }
 
 .calendar-container {
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    overflow: hidden;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-content {
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.calendar-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collaborators-list {
+    width: 10vw;
+    margin-right: 20px;
+}
+
+.collaborator-item {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
 }
 
 .rbc-header {
@@ -114,6 +143,7 @@
 .rbc-calendar {
     height: 100%;
     background-color: white;
+    margin-right: 20px;
 }
 
 .rbc-event {
@@ -140,6 +170,7 @@
 
 .collaborator-container {
     display: flex;
+    margin-right: 20px;
 }
 
 .options-container {

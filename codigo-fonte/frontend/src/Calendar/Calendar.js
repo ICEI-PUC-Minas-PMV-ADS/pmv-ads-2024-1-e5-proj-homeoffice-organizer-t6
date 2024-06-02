@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
+import React, {useState, useEffect, useCallback} from 'react';
+import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -7,10 +7,11 @@ import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
 import CalendarToolbar from './CalendarToolbar';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
-import { showToast } from "../ToastContainer";
+import {showToast} from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
-import './Select.css';
+import './Select.css'
+import CollaboratorModal from './CollaboratorModal';
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -23,6 +24,7 @@ const MyCalendar = () => {
     const [collaborators, setCollaborators] = useState([]);
     const [selectedSector, setSelectedSector] = useState('');
     const [selectedCollaborator, setSelectedCollaborator] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -129,8 +131,40 @@ const MyCalendar = () => {
         setSelectedCollaborator(e.target.value);
     };
 
+    const colors = [
+        '#4053F7', '#F7404B', '#FAE400', '#FFA07A', '#36FA54',
+        '#157B13', '#66FF33', '#40F753', '#A1FFA1', '#243328',
+        '#3357FF', '#3366FF', '#3385FF', '#3399FF', '#33A1FF',
+        '#F3FF33', '#E3FF33', '#D3FF33', '#C3FF33', '#B3FF33',
+        '#FF33A1', '#FF3399', '#FF3385', '#FF3370', '#FF3366'
+    ];
+
+    const handleDragStart = (e, collaborator) => {
+        e.dataTransfer.setData('collaborator', JSON.stringify(collaborator));
+    };
+
+    const handleDrop = (e, slotInfo) => {
+        e.preventDefault();
+        const collaborator = JSON.parse(e.dataTransfer.getData('collaborator'));
+        const newEvent = {
+            title: collaborator.name,
+            start: slotInfo.start,
+            end: slotInfo.start,
+            allDay: true
+        };
+        setEvents([...events, newEvent]);
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    const handleSlotSelect = (slotInfo) => {
+        setSelectedDate(slotInfo.start);
+    };
+
     return (
-        <div className="calendar">
+        <div className="calendar-container">
             <Navbar />
             <CalendarToolbar
                 selectedSector={selectedSector}
@@ -145,23 +179,52 @@ const MyCalendar = () => {
                 setView={setView}
                 openModal={openModal}
             />
-            <div className="calendar-container">
-                <Calendar
-                    localizer={localizer}
-                    events={events}
-                    startAccessor="start"
-                    endAccessor="end"
-                    style={{ height: 700, width: '90vw' }}
-                    toolbar={false}
-                    view={view}
-                    date={date}
-                    dayPropGetter={getDayProp}
-                    onSelectEvent={handleSelectEvent}
-                    views={['month']}
-                />
+            <div className="calendar-content">
+                <div
+                    className="calendar-wrapper"
+                    onDrop={(e) => handleDrop(e, { start: selectedDate })}
+                    onDragOver={handleDragOver}
+                >
+                    <Calendar
+                        selectable
+                        onSelectSlot={handleSlotSelect}
+                        localizer={localizer}
+                        events={events}
+                        startAccessor="start"
+                        endAccessor="end"
+                        style={{ height: 700, width: '100%' }}
+                        toolbar={false}
+                        view={view}
+                        date={date}
+                        dayPropGetter={getDayProp}
+                        onSelectEvent={handleSelectEvent}
+                        views={['month']}
+                    />
+                </div>
+                {selectedSector && (
+                    <div className="collaborators-list">
+                        <h3>Colaboradores</h3>
+                        {collaborators.map((collaborator, index) => (
+                            <div
+                                key={collaborator.id}
+                                className="collaborator-item"
+                                style={{
+                                    backgroundColor: colors[index % colors.length],
+                                }}
+                                draggable
+                                onDragStart={(e) => handleDragStart(e, collaborator)}
+                            >
+                                {collaborator.name}
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
             {showModal && modalType === 'collaborator' && (
-                <ModalCollaborator closeModal={closeModal} />
+                <ModalCollaborator
+                    selectedDate={selectedDate}
+                    closeModal={closeModal}
+                />
             )}
             {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
             {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
