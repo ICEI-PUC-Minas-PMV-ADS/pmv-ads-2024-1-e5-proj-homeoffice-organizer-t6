@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
 }
 
 .navbar-left {
@@ -26,6 +25,7 @@
 .nav-btn {
   padding: 12px 24px;
   background-color: #DDAE3A;
+  font-size: 14px;
   color: #212121;
   border: 2px solid #212121;
   border-radius: 5px;
