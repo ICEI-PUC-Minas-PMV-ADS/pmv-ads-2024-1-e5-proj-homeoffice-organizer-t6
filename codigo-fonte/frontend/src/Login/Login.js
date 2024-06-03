@@ -40,9 +40,8 @@ function Login() {
           <div className="form-group">
             <input type="password" id="password" name="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
             <ul>
-                <a className="fs-14" href="#">Esqueci minha senha</a>
+              <a className="fs-14" href="#">Esqueci minha senha</a>
             </ul>
-
           </div>
           <button className="form-button" type="submit">Entrar</button>
         </form>

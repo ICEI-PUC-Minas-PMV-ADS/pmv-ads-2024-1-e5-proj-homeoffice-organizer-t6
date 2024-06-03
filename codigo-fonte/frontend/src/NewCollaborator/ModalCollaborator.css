@@ -1,4 +1,4 @@
-.modal {
+.modal-collaborator {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal-collaborator-content {
     background-color: #fefefe;
     width: 300px;
     padding: 30px;
