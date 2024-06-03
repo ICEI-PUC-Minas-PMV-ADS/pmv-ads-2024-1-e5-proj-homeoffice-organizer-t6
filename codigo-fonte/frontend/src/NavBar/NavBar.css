@@ -1,6 +1,4 @@
 .navbar {
-  position: fixed;
-  width: 100%;
   background-color: #DDAE3A;
   color: #fff;
   display: flex;
@@ -25,7 +23,7 @@
   margin-right: 50px;
 }
 
-.navbar-right button {
+.nav-btn {
   padding: 12px 24px;
   background-color: #DDAE3A;
   color: #212121;
@@ -33,9 +31,10 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
   font-weight: bold;
 }
 
-.navbar-right button:hover {
+.nav-btn:hover {
   background-color: #C49C0A;
 }
