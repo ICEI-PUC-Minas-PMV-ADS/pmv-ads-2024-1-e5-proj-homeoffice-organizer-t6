@@ -16,8 +16,8 @@ const EventModal = ({ closeModal, onSave }) => {
     };
 
     return (
-        <div className="event-modal"> {/* Defina a classe "event-modal" aqui */}
-            <div className="event-modal-content"> {/* Defina a classe "event-modal-content" aqui */}
+        <div className="event-modal">
+            <div className="event-modal-content">
                 <span className="event-close" onClick={closeModal}>&times;</span>
                 <h2>Criar Evento</h2>
                 <label>Título:</label>
