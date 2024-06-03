@@ -24,7 +24,7 @@ const EventModal = ({ closeModal, onSave }) => {
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 <label>Data:</label>
                 <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-                <button onClick={handleSave}>Salvar</button>
+                <button type="submit" onClick={handleSave}>Salvar</button>
             </div>
         </div>
     );

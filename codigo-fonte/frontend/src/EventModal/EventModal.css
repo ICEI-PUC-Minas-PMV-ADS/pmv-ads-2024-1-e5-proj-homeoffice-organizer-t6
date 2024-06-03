@@ -9,16 +9,19 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
     background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .close {
@@ -42,9 +45,38 @@ label {
     margin-top: 10px;
 }
 
-input {
+input,
+select,
+button {
     width: 100%;
     padding: 8px;
     margin: 8px 0;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    background-color: white;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+[type="submit"] {
+    background-color: #212121;
+    color: aliceblue;
+    cursor: pointer;
+    font-family: Zen Kaku Gothic Antique, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+[type="submit"]:hover {
+    background-color: #696969;
 }
