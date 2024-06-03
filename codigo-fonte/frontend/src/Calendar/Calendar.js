@@ -4,13 +4,12 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
-import './Calendar.css';
-import CalendarToolbar from './CalendarToolbar';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import { showToast } from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
-import EventDetailModal from "../EventModal/EventDetailModal";
-import './Select.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import './Calendar.css';
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -130,41 +129,94 @@ const MyCalendar = () => {
     };
 
     return (
-        <div className="calendar">
+        <div>
             <Navbar />
-            <CalendarToolbar
-                selectedSector={selectedSector}
-                selectedCollaborator={selectedCollaborator}
-                collaborators={collaborators}
-                handleSectorChange={handleSectorChange}
-                handleCollaboratorChange={handleCollaboratorChange}
-                onPrevClick={onPrevClick}
-                onNextClick={onNextClick}
-                currentNavigation={currentNavigation}
-                view={view}
-                setView={setView}
-                openModal={openModal}
-            />
-            <div className="calendar-container">
-                <Calendar
-                    localizer={localizer}
-                    events={events}
-                    startAccessor="start"
-                    endAccessor="end"
-                    style={{ height: 700, width: '90vw' }}
-                    toolbar={false}
-                    view={view}
-                    date={date}
-                    dayPropGetter={getDayProp}
-                    onSelectEvent={handleSelectEvent}
-                    views={['month']}
-                />
+            <div className="calendar">
+                <div className="toolbar-container">
+                    <div className="toolbar">
+                        <div className="left-buttons">
+                            <div className="collaborator-container">
+                                <button className="toolbar-button" onClick={() => openModal('collaborator')}>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus} /></span>
+                                    <span className="text">Adicionar Colaborador</span>
+                                </button>
+                                <div className="select-container">
+                                    <select
+                                        className="select"
+                                        value={selectedSector}
+                                        onChange={handleSectorChange}
+                                    >
+                                        <option value="">Selecione um setor</option>
+                                        <option value="atendimento">Atendimento</option>
+                                        <option value="comunicação">Comunicação</option>
+                                        <option value="conteúdo">Conteúdo</option>
+                                        <option value="financeiro">Financeiro</option>
+                                        <option value="onidevs">Onidevs</option>
+                                        <option value="qh4">QH4</option>
+                                        <option value="rh">RH</option>
+                                    </select>
+                                    <div className="select-arrow"></div>
+                                </div>
+                                <div className="select-container">
+                                    <select
+                                        className="select"
+                                        value={selectedCollaborator}
+                                        onChange={handleCollaboratorChange}
+                                    >
+                                        <option value="">Selecione um colaborador</option>
+                                        {selectedSector &&
+                                            collaborators
+                                                .filter(
+                                                    collaborator =>
+                                                        collaborator.sector === selectedSector
+                                                )
+                                                .map(collaborator => (
+                                                    <option key={collaborator.id} value={collaborator.name}>
+                                                        {collaborator.name}
+                                                    </option>
+                                                ))}
+                                    </select>
+                                    <div className="select-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="right-buttons">
+                            <div className="options-container">
+                                <button className="toolbar-button" onClick={onPrevClick}>
+                                    {'<'}
+                                </button>
+                                <div className="navigation-info">{currentNavigation}</div>
+                                <button className="toolbar-button" onClick={onNextClick}>
+                                    {'>'}
+                                </button>
+                                <button className="toolbar-button" onClick={() => openModal('event')}>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus} /></span>
+                                    <span className="text">Criar Evento</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="calendar-container">
+                    <Calendar
+                        localizer={localizer}
+                        events={events}
+                        startAccessor="start"
+                        endAccessor="end"
+                        style={{ height: 700, width: '90vw' }}
+                        toolbar={false}
+                        view={view}
+                        date={date}
+                        dayPropGetter={getDayProp}
+                        onSelectEvent={handleSelectEvent}
+                        views={['month']}
+                    />
+                </div>
+                {showModal && modalType === 'collaborator' && (
+                    <ModalCollaborator closeModal={closeModal} />
+                )}
+                {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
             </div>
-            {showModal && modalType === 'collaborator' && (
-                <ModalCollaborator closeModal={closeModal} />
-            )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
-            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
         </div>
     );
 };

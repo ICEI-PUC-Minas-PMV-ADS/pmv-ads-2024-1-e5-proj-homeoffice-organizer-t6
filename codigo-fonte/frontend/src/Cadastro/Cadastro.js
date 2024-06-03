@@ -87,29 +87,29 @@ function SignUp() {
                         <h2 className='form-text'>Fazer Cadastro</h2>
                         {successMessage && <p className="success-message">{successMessage}</p>}
                         <input type="text" id="nome" name="nome" placeholder='Nome' value={formData.nome} onChange={handleChange}
-                            className={errors.nome ? 'error' : ''} required />
+                            className={errors.nome ? 'input-error' : 'input-field'} required />
                         {errors.nome && <span className="error-message">Por favor, insira um nome válido.</span>}
                     </div>
                     <div className="form-group">
                         <input type="email" id="email" name="email" placeholder='Email' value={formData.email} onChange={handleChange}
-                            className={errors.email ? 'error' : ''} required />
+                            className={errors.email ? 'input-error' : 'input-field'} required />
                         {errors.email && <span className="error-message">Por favor, insira um email válido.</span>}
                     </div>
                     <div className="form-group">
                         <input type="password" id="senha" name="senha" placeholder='Senha' value={formData.senha} onChange={handleChange}
-                            className={errors.senha ? 'error' : ''} required />
+                            className={errors.senha ? 'input-error' : 'input-field'} required />
                         {errors.senha &&
                             <span className="error-message">A senha deve conter pelo menos 8 caracteres, incluindo uma letra minúscula e um número.</span>}
                     </div>
                     <div className="form-group">
                         <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder='Confirmar Senha' value={formData.confirmarSenha}
-                            onChange={handleChange} className={errors.confirmarSenha ? 'error' : ''} required />
+                            onChange={handleChange} className={errors.confirmarSenha ? 'input-error' : 'input-field'} required />
                         {errors.confirmarSenha && <span className="error-message">As senhas não correspondem.</span>}
                         <ul>
-                            <a className="fs-14" href="/Login" >Já tenho uma conta</a>
+                            <a className="link-existing-account" href="/Login">Já tenho uma conta</a>
                         </ul>
                     </div>
-                    <button className="form-button" type="submit">Criar Conta</button>
+                    <button className="submit-button" type="submit">Criar Conta</button>
                 </form>
                 {successMessage && <p className="bottom-success-message">{successMessage}</p>}
             </div>

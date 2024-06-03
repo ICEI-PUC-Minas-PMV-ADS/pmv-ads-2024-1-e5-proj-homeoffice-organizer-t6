@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './NavBar.css'
 import logoImg from './img/HomeOrganizerLogo.png';
 
 function Navbar({ isLoginPage }) {
@@ -10,13 +10,9 @@ function Navbar({ isLoginPage }) {
       </div>
       <div className="navbar-right">
         {isLoginPage ? (
-          <Link to="/cadastro">
-            <a className="btncadastro">FAZER CADASTRO</a>
-          </Link>
+            <a href="/Cadastro" className="nav-btn">FAZER CADASTRO</a>
         ) : (
-          <Link to="/login">
-            <a className="btncadastro">FAZER LOGIN</a>
-          </Link>
+            <a href="/Login" className="nav-btn">FAZER LOGIN</a>
         )}
       </div>
     </nav>

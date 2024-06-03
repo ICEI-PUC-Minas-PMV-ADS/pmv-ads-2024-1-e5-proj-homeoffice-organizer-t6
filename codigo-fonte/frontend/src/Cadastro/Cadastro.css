@@ -1,22 +1,3 @@
-h2 {
-  font-family: Zen Kaku Gothic Antique, sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 37.5px;
-  text-align: center;
-}
-
-.fs-14 {
-  color: darkgrey;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-ul {
-  text-align: right;
-  margin-right: 80px;
-}
-
 .cadastro-container {
   background-color: #DDAE3A;
   display: flex;
@@ -42,21 +23,14 @@ ul {
   text-align: center;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.input-field {
   width: 100%;
   padding: 20px 10px !important;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-input.error {
+.input-error {
   border-color: #ff0000;
 }
 
@@ -65,7 +39,7 @@ input.error {
   font-size: 14px;
 }
 
-.form-button {
+.submit-button {
   width: 100%;
   padding: 20px;
   text-transform: uppercase;
@@ -77,6 +51,14 @@ input.error {
   transition: background-color 0.3s ease;
 }
 
-.form-button:hover {
+.submit-button:hover {
   background-color: #696969;
+}
+
+.link-existing-account {
+  text-align: right;
+  margin-right: 80px;
+  color: darkgrey;
+  font-size: 14px;
+  font-weight: 400;
 }
