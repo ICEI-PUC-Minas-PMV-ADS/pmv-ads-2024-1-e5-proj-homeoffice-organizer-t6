@@ -11,10 +11,12 @@ import {showToast} from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
 import './Select.css'
-import CollaboratorModal from './CollaboratorModal';
+import {toast} from "react-toastify";
+import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
+    const [daysHome, setDaysHome] = useState([]);
     const [view, setView] = useState(Views.MONTH);
     const [date, setDate] = useState(moment().toDate());
     const [currentNavigation, setCurrentNavigation] = useState('');
@@ -46,6 +48,23 @@ const MyCalendar = () => {
         fetchHolidays();
     }, []);
 
+    const fetchCollaboratorDates = async () => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-dates-list/`);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar as datas dos colaboradores.');
+            }
+            const data = await response.json();
+            setDaysHome(data);
+        } catch (error) {
+            console.error('Erro ao buscar as datas dos colaboradores:', error.message);
+        }
+    };
+
+    useEffect(() => {
+        fetchCollaboratorDates();
+    }, []);
+
     const fetchCollaborators = async (sector) => {
         try {
             let url = 'http://127.0.0.1:8000/collaborator/collaborators/';
@@ -54,13 +73,13 @@ const MyCalendar = () => {
             }
             const response = await fetch(url);
             if (!response.ok) {
-                showToast('Erro ao buscar colaboradores.', 'error');
+                throw new Error('Erro ao buscar colaboradores.');
             }
             const data = await response.json();
             setCollaborators(data);
         } catch (error) {
-            console.error('Erro:', error);
-            showToast('Erro ao buscar colaboradores.', 'error');
+            console.error('Erro ao buscar colaboradores:', error.message);
+            toast.error('Erro ao buscar colaboradores.');
         }
     };
 
@@ -134,14 +153,7 @@ const MyCalendar = () => {
     const colors = [
         '#4053F7', '#F7404B', '#FAE400', '#FFA07A', '#36FA54',
         '#157B13', '#66FF33', '#40F753', '#A1FFA1', '#243328',
-        '#3357FF', '#3366FF', '#3385FF', '#3399FF', '#33A1FF',
-        '#F3FF33', '#E3FF33', '#D3FF33', '#C3FF33', '#B3FF33',
-        '#FF33A1', '#FF3399', '#FF3385', '#FF3370', '#FF3366'
     ];
-
-    const handleDragStart = (e, collaborator) => {
-        e.dataTransfer.setData('collaborator', JSON.stringify(collaborator));
-    };
 
     const handleDrop = (e, slotInfo) => {
         e.preventDefault();
@@ -160,12 +172,32 @@ const MyCalendar = () => {
     };
 
     const handleSlotSelect = (slotInfo) => {
+        if (!selectedSector) {
+            toast.error('Por favor, selecione um setor primeiro.');
+            return;
+        }
         setSelectedDate(slotInfo.start);
+        openModal('collaborators');
+    };
+
+    const handleCollaboratorSelect = async (collaborator) => {
+        if (events.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
+            toast.error('Já existe um evento para esta data.');
+            return;
+        }
+        const newEvent = {
+            title: collaborator.name,
+            start: selectedDate,
+            end: selectedDate,
+            allDay: true
+        };
+        setEvents([...events, newEvent]);
+        closeModal();
     };
 
     return (
         <div className="calendar-container">
-            <Navbar />
+            <Navbar/>
             <CalendarToolbar
                 selectedSector={selectedSector}
                 selectedCollaborator={selectedCollaborator}
@@ -182,7 +214,7 @@ const MyCalendar = () => {
             <div className="calendar-content">
                 <div
                     className="calendar-wrapper"
-                    onDrop={(e) => handleDrop(e, { start: selectedDate })}
+                    onDrop={(e) => handleDrop(e, {start: selectedDate})}
                     onDragOver={handleDragOver}
                 >
                     <Calendar
@@ -192,7 +224,7 @@ const MyCalendar = () => {
                         events={events}
                         startAccessor="start"
                         endAccessor="end"
-                        style={{ height: 700, width: '100%' }}
+                        style={{height: 700, width: '100%'}}
                         toolbar={false}
                         view={view}
                         date={date}
@@ -201,33 +233,25 @@ const MyCalendar = () => {
                         views={['month']}
                     />
                 </div>
-                {selectedSector && (
-                    <div className="collaborators-list">
-                        <h3>Colaboradores</h3>
-                        {collaborators.map((collaborator, index) => (
-                            <div
-                                key={collaborator.id}
-                                className="collaborator-item"
-                                style={{
-                                    backgroundColor: colors[index % colors.length],
-                                }}
-                                draggable
-                                onDragStart={(e) => handleDragStart(e, collaborator)}
-                            >
-                                {collaborator.name}
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
+            {showModal && modalType === 'collaborators' && (
+                <ModalCollaborators
+                    selectedDate={selectedDate}
+                    closeModal={closeModal}
+                    collaborators={collaborators}
+                    handleCollaboratorSelect={handleCollaboratorSelect}
+                    events={events}
+                    colors={colors}
+                />
+            )}
             {showModal && modalType === 'collaborator' && (
                 <ModalCollaborator
                     selectedDate={selectedDate}
                     closeModal={closeModal}
                 />
             )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
-            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
+            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>}
+            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
         </div>
     );
 };
