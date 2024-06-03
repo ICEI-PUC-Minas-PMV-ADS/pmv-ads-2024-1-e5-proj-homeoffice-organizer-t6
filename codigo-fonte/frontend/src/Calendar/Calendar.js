@@ -10,7 +10,6 @@ import EventModal from "../EventModal/EventModal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './Calendar.css';
-import './Select.css';
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);

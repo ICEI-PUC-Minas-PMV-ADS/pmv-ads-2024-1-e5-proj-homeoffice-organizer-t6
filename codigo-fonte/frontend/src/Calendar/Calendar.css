@@ -33,6 +33,13 @@
     width: 100%;
 }
 
+.select-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
 .select {
     padding: 12px 24px;
     background-color: #DDAE3A;
@@ -46,6 +53,23 @@
     font-weight: bold;
     margin: 0;
     height: 100%;
+    appearance: none;
+    width: 260px;
+    height: 45px;
+}
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-arrow::before {
+    content: '\25BC';
+    font-size: 12px;
+    color: #212121;
 }
 
 .navigation-info {
@@ -140,4 +164,32 @@
 
 .options-container {
     display: flex;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+    padding: 5px 0;
+    width: 300px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.select-options.active {
+    display: block;
+}
+
+.select-option {
+    padding: 10px;
+    font-size: 16px;
+    color: #212121;
+    cursor: pointer;
+}
+
+.select-option:hover {
+    background-color: #f8f9fa;
 }
