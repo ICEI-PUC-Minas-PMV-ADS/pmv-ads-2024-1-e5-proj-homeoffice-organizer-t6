@@ -150,8 +150,6 @@ G.idea/sonarlint/issuestore/d/7/d79356dd43eb6097ed1033f1540cf147ddfb9736,a/f/af
 Q.idea/sonarlint/securityhotspotstore/7/5/75b3b81cff849b08343553e269c3327a04ab22e0,3/6/362fa5a3d5d1631e12bae8beed50661c8c40cf64
 Å
 Q.idea/sonarlint/securityhotspotstore/d/7/d79356dd43eb6097ed1033f1540cf147ddfb9736,4/a/4acb51eb082838f85f1981c43640be50796df310
-`
-0frontend/src/CollaboratorsModal/Collaborators.js,4/7/47e366a7c577f70abaee6be7854c41c3c2debd0e
 f
 6frontend/src/CollaboratorsModal/ModalCollaborators.css,a/8/a84a3b3fdaaa7a22a0bc6e7ba19365aa876e0a60
 e

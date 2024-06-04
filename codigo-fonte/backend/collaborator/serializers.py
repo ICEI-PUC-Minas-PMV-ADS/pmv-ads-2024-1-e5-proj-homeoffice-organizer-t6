@@ -9,8 +9,8 @@ class CollaboratorSerializer(serializers.ModelSerializer):
 
 
 class CollaboratorDateSerializer(serializers.ModelSerializer):
-    collaborators = serializers.StringRelatedField(many=True)
+    collaborator = serializers.StringRelatedField()
 
     class Meta:
         model = CollaboratorDate
-        fields = ['date', 'collaborators']
+        fields = ['date', 'collaborator']

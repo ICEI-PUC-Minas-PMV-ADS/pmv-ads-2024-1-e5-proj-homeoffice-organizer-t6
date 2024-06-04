@@ -58,8 +58,10 @@ class CollaboratorDateView(APIView):
             return Response({'message': 'Invalid date format.'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            CollaboratorDate.objects.create(collaborator=collaborator, date=date)
-            return Response({'message': 'Collaborator associated with date successfully.'}, status=status.HTTP_201_CREATED)
+            collaborator_date = CollaboratorDate(collaborator=collaborator, date=date)
+            collaborator_date.save()
+            return Response({'message': 'Collaborator associated with date successfully.'},
+                            status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

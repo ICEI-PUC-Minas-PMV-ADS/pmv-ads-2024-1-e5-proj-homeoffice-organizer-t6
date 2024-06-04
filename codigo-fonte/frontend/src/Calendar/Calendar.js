@@ -7,7 +7,6 @@ import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
 import CalendarToolbar from './CalendarToolbar';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
-import {showToast} from "../ToastContainer";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
 import './Select.css'
@@ -16,17 +15,18 @@ import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
-    const [daysHome, setDaysHome] = useState([]);
-    const [view, setView] = useState(Views.MONTH);
-    const [date, setDate] = useState(moment().toDate());
-    const [currentNavigation, setCurrentNavigation] = useState('');
-    const [showModal, setShowModal] = useState(false);
-    const [modalType, setModalType] = useState('');
-    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [homeOfficeEvents, setHomeOfficeEvents] = useState([]);
+    const [filteredHomeOfficeEvents, setFilteredHomeOfficeEvents] = useState([]);
     const [collaborators, setCollaborators] = useState([]);
     const [selectedSector, setSelectedSector] = useState('');
     const [selectedCollaborator, setSelectedCollaborator] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [modalType, setModalType] = useState('');
+    const [currentNavigation, setCurrentNavigation] = useState('');
+    const [view, setView] = useState(Views.MONTH);
+    const [date, setDate] = useState(new Date());
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -37,7 +37,8 @@ const MyCalendar = () => {
                     title: holiday.name,
                     start: moment(holiday.date).toDate(),
                     end: moment(holiday.date).toDate(),
-                    allDay: true
+                    allDay: true,
+                    type: 'holiday'
                 }));
                 setEvents(holidayEvents);
             } catch (error) {
@@ -55,7 +56,15 @@ const MyCalendar = () => {
                 throw new Error('Erro ao buscar as datas dos colaboradores.');
             }
             const data = await response.json();
-            setDaysHome(data);
+            const collaboratorEvents = data.map(item => ({
+                title: item.collaborator,
+                start: moment(item.date).toDate(),
+                end: moment(item.date).toDate(),
+                allDay: true,
+                type: 'homeOffice'
+            }));
+            setHomeOfficeEvents(collaboratorEvents);
+            setFilteredHomeOfficeEvents(collaboratorEvents); // Inicialmente, os eventos filtrados são os mesmos que os eventos de home office
         } catch (error) {
             console.error('Erro ao buscar as datas dos colaboradores:', error.message);
         }
@@ -90,6 +99,18 @@ const MyCalendar = () => {
     useEffect(() => {
         setCurrentNavigation(getCurrentNavigation(view, date));
     }, [view, date]);
+
+    useEffect(() => {
+        // Quando o setor selecionado mudar, filtrar os eventos de home office correspondentes ao setor
+        const filteredEvents = homeOfficeEvents.filter(event => {
+            // Se o setor não estiver selecionado, retorna todos os eventos de home office
+            if (!selectedSector) return true;
+            // Verifica se o colaborador associado ao evento pertence ao setor selecionado
+            const collaborator = collaborators.find(collab => collab.name === event.title);
+            return collaborator && collaborator.sector === selectedSector;
+        });
+        setFilteredHomeOfficeEvents(filteredEvents);
+    }, [selectedSector, homeOfficeEvents, collaborators]);
 
     const localizer = momentLocalizer(moment);
 
@@ -150,9 +171,14 @@ const MyCalendar = () => {
         setSelectedCollaborator(e.target.value);
     };
 
-    const colors = [
-        '#4053F7', '#F7404B', '#FAE400', '#FFA07A', '#36FA54',
-        '#157B13', '#66FF33', '#40F753', '#A1FFA1', '#243328',
+    const eventColors = {
+        holiday: '#4053F7',
+        homeOffice: '#F7404B'
+    };
+
+    const collaboratorColors = [
+        '#FF5733', '#33FF57', '#3357FF', '#FF33A5', '#33FFA5',
+        '#A533FF', '#FFA533', '#33FFFA', '#FF3357', '#57FF33',
     ];
 
     const handleDrop = (e, slotInfo) => {
@@ -162,9 +188,10 @@ const MyCalendar = () => {
             title: collaborator.name,
             start: slotInfo.start,
             end: slotInfo.start,
-            allDay: true
+            allDay: true,
+            type: 'homeOffice'
         };
-        setEvents([...events, newEvent]);
+        setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
     };
 
     const handleDragOver = (e) => {
@@ -181,7 +208,7 @@ const MyCalendar = () => {
     };
 
     const handleCollaboratorSelect = async (collaborator) => {
-        if (events.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
+        if (homeOfficeEvents.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
             toast.error('Já existe um evento para esta data.');
             return;
         }
@@ -189,10 +216,41 @@ const MyCalendar = () => {
             title: collaborator.name,
             start: selectedDate,
             end: selectedDate,
-            allDay: true
+            allDay: true,
+            type: 'homeOffice'
         };
-        setEvents([...events, newEvent]);
+        setHomeOfficeEvents(prevHomeOfficeEvents => [...prevHomeOfficeEvents, newEvent]);
         closeModal();
+    };
+
+    const combinedEvents = [...events, ...filteredHomeOfficeEvents]; // Usar os eventos filtrados
+
+    const eventPropGetter = (event) => {
+        if (event.type === 'holiday') {
+            return {style: {backgroundColor: '#4053F7'}}; // Cor fixa para feriados
+        } else if (event.type === 'homeOffice') {
+            const collaboratorName = event.title;
+            const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
+            const collaboratorColor = collaboratorColors[collaboratorIndex % collaboratorColors.length];
+            return {style: {backgroundColor: collaboratorColor}}; // Cor dinâmica baseada no colaborador
+        }
+    };
+
+    const handleCollaboratorNameStyle = (event) => {
+        const collaboratorName = event.title;
+        const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
+        const collaboratorColor = collaboratorColors[collaboratorIndex % collaboratorColors.length];
+
+        const style = {
+            backgroundColor: collaboratorColor,
+            color: 'white',
+            borderRadius: '3px',
+            padding: '3px',
+            display: 'inline-block',
+            cursor: 'pointer'
+        };
+
+        return {style};
     };
 
     return (
@@ -221,7 +279,7 @@ const MyCalendar = () => {
                         selectable
                         onSelectSlot={handleSlotSelect}
                         localizer={localizer}
-                        events={events}
+                        events={combinedEvents}
                         startAccessor="start"
                         endAccessor="end"
                         style={{height: 700, width: '100%'}}
@@ -231,6 +289,8 @@ const MyCalendar = () => {
                         dayPropGetter={getDayProp}
                         onSelectEvent={handleSelectEvent}
                         views={['month']}
+                        eventPropGetter={eventPropGetter}
+                        eventContent={handleCollaboratorNameStyle}
                     />
                 </div>
             </div>
@@ -240,8 +300,9 @@ const MyCalendar = () => {
                     closeModal={closeModal}
                     collaborators={collaborators}
                     handleCollaboratorSelect={handleCollaboratorSelect}
-                    events={events}
-                    colors={colors}
+                    colors={collaboratorColors}
+                    homeOfficeEvents={homeOfficeEvents}
+                    setHomeOfficeEvents={setHomeOfficeEvents}
                 />
             )}
             {showModal && modalType === 'collaborator' && (
