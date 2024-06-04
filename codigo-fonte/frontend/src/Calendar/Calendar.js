@@ -49,6 +49,31 @@ const MyCalendar = () => {
         fetchHolidays();
     }, []);
 
+    useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/event/events-list/');
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar eventos.');
+                }
+                const data = await response.json();
+                const eventList = data.map(event => ({
+                    title: event.title,
+                    description: event.description,
+                    start: moment(event.date).toDate(),
+                    end: moment(event.date).toDate(),
+                    allDay: true,
+                    type: 'event'
+                }));
+                setEvents(prevEvents => [...prevEvents, ...eventList]);
+            } catch (error) {
+                console.error('Erro ao buscar eventos:', error.message);
+            }
+        };
+
+        fetchEvents();
+    }, []);
+
     const fetchCollaboratorDates = async () => {
         try {
             const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-dates-list/`);
@@ -64,7 +89,7 @@ const MyCalendar = () => {
                 type: 'homeOffice'
             }));
             setHomeOfficeEvents(collaboratorEvents);
-            setFilteredHomeOfficeEvents(collaboratorEvents); // Inicialmente, os eventos filtrados são os mesmos que os eventos de home office
+            setFilteredHomeOfficeEvents(collaboratorEvents);
         } catch (error) {
             console.error('Erro ao buscar as datas dos colaboradores:', error.message);
         }
@@ -199,12 +224,24 @@ const MyCalendar = () => {
     };
 
     const handleSlotSelect = (slotInfo) => {
-        if (!selectedSector) {
-            toast.error('Por favor, selecione um setor primeiro.');
-            return;
+        const selectedDayHasEvent = combinedEvents.some(event =>
+            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'event'
+        );
+
+        const selectedDayIsHoliday = combinedEvents.some(event =>
+            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'holiday'
+        );
+
+        if (selectedDayHasEvent || selectedDayIsHoliday) {
+            toast.error('Não é possível fazer home office nesse dia.');
+        } else {
+            if (!selectedSector) {
+                toast.error('Por favor, selecione um setor primeiro.');
+                return;
+            }
+            setSelectedDate(slotInfo.start);
+            openModal('collaborators');
         }
-        setSelectedDate(slotInfo.start);
-        openModal('collaborators');
     };
 
     const handleCollaboratorSelect = async (collaborator) => {
