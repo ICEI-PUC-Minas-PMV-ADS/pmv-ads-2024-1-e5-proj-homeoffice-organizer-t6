@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="criacao de modelo q salva data dos colaboradores">
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="salvando os nomes no calendario">
+      <change afterPath="$PROJECT_DIR$/backend/event/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/event/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/collaborator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/collaborator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/CollaboratorsModal/ModalCollaborators.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/CollaboratorsModal/ModalCollaborators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +44,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-vinicius&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "dev-vinicius",
+    "last_opened_file_path": "/home/vinicius/Documents/trabalho puc/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/codigo-fonte/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -62,6 +75,7 @@
     <MESSAGE value="alinhando botoes" />
     <MESSAGE value="inserindo nomes" />
     <MESSAGE value="criacao de modelo q salva data dos colaboradores" />
-    <option name="LAST_COMMIT_MESSAGE" value="criacao de modelo q salva data dos colaboradores" />
+    <MESSAGE value="salvando os nomes no calendario" />
+    <option name="LAST_COMMIT_MESSAGE" value="salvando os nomes no calendario" />
   </component>
 </project>
