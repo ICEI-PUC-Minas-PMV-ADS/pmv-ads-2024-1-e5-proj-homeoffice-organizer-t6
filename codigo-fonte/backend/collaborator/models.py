@@ -11,6 +11,7 @@ class Collaborator(models.Model):
 
 
 class CollaboratorDate(models.Model):
+    id = models.AutoField(primary_key=True)
     collaborator = models.ForeignKey(Collaborator, on_delete=models.CASCADE)
     date = models.DateField()
 

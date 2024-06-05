@@ -1,15 +1,38 @@
 import React from 'react';
 import './ModalCollaborators.css';
 import {toast} from 'react-toastify';
+import moment from 'moment';
 
 const ModalCollaborators = ({
-                                selectedDate,
-                                closeModal,
-                                collaborators,
-                                setHomeOfficeEvents,
-                                homeOfficeEvents,
-                                colors
-                            }) => {
+    selectedDate,
+    closeModal,
+    collaborators,
+    setHomeOfficeEvents,
+    homeOfficeEvents,
+    colors
+}) => {
+    // Função para verificar se um colaborador já tem duas datas na mesma semana
+    const collaboratorHasTwoDatesInWeek = (collaborator) => {
+        const startOfWeek = moment(selectedDate).startOf('isoWeek');
+        const endOfWeek = moment(selectedDate).endOf('isoWeek');
+
+        const eventsThisWeek = homeOfficeEvents.filter(event => {
+            const eventDate = moment(event.start);
+            return event.title === collaborator.name &&
+                   eventDate.isBetween(startOfWeek, endOfWeek, null, '[]');
+        });
+
+        return eventsThisWeek.length >= 2;
+    };
+
+    // Função para verificar se um colaborador já está marcado na data selecionada
+    const collaboratorAlreadyBookedOnDate = (collaborator) => {
+        return homeOfficeEvents.some(event =>
+            event.title === collaborator.name &&
+            moment(event.start).isSame(selectedDate, 'day')
+        );
+    };
+
     const handleCollaboratorClick = async (collaborator) => {
         const newEvent = {
             title: collaborator.name,
@@ -53,16 +76,18 @@ const ModalCollaborators = ({
             <div className="modal-content">
                 <h2>Selecione um Colaborador</h2>
                 {collaborators.map((collaborator, index) => (
-                    <div
-                        key={collaborator.id}
-                        className="collaborator-item"
-                        style={{
-                            backgroundColor: colors[index % colors.length],
-                        }}
-                        onClick={() => handleCollaboratorClick(collaborator)}
-                    >
-                        {collaborator.name}
-                    </div>
+                    !collaboratorHasTwoDatesInWeek(collaborator) && !collaboratorAlreadyBookedOnDate(collaborator) && (
+                        <div
+                            key={collaborator.id}
+                            className="collaborator-item"
+                            style={{
+                                backgroundColor: colors[index % colors.length],
+                            }}
+                            onClick={() => handleCollaboratorClick(collaborator)}
+                        >
+                            {collaborator.name}
+                        </div>
+                    )
                 ))}
                 <button onClick={closeModal}>Cancelar</button>
             </div>

@@ -12,6 +12,7 @@ import EventDetailModal from "../EventModal/EventDetailModal";
 import './Select.css'
 import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
+import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -82,6 +83,7 @@ const MyCalendar = () => {
             }
             const data = await response.json();
             const collaboratorEvents = data.map(item => ({
+                id: item.id,
                 title: item.collaborator,
                 start: moment(item.date).toDate(),
                 end: moment(item.date).toDate(),
@@ -178,6 +180,23 @@ const MyCalendar = () => {
         return dayProp;
     };
 
+    const handleDeleteHome = async (collaboratorId) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-date-delete/${collaboratorId}/`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                throw new Error('Erro ao excluir home office');
+            }
+            setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
+            toast.success('Evento excluído com sucesso!');
+            closeModal();
+        } catch (error) {
+            console.error('Erro ao excluir home office:', error);
+            toast.error(`Erro ao excluir home office`);
+        }
+    };
+
     const handleSaveEvent = (newEvent) => {
         setEvents([...events, newEvent]);
         closeModal();
@@ -232,7 +251,10 @@ const MyCalendar = () => {
             moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'holiday'
         );
 
-        if (selectedDayHasEvent || selectedDayIsHoliday) {
+        const selectedDay = moment(slotInfo.start).day(); // 0: Domingo, 6: Sábado
+        const isWeekend = (selectedDay === 0 || selectedDay === 6);
+
+        if (selectedDayHasEvent || selectedDayIsHoliday || isWeekend) {
             toast.error('Não é possível fazer home office nesse dia.');
         } else {
             if (!selectedSector) {
@@ -250,6 +272,7 @@ const MyCalendar = () => {
             return;
         }
         const newEvent = {
+            id: Date.now(),
             title: collaborator.name,
             start: selectedDate,
             end: selectedDate,
@@ -264,7 +287,7 @@ const MyCalendar = () => {
 
     const eventPropGetter = (event) => {
         if (event.type === 'holiday') {
-            return {style: {backgroundColor: '#4053F7'}}; // Cor fixa para feriados
+            return {style: {backgroundColor: '#0000000'}}; // Cor fixa para feriados
         } else if (event.type === 'homeOffice') {
             const collaboratorName = event.title;
             const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
@@ -288,6 +311,15 @@ const MyCalendar = () => {
         };
 
         return {style};
+    };
+
+    const handleCollaboratorClick = (event) => {
+        // Verifique se o item clicado é um colaborador
+        if (event.type === 'homeOffice') {
+            setSelectedEvent(event);
+            setModalType('deleteConfirmation'); // Definir o tipo do modal como 'deleteConfirmation'
+            setShowModal(true); // Abrir o modal
+        }
     };
 
     return (
@@ -324,7 +356,7 @@ const MyCalendar = () => {
                         view={view}
                         date={date}
                         dayPropGetter={getDayProp}
-                        onSelectEvent={handleSelectEvent}
+                        onSelectEvent={handleCollaboratorClick}
                         views={['month']}
                         eventPropGetter={eventPropGetter}
                         eventContent={handleCollaboratorNameStyle}
@@ -350,6 +382,14 @@ const MyCalendar = () => {
             )}
             {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>}
             {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
+            {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
+                <DeleteConfirmationModal
+                    collaboratorId={selectedEvent.id}
+                    collaboratorName={selectedEvent.title}
+                    onDelete={handleDeleteHome}
+                    onClose={closeModal}
+                />
+            )}
         </div>
     );
 };

@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="salvando os nomes no calendario">
-      <change afterPath="$PROJECT_DIR$/backend/event/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/event/views.py" afterDir="false" />
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="feriado e dias de evento sem possibilidade de&#10;fazer home">
+      <change afterPath="$PROJECT_DIR$/frontend/src/DeleteEvent/DeleteConfirmationModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/collaborator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/collaborator/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/collaborator/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/collaborator/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/CollaboratorsModal/ModalCollaborators.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/CollaboratorsModal/ModalCollaborators.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +72,8 @@
     <MESSAGE value="inserindo nomes" />
     <MESSAGE value="criacao de modelo q salva data dos colaboradores" />
     <MESSAGE value="salvando os nomes no calendario" />
-    <option name="LAST_COMMIT_MESSAGE" value="salvando os nomes no calendario" />
+    <MESSAGE value="parte do backend de criacao de evento" />
+    <MESSAGE value="feriado e dias de evento sem possibilidade de&#10;fazer home" />
+    <option name="LAST_COMMIT_MESSAGE" value="feriado e dias de evento sem possibilidade de&#10;fazer home" />
   </component>
 </project>

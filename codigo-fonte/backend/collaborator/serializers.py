@@ -13,4 +13,4 @@ class CollaboratorDateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CollaboratorDate
-        fields = ['date', 'collaborator']
+        fields = ['id', 'date', 'collaborator']

@@ -178,3 +178,7 @@ E
 backend/event/urls.py,c/0/c0c28fc215c8415f4a7ea66ef23815ddf2ff70a2
 F
 backend/event/views.py,6/2/62eb10bd345e87a786700189540a57f4350f0c14
+W
+'frontend/src/DeleteEvent/DeleteEvent.js,c/0/c0e2ac06e1cdbcb5b821d5e6036360a2dc1a8d7d
+c
+3frontend/src/DeleteEvent/DeleteConfirmationModal.js,5/2/52f1849d078a7787f47f7f39eb4c2499227dc661
