@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <div>
-      <Navbar isLoginPage={true} />
+      <Navbar pageName={'login'} />
       <div className="login-container">
         <form className="login-form" onSubmit={handleSubmit}>
           <h2>Fazer Login</h2>

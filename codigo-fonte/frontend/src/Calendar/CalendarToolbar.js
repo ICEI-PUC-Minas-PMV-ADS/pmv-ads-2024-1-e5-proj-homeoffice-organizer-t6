@@ -29,7 +29,9 @@ const CalendarToolbar = ({
                                     value={selectedSector}
                                     onChange={handleSectorChange}
                                 >
-                                    <option value="">Selecione um setor</option>
+                                    <option value="">
+                                        {selectedSector ? 'Limpar filtro' : 'Selecione um setor'}
+                                    </option>
                                     <option value="atendimento">Atendimento</option>
                                     <option value="comunicação">Comunicação</option>
                                     <option value="conteúdo">Conteúdo</option>
@@ -46,7 +48,9 @@ const CalendarToolbar = ({
                                     value={selectedCollaborator}
                                     onChange={handleCollaboratorChange}
                                 >
-                                    <option value="">Selecione um colaborador</option>
+                                    <option value="">
+                                        {selectedCollaborator ? 'Limpar filtro' : 'Selecione um colaborador'}
+                                    </option>
                                     {selectedSector &&
                                         collaborators
                                             .filter(

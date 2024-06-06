@@ -156,8 +156,6 @@ e
 5frontend/src/CollaboratorsModal/ModalCollaborators.js,1/a/1a6bf5c3f0336ffdeb38f4ef1005302e789e814b
 X
 (backend/event/migrations/0001_initial.py,9/c/9cf55e1a2a0e704bf9708583a00b2546e390df93
-c
-3backend/event/migrations/0002_auto_20240513_0046.py,7/d/7da99b72d916e6ae175dd8eb7c9f637c9fd39878
 T
 $backend/event/migrations/__init__.py,5/5/55c10bff388ae77f5d72472fa7056498d27b9524
 I
@@ -178,7 +176,13 @@ E
 backend/event/urls.py,c/0/c0c28fc215c8415f4a7ea66ef23815ddf2ff70a2
 F
 backend/event/views.py,6/2/62eb10bd345e87a786700189540a57f4350f0c14
-W
-'frontend/src/DeleteEvent/DeleteEvent.js,c/0/c0e2ac06e1cdbcb5b821d5e6036360a2dc1a8d7d
 c
 3frontend/src/DeleteEvent/DeleteConfirmationModal.js,5/2/52f1849d078a7787f47f7f39eb4c2499227dc661
+y
+Ibackend/collaborator/migrations/0004_rename_data_collaboratordate_date.py,7/f/7f5fc5a5e322aa2a11967ad717d804c504e5e2d7
+q
+Abackend/collaborator/migrations/0005_alter_collaboratordate_id.py,3/c/3c6b3b3c7a687deade96c19da1e7e3ece3451474
+h
+8backend/collaborator/migrations/0003_collaboratordate.py,0/5/05f6dbd3dcd41b50026608381a430450c6af9044
+K
+frontend/src/Login/Login.js,6/5/651c84e283087952fa64a6d8ecaab37f5733a682

@@ -79,7 +79,7 @@ function SignUp() {
 
     return (
         <div>
-            <Navbar isLoginPage={false} />
+            <Navbar pageName={'register'} />
             <div className="cadastro-container">
                 {credentialExist && <p>Esse e-mail já existe</p>}
                 <form className="cadastro-form" onSubmit={handleSubmit}>

@@ -189,7 +189,7 @@ const MyCalendar = () => {
                 throw new Error('Erro ao excluir home office');
             }
             setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
-            toast.success('Evento excluído com sucesso!');
+            toast.success('Marcação excluída com sucesso!');
             closeModal();
         } catch (error) {
             console.error('Erro ao excluir home office:', error);
@@ -202,23 +202,39 @@ const MyCalendar = () => {
         closeModal();
     };
 
-    const handleSelectEvent = (event) => {
-        setSelectedEvent(event);
-        openModal('detail');
-    };
-
     const handleSectorChange = (e) => {
         setSelectedSector(e.target.value);
+        setSelectedCollaborator(''); // Limpa o colaborador selecionado
     };
+
 
     const handleCollaboratorChange = (e) => {
-        setSelectedCollaborator(e.target.value);
+        const value = e.target.value;
+        if (value === '') {
+            setSelectedCollaborator('');
+        } else {
+            setSelectedCollaborator(value);
+        }
     };
 
-    const eventColors = {
-        holiday: '#4053F7',
-        homeOffice: '#F7404B'
-    };
+    useEffect(() => {
+        // Filtrar eventos de home office com base no setor e colaborador selecionados
+        const filteredHomeOfficeEvents = homeOfficeEvents.filter(event => {
+            const collaborator = collaborators.find(collab => collab.name === event.title);
+            return (
+                selectedSector &&
+                (!selectedSector || (collaborator && collaborator.sector === selectedSector)) &&
+                (!selectedCollaborator || event.title === selectedCollaborator)
+            );
+        });
+
+        // Manter todos os eventos que não são de home office
+        const nonHomeOfficeEvents = events.filter(event => event.type !== 'homeOffice');
+
+        // Combinar eventos filtrados de home office com os eventos que não são de home office
+        setFilteredHomeOfficeEvents([...filteredHomeOfficeEvents, ...nonHomeOfficeEvents]);
+    }, [selectedSector, selectedCollaborator, homeOfficeEvents, collaborators, events]);
+
 
     const collaboratorColors = [
         '#FF5733', '#33FF57', '#3357FF', '#FF33A5', '#33FFA5',
@@ -283,7 +299,7 @@ const MyCalendar = () => {
         closeModal();
     };
 
-    const combinedEvents = [...events, ...filteredHomeOfficeEvents]; // Usar os eventos filtrados
+    const combinedEvents = [...filteredHomeOfficeEvents]; // Usar os eventos filtrados, incluindo não-homeOffice
 
     const eventPropGetter = (event) => {
         if (event.type === 'holiday') {
@@ -324,7 +340,7 @@ const MyCalendar = () => {
 
     return (
         <div className="calendar-container">
-            <Navbar/>
+            <Navbar pageName={''}/>
             <CalendarToolbar
                 selectedSector={selectedSector}
                 selectedCollaborator={selectedCollaborator}
@@ -334,8 +350,6 @@ const MyCalendar = () => {
                 onPrevClick={onPrevClick}
                 onNextClick={onNextClick}
                 currentNavigation={currentNavigation}
-                view={view}
-                setView={setView}
                 openModal={openModal}
             />
             <div className="calendar-content">
