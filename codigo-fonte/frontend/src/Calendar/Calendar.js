@@ -8,11 +8,11 @@ import './Calendar.css';
 import CalendarToolbar from './CalendarToolbar';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
-import EventDetailModal from "../EventModal/EventDetailModal";
 import './Select.css'
 import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
+import EventDetailModal from "../EventModal/EventDetailModal";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
