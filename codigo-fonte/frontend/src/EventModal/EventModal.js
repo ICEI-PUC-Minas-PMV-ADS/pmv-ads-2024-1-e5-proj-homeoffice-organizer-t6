@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './EventModal.css';
 
-const EventModal = ({ closeModal }) => {
+const EventModal = ({closeModal}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
@@ -34,17 +34,17 @@ const EventModal = ({ closeModal }) => {
     };
 
     return (
-        <div className="modal">
-            <div className="modal-content">
-                <span className="close" onClick={closeModal}>&times;</span>
+        <div className="event-modal">
+            <div className="event-modal-content">
+                <span className="event-close" onClick={closeModal}>&times;</span>
                 <h2>Criar Evento</h2>
                 <label>Título:</label>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
                 <label>Descrição:</label>
                 <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                 <label>Data:</label>
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-                <button onClick={handleSave}>Salvar</button>
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>
+                <button type="submit" onClick={handleSave}>Salvar</button>
             </div>
         </div>
     );

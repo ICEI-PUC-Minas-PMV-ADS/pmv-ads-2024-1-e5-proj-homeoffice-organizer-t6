@@ -31,6 +31,7 @@ const MyCalendar = () => {
 
     useEffect(() => {
         const fetchHolidays = async () => {
+            // função que busca feriados em uma api pública e insere no calendario como um evento
             try {
                 const response = await fetch(`https://brasilapi.com.br/api/feriados/v1/2024`);
                 const data = await response.json();
@@ -52,6 +53,7 @@ const MyCalendar = () => {
 
     useEffect(() => {
         const fetchEvents = async () => {
+            // função que pega a lista de eventos que já foi criada pelo usuário
             try {
                 const response = await fetch('http://127.0.0.1:8000/event/events-list/');
                 if (!response.ok) {
@@ -76,6 +78,7 @@ const MyCalendar = () => {
     }, []);
 
     const fetchCollaboratorDates = async () => {
+        // função que busca os dias de home office que foram marcados para os colaboradores
         try {
             const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-dates-list/`);
             if (!response.ok) {
@@ -102,6 +105,7 @@ const MyCalendar = () => {
     }, []);
 
     const fetchCollaborators = async (sector) => {
+        // função que pega o nome dos colaboradores e o filtra por determinado setor (de acordo com o setor que esta selecionado no select)
         try {
             let url = 'http://127.0.0.1:8000/collaborator/collaborators/';
             if (sector) {
@@ -124,13 +128,14 @@ const MyCalendar = () => {
     }, [selectedSector]);
 
     useEffect(() => {
+        // garante que a navegação atual seja sempre atualizada conforme a visualização e a data mudam, mantendo a interface do usuário sincronizada com os valores selecionados.
         setCurrentNavigation(getCurrentNavigation(view, date));
     }, [view, date]);
 
     useEffect(() => {
-        // Quando o setor selecionado mudar, filtrar os eventos de home office correspondentes ao setor
+        // Quando o setor selecionado mudar, filtra os eventos de home office correspondentes ao setor
         const filteredEvents = homeOfficeEvents.filter(event => {
-            // Se o setor não estiver selecionado, retorna todos os eventos de home office
+            // Se o setor não estiver selecionado, não retorna nenhum dia de home office
             if (!selectedSector) return true;
             // Verifica se o colaborador associado ao evento pertence ao setor selecionado
             const collaborator = collaborators.find(collab => collab.name === event.title);
@@ -142,28 +147,34 @@ const MyCalendar = () => {
     const localizer = momentLocalizer(moment);
 
     const onNextClick = useCallback(() => {
+        // função para atualizar a data ao avançar para o próximo mês
         setDate(prevDate => moment(prevDate).add(1, 'M').toDate());
     }, []);
 
     const onPrevClick = useCallback(() => {
+        // função para atualizar a data ao retorceder para o mês anterior
         setDate(prevDate => moment(prevDate).subtract(1, 'M').toDate());
     }, []);
 
     const openModal = (type) => {
+        // função pra abrir um modal com base no tipo fornecido
         setModalType(type);
         setShowModal(true);
     };
 
     const closeModal = () => {
+        // função pra fechar o modal
         setShowModal(false);
     };
 
     const getCurrentNavigation = (view, date) => {
+        // função para obter a navegação atual (mês/ano) com base na visualização e data atual
         if (view === Views.MONTH) return moment(date).format('MMMM, YYYY');
         return '';
     };
 
     const getDayProp = (date) => {
+        // função para obter as propriedades do dia no calendário
         const isCurrentMonth = moment(date).isSame(date, 'month');
         const isToday = moment(date).isSame(moment(), 'day');
 
@@ -181,6 +192,7 @@ const MyCalendar = () => {
     };
 
     const handleDeleteHome = async (collaboratorId) => {
+        //função para deletar o "evento" de home office de determinado colaborador
         try {
             const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-date-delete/${collaboratorId}/`, {
                 method: 'DELETE',
@@ -198,17 +210,20 @@ const MyCalendar = () => {
     };
 
     const handleSaveEvent = (newEvent) => {
+        // função para salvar "evento" de home office do colaborador
         setEvents([...events, newEvent]);
         closeModal();
     };
 
     const handleSectorChange = (e) => {
+        // função que lida com a mudança de setor
         setSelectedSector(e.target.value);
         setSelectedCollaborator(''); // Limpa o colaborador selecionado
     };
 
 
     const handleCollaboratorChange = (e) => {
+        // função que lida com a mudança de colaborador
         const value = e.target.value;
         if (value === '') {
             setSelectedCollaborator('');
@@ -218,7 +233,7 @@ const MyCalendar = () => {
     };
 
     useEffect(() => {
-        // Filtrar eventos de home office com base no setor e colaborador selecionados
+        // funçao que filtra "eventos" de home office com base no setor e colaborador selecionados
         const filteredHomeOfficeEvents = homeOfficeEvents.filter(event => {
             const collaborator = collaborators.find(collab => collab.name === event.title);
             return (
@@ -228,15 +243,33 @@ const MyCalendar = () => {
             );
         });
 
-        // Manter todos os eventos que não são de home office
+        // Mantem todos os eventos que não são de home office
         const nonHomeOfficeEvents = events.filter(event => event.type !== 'homeOffice');
 
-        // Combinar eventos filtrados de home office com os eventos que não são de home office
+        // Combina eventos filtrados de home office com os eventos que não são de home office (feriados e eventos criados pelo usuário)
         setFilteredHomeOfficeEvents([...filteredHomeOfficeEvents, ...nonHomeOfficeEvents]);
     }, [selectedSector, selectedCollaborator, homeOfficeEvents, collaborators, events]);
 
+    const handleCollaboratorNameStyle = (event) => {
+        // essa função é usada pra definir o nome do colaborador como o "título do evento"
+        const collaboratorName = event.title;
+        const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
+        const collaboratorColor = collaboratorColors[collaboratorIndex % collaboratorColors.length];
+
+        const style = {
+            backgroundColor: collaboratorColor,
+            color: 'white',
+            borderRadius: '3px',
+            padding: '3px',
+            display: 'inline-block',
+            cursor: 'pointer'
+        };
+
+        return {style};
+    };
 
     const collaboratorColors = [
+        // essas sao as cores dos do container de cada colaborador de acordo com a ordem de criação.
         '#FF5733', '#33FF57', '#3357FF', '#FF33A5', '#33FFA5',
         '#A533FF', '#FFA533', '#33FFFA', '#FF3357', '#57FF33',
     ];
@@ -258,7 +291,8 @@ const MyCalendar = () => {
         e.preventDefault();
     };
 
-    const handleSlotSelect = (slotInfo) => {
+    const handleInvalidDaySelect = (slotInfo) => {
+        // função que lida com a seleção de um dia inválido pra marcar home office no calendário. (se a pessoa selecionar um evento, feriado ou fim de semana, aparece a msg que não é possível fazer home office naquele dia)
         const selectedDayHasEvent = combinedEvents.some(event =>
             moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'event'
         );
@@ -283,6 +317,7 @@ const MyCalendar = () => {
     };
 
     const handleCollaboratorSelect = async (collaborator) => {
+         // função para selecionar um colaborador e atribuir o home office em uma data específica (na data que ele clicou)
         if (homeOfficeEvents.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
             toast.error('Já existe um evento para esta data.');
             return;
@@ -299,9 +334,10 @@ const MyCalendar = () => {
         closeModal();
     };
 
-    const combinedEvents = [...filteredHomeOfficeEvents]; // Usar os eventos filtrados, incluindo não-homeOffice
+    const combinedEvents = [...filteredHomeOfficeEvents]; // Usa os eventos filtrados, incluindo sem ser home office
 
     const eventPropGetter = (event) => {
+        // essa funçao diferencia o estilo de cada tipo de 'evento' no calendário. Se é feriado ou evento criado o container é preto.
         if (event.type === 'holiday' || event.type === 'event') {
             return {
                 style: {
@@ -321,6 +357,9 @@ const MyCalendar = () => {
             return {
                 style: {
                     backgroundColor: collaboratorColor,
+                    color: 'white',
+                    borderRadius: '5px',
+                    padding: '2px 5px',
                     height: '1vw',
                     fontSize: '0.75vw'
                 }
@@ -329,30 +368,12 @@ const MyCalendar = () => {
         return {};
     };
 
-
-    const handleCollaboratorNameStyle = (event) => {
-        const collaboratorName = event.title;
-        const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
-        const collaboratorColor = collaboratorColors[collaboratorIndex % collaboratorColors.length];
-
-        const style = {
-            backgroundColor: collaboratorColor,
-            color: 'white',
-            borderRadius: '3px',
-            padding: '3px',
-            display: 'inline-block',
-            cursor: 'pointer'
-        };
-
-        return {style};
-    };
-
     const handleCollaboratorClick = (event) => {
-        // Verifique se o item clicado é um colaborador
+        // Verifica se o item clicado é um colaborador
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
-            setModalType('deleteConfirmation'); // Definir o tipo do modal como 'deleteConfirmation'
-            setShowModal(true); // Abrir o modal
+            setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
+            setShowModal(true); // Abre o modal
         }
     };
 
@@ -378,7 +399,7 @@ const MyCalendar = () => {
                 >
                     <Calendar
                         selectable
-                        onSelectSlot={handleSlotSelect}
+                        onSelectSlot={handleInvalidDaySelect}
                         localizer={localizer}
                         events={combinedEvents}
                         startAccessor="start"

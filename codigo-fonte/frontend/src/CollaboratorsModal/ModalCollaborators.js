@@ -11,7 +11,7 @@ const ModalCollaborators = ({
     homeOfficeEvents,
     colors
 }) => {
-    // Função para verificar se um colaborador já tem duas datas na mesma semana
+    // função para verificar se um colaborador já tem duas datas na mesma semana
     const collaboratorHasTwoDatesInWeek = (collaborator) => {
         const startOfWeek = moment(selectedDate).startOf('isoWeek');
         const endOfWeek = moment(selectedDate).endOf('isoWeek');
@@ -25,7 +25,7 @@ const ModalCollaborators = ({
         return eventsThisWeek.length >= 2;
     };
 
-    // Função para verificar se um colaborador já está marcado na data selecionada
+    // função para verificar se um colaborador já está marcado na data selecionada
     const collaboratorAlreadyBookedOnDate = (collaborator) => {
         return homeOfficeEvents.some(event =>
             event.title === collaborator.name &&
@@ -34,6 +34,7 @@ const ModalCollaborators = ({
     };
 
     const handleCollaboratorClick = async (collaborator) => {
+        // funçao que cria evento com a data de home office do colaborador
         const newEvent = {
             title: collaborator.name,
             start: selectedDate,
@@ -46,6 +47,7 @@ const ModalCollaborators = ({
         setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
 
         try {
+            // funçao que faz chamada de criação de home office do colaborador
             const response = await fetch('http://127.0.0.1:8000/collaborator/api/collaborator-date/', {
                 method: 'POST',
                 headers: {
@@ -66,7 +68,7 @@ const ModalCollaborators = ({
         } catch (error) {
             console.error('Erro ao agendar home office:', error);
             toast.error(`Erro ao agendar home office. Detalhes: ${error.message}`);
-            // Remove o evento adicionado caso ocorra algum erro
+            // remove o evento adicionado caso ocorra algum erro
             setHomeOfficeEvents(prevEvents => prevEvents.filter(event => event !== newEvent));
         }
     };

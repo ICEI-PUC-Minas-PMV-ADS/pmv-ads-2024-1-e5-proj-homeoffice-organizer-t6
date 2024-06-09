@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Modal.css';
+import './ModalCollaborator.css';
 import {showToast} from "../ToastContainer";
 
 const ModalCollaborator = ({closeModal}) => {
@@ -45,8 +45,8 @@ const ModalCollaborator = ({closeModal}) => {
 
 
     return (
-        <div className="modal">
-            <div className="modal-content">
+        <div className="modal-collaborator">
+            <div className="modal-collaborator-content">
                 <span className="close" onClick={closeModal}>&times;</span>
                 <h2>Adicionar Colaborador</h2>
                 <form onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const ModalCollaborator = ({closeModal}) => {
                         <option value="qh4">QH4</option>
                         <option value="rh">RH</option>
                     </select>
-                    <button type="submit" style={{ backgroundColor: '#4CAF50' }}>Adicionar</button>
+                    <button type="submit">Adicionar</button>
                 </form>
             </div>
         </div>
