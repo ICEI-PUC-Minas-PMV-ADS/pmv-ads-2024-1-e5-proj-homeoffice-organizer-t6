@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './EventModal.css';
+import {toast} from "react-toastify";
 
 const EventModal = ({closeModal}) => {
     const [title, setTitle] = useState('');
@@ -29,7 +30,7 @@ const EventModal = ({closeModal}) => {
             closeModal();
         } catch (error) {
             console.error('Erro ao criar evento:', error.message);
-            // Tratar o erro, exibir mensagem de erro, etc.
+            toast.error(`Erro ao agendar evento.`);
         }
     };
 

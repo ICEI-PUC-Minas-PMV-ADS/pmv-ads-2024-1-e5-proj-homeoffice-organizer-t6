@@ -1,9 +1,12 @@
 .navbar {
+  position: fixed;
+  width: 100%;
   background-color: #DDAE3A;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .navbar-left {
@@ -22,19 +25,17 @@
   margin-right: 50px;
 }
 
-.nav-btn {
+.navbar-right button {
   padding: 12px 24px;
   background-color: #DDAE3A;
-  font-size: 14px;
   color: #212121;
   border: 2px solid #212121;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  text-decoration: none;
   font-weight: bold;
 }
 
-.nav-btn:hover {
+.navbar-right button:hover {
   background-color: #C49C0A;
 }

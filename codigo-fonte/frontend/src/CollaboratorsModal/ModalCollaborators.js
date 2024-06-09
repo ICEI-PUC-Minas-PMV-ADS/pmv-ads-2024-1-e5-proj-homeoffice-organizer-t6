@@ -67,7 +67,7 @@ const ModalCollaborators = ({
             toast.success('Home office agendado com sucesso!');
         } catch (error) {
             console.error('Erro ao agendar home office:', error);
-            toast.error(`Erro ao agendar home office. Detalhes: ${error.message}`);
+            toast.error(`Erro ao agendar home office.`);
             // remove o evento adicionado caso ocorra algum erro
             setHomeOfficeEvents(prevEvents => prevEvents.filter(event => event !== newEvent));
         }

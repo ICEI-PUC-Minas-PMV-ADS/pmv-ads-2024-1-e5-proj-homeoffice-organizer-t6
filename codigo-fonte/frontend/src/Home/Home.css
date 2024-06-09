@@ -14,8 +14,8 @@ h1 {
 }
 
 .top-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
 }
