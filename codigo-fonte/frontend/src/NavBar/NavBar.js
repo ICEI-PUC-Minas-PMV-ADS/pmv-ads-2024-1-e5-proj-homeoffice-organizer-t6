@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logoImg from './img/HomeOrganizerLogo.png';
+import './NavBar.css'
 
 function Navbar({pageName}) {
     return (
@@ -12,16 +13,16 @@ function Navbar({pageName}) {
             </div>
             <div className="navbar-right">
                 {pageName === 'login' ? (
-                    <Link to="/cadastro">
-                        <span className="btncadastro">FAZER CADASTRO</span>
+                    <Link to="/cadastro" className='navbar-link'>
+                        <button className="navbar-button">FAZER CADASTRO</button>
                     </Link>
                 ) : pageName === 'register' ? (
-                    <Link to="/login">
-                        <span className="btncadastro">FAZER LOGIN</span>
+                    <Link to="/login" className='navbar-link'>
+                        <button className="navbar-button">FAZER LOGIN</button>
                     </Link>
                 ) : (
-                    <Link to="/login">
-                        <span className="btncadastro">SAIR</span>
+                    <Link to="/login" className='navbar-link'>
+                        <button className="navbar-button">SAIR</button>
                     </Link>
                 )}
             </div>
