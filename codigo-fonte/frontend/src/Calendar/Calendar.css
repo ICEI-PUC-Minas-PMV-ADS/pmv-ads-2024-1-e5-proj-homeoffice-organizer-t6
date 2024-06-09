@@ -86,7 +86,7 @@
 
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 100%;;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -111,6 +111,7 @@
     width: 100%;
     margin-left: 20px;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .calendar-wrapper {
@@ -118,6 +119,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .collaborators-list {
@@ -145,6 +147,7 @@
     height: 100%;
     background-color: white;
     margin-right: 20px;
+    width: 100%;
 }
 
 .rbc-event {
@@ -176,4 +179,10 @@
 
 .options-container {
     display: flex;
+}
+
+.rbc-event-holiday {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }

@@ -302,15 +302,33 @@ const MyCalendar = () => {
     const combinedEvents = [...filteredHomeOfficeEvents]; // Usar os eventos filtrados, incluindo não-homeOffice
 
     const eventPropGetter = (event) => {
-        if (event.type === 'holiday') {
-            return {style: {backgroundColor: '#0000000'}}; // Cor fixa para feriados
+        if (event.type === 'holiday' || event.type === 'event') {
+            return {
+                style: {
+                    backgroundColor: 'black',
+                    color: 'white',
+                    borderRadius: '5px',
+                    padding: '2px 5px',
+                    height: '1vw',
+                    fontSize: '0.75vw'
+
+                }
+            };
         } else if (event.type === 'homeOffice') {
             const collaboratorName = event.title;
             const collaboratorIndex = collaborators.findIndex(collaborator => collaborator.name === collaboratorName);
             const collaboratorColor = collaboratorColors[collaboratorIndex % collaboratorColors.length];
-            return {style: {backgroundColor: collaboratorColor}}; // Cor dinâmica baseada no colaborador
+            return {
+                style: {
+                    backgroundColor: collaboratorColor,
+                    height: '1vw',
+                    fontSize: '0.75vw'
+                }
+            };
         }
+        return {};
     };
+
 
     const handleCollaboratorNameStyle = (event) => {
         const collaboratorName = event.title;
@@ -365,7 +383,7 @@ const MyCalendar = () => {
                         events={combinedEvents}
                         startAccessor="start"
                         endAccessor="end"
-                        style={{height: 700, width: '100%'}}
+                        style={{height: 'calc(100vh - 200px)', width: '100%'}}
                         toolbar={false}
                         view={view}
                         date={date}
@@ -374,6 +392,8 @@ const MyCalendar = () => {
                         views={['month']}
                         eventPropGetter={eventPropGetter}
                         eventContent={handleCollaboratorNameStyle}
+                        showMultiDayTimes
+                        showMore={() => null}
                     />
                 </div>
             </div>
