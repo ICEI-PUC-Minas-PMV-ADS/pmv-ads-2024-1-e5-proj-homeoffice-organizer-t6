@@ -8,3 +8,12 @@ class Collaborator(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CollaboratorDate(models.Model):
+    id = models.AutoField(primary_key=True)
+    collaborator = models.ForeignKey(Collaborator, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    def __str__(self):
+        return f"{self.collaborator.name} - {self.date}"

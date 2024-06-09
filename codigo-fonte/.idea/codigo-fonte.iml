@@ -7,4 +7,11 @@
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="db615418-1a50-4777-bded-d84f87d356e1" />
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/node_modules/workbox-build/src/templates" />
+      </list>
+    </option>
+  </component>
 </module>

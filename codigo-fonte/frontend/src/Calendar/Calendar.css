@@ -1,21 +1,19 @@
-.calendar {
-    font-family: Arial, sans-serif;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.calendar-container {
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
+.content-page {
+    margin-left: 20px;
 }
 
 .toolbar-container {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+.left-buttons {
+    margin-right: auto;
+}
+
+.right-buttons {
+    display: flex;
 }
 
 .toolbar {
@@ -25,21 +23,10 @@
     width: 100%;
 }
 
-.collaborator-container {
-    display: flex;
-}
-
-.select-container {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
 .select {
-    padding: 10px 24px;
+    padding: 12px 24px;
     background-color: #DDAE3A;
-    font-size: 10px;
+    font-size: 12px;
     color: #212121;
     border: 2px solid #212121;
     border-radius: 5px;
@@ -47,64 +34,19 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: bold;
-    appearance: none;
-    width: 220px;
-}
-
-.select-arrow {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-.select-arrow::before {
-    content: '\25BC';
-    font-size: 10px;
-    color: #212121;
-}
-
-
-.select-options {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    z-index: 1;
-    padding: 5px 0;
-    width: 300px;
-    max-height: 250px;
-    overflow-y: auto;
-}
-
-.select-options.active {
-    display: block;
-}
-
-.select-option {
-    padding: 10px;
-    font-size: 12px;
-    color: #212121;
-    cursor: pointer;
-}
-
-.select-option:hover {
-    background-color: #f8f9fa;
-}
-
-.options-container {
-    display: flex;
+    margin: 0;
+    height: 100%;
 }
 
 .navigation-info {
-    padding: 8px 8px;
+    padding: 12px 24px;
     background-color: #DDAE3A;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     place-content: center;
     color: #212121;
+    border: 2px solid #212121;
+    border-radius: 5px;
     margin-right: 8px;
     font-weight: bold;
     white-space: nowrap;
@@ -113,9 +55,9 @@
 .toolbar-button {
     display: flex;
     align-items: center;
-    padding: 10px 24px;
+    width: 100px;
     background-color: #DDAE3A;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #212121;
     border: 2px solid #212121;
@@ -123,25 +65,73 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: bold;
-    margin-right: 8px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 20px;
     place-content: center;
+}
+
+.toolbar-button:not(:last-child) {
+    margin-right: 8px;
 }
 
 .toolbar-button:hover {
     background-color: #C49C0A;
 }
 
-.toolbar-button .icon {
-    margin-right: 8px;
-}
-
-.toolbar-button .text {
-    white-space: nowrap;
-}
-
 .toolbar-button.selected {
     background-color: #212121;
     color: white;
+}
+
+.calendar {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calendar h2 {
+    text-align: center;
+}
+
+.calendar-controls {
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.calendar-content {
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.calendar-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.collaborators-list {
+    width: 10vw;
+    margin-right: 20px;
+}
+
+.collaborator-item {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
 }
 
 .rbc-header {
@@ -156,10 +146,12 @@
 .rbc-calendar {
     height: 100%;
     background-color: white;
+    margin-right: 20px;
+    width: 100%;
 }
 
 .rbc-event {
-    background-color: #007bff;
+    background-color: #000000;
     border: none;
     border-radius: 5px;
     color: white;
@@ -178,4 +170,19 @@
 
 .current-day {
     background-color: #e6f7ff;
+}
+
+.collaborator-container {
+    display: flex;
+    margin-right: 20px;
+}
+
+.options-container {
+    display: flex;
+}
+
+.rbc-event-holiday {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }

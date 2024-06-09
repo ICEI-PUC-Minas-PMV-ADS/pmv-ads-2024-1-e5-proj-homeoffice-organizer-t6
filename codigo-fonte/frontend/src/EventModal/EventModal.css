@@ -80,3 +80,9 @@ input[type="date"] {
 [type="submit"]:hover {
     background-color: #696969;
 }
+
+.event-modal-content textarea {
+    height: 150px;
+    min-height: 150px;
+    resize: vertical;
+}
