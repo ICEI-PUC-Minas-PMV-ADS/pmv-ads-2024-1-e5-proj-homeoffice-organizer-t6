@@ -21,6 +21,7 @@
 
 .navbar-right button {
     padding: 12px 24px;
+    width: auto;
     border: 2px solid #212121;
     border-radius: 5px;
     cursor: pointer;
