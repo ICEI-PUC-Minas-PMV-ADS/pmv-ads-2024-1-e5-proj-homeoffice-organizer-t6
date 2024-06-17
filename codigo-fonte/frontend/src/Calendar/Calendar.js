@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
+import React, {useState, useEffect, useCallback} from 'react';
+import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
 
@@ -368,26 +368,31 @@ const MyCalendar = () => {
         return {};
     };
 
-    const handleCollaboratorClick = (event) => {
+    const handleEventTypeClick = (event) => {
         // Verifica se o item clicado é um colaborador
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
             setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
-            setShowModal(true); // Abre o modal
+            setShowModal(true);
+            // Verifica se o item clicado é um evento criado
+        } else if (event.type === 'event') {
+            setSelectedEvent(event);
+            setModalType('detail'); //Define que o tipo de modal que vai abrir é o de detalhe do evento criado
+            setShowModal(true);
         }
     };
 
     const CalendarToolbar = ({
-        selectedSector,
-        selectedCollaborator,
-        collaborators,
-        handleSectorChange,
-        handleCollaboratorChange,
-        onPrevClick,
-        onNextClick,
-        currentNavigation,
-        openModal
-    }) => {
+                                 selectedSector,
+                                 selectedCollaborator,
+                                 collaborators,
+                                 handleSectorChange,
+                                 handleCollaboratorChange,
+                                 onPrevClick,
+                                 onNextClick,
+                                 currentNavigation,
+                                 openModal
+                             }) => {
         return (
             <div className="content-page">
                 <div className="toolbar-container">
@@ -395,7 +400,7 @@ const MyCalendar = () => {
                         <div className="left-buttons">
                             <div className="collaborator-container">
                                 <button className="toolbar-button" onClick={() => openModal('collaborator')}>
-                                    <span className="icon"><FontAwesomeIcon icon={faPlus} /> </span>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Adicionar Colaborador</span>
                                 </button>
                                 <div className="select-container">
@@ -452,7 +457,7 @@ const MyCalendar = () => {
                                     {'>'}
                                 </button>
                                 <button className="toolbar-button" onClick={() => openModal('event')}>
-                                    <span className="icon"><FontAwesomeIcon icon={faPlus} /> </span>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Criar Evento</span>
                                 </button>
                             </div>
@@ -465,7 +470,7 @@ const MyCalendar = () => {
 
     return (
         <div className="calendar-container">
-            <Navbar pageName={''} />
+            <Navbar pageName={''}/>
             <CalendarToolbar
                 selectedSector={selectedSector}
                 selectedCollaborator={selectedCollaborator}
@@ -480,7 +485,7 @@ const MyCalendar = () => {
             <div className="calendar-content">
                 <div
                     className="calendar-wrapper"
-                    onDrop={(e) => handleDrop(e, { start: selectedDate })}
+                    onDrop={(e) => handleDrop(e, {start: selectedDate})}
                     onDragOver={handleDragOver}
                 >
                     <Calendar
@@ -490,12 +495,12 @@ const MyCalendar = () => {
                         events={combinedEvents}
                         startAccessor="start"
                         endAccessor="end"
-                        style={{ height: 'calc(100vh - 200px)', width: '100%' }}
+                        style={{height: 'calc(100vh - 200px)', width: '100%'}}
                         toolbar={false}
                         view={view}
                         date={date}
                         dayPropGetter={getDayProp}
-                        onSelectEvent={handleCollaboratorClick}
+                        onSelectEvent={handleEventTypeClick}
                         views={['month']}
                         eventPropGetter={eventPropGetter}
                         eventContent={handleCollaboratorNameStyle}
@@ -521,8 +526,8 @@ const MyCalendar = () => {
                     closeModal={closeModal}
                 />
             )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent} />}
-            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
+            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} handleSave={handleSaveEvent}/>}
+            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
             {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
                 <DeleteConfirmationModal
                     collaboratorId={selectedEvent.id}

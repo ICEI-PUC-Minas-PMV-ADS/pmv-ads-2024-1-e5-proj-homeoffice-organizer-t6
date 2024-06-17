@@ -135,6 +135,10 @@
     color: white;
 }
 
+.icon {
+    margin-right: 10px;
+}
+
 .calendar {
     font-family: Arial, sans-serif;
     max-width: 100%;
