@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Cadastro.css';
 import Navbar from "../NavBar/NavBar";
 import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify";
 
 function SignUp() {
     const [formData, setFormData] = useState({
@@ -19,7 +20,6 @@ function SignUp() {
         confirmarSenha: false
     });
 
-    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
     const [credentialExist, setCredentialExist] = useState(false)
 
@@ -66,26 +66,24 @@ function SignUp() {
 
         try {
             const response = await axios.post('http://127.0.0.1:8000/auth/signup/', dataToSend);
-            console.log('Cadastro bem-sucedido:', response.data);
-            setSuccessMessage('Sucesso! Seu cadastro foi feito com sucesso!');
+            toast.success('Sucesso! Seu cadastro foi feito com sucesso!');
             setTimeout(() => {
                 navigate('/login');
             }, 2000);
         } catch (error) {
-            console.error('Erro ao fazer o cadastro:', error);
+            toast.error('Erro ao fazer o cadastro:', error);
             setCredentialExist(true)
         }
     };
 
     return (
         <div>
-            <Navbar pageName={'register'} />
             <div className="cadastro-container">
+                <Navbar pageName={'register'} />
                 {credentialExist && <p>Esse e-mail já existe</p>}
                 <form className="cadastro-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <h2 className='form-text'>Fazer Cadastro</h2>
-                        {successMessage && <p className="success-message">{successMessage}</p>}
                         <input type="text" id="nome" name="nome" placeholder='Nome' value={formData.nome} onChange={handleChange}
                             className={errors.nome ? 'input-error' : 'input-field'} required />
                         {errors.nome && <span className="error-message">Por favor, insira um nome válido.</span>}
@@ -111,7 +109,6 @@ function SignUp() {
                     </div>
                     <button className="submit-button" type="submit">Criar Conta</button>
                 </form>
-                {successMessage && <p className="bottom-success-message">{successMessage}</p>}
             </div>
         </div>
     );

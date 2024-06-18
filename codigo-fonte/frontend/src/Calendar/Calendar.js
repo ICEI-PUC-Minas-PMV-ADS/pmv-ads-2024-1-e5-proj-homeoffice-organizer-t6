@@ -61,12 +61,13 @@ const MyCalendar = () => {
                 }
                 const data = await response.json();
                 const eventList = data.map(event => ({
+                    id: event.id,
                     title: event.title,
                     description: event.description,
                     start: moment(event.date).toDate(),
                     end: moment(event.date).toDate(),
                     allDay: true,
-                    type: 'event'
+                    type: 'eventCreated'
                 }));
                 setEvents(prevEvents => [...prevEvents, ...eventList]);
             } catch (error) {
@@ -294,7 +295,7 @@ const MyCalendar = () => {
     const handleInvalidDaySelect = (slotInfo) => {
         // função que lida com a seleção de um dia inválido pra marcar home office no calendário. (se a pessoa selecionar um evento, feriado ou fim de semana, aparece a msg que não é possível fazer home office naquele dia)
         const selectedDayHasEvent = combinedEvents.some(event =>
-            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'event'
+            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'eventCreated'
         );
 
         const selectedDayIsHoliday = combinedEvents.some(event =>
@@ -338,7 +339,7 @@ const MyCalendar = () => {
 
     const eventPropGetter = (event) => {
         // essa funçao diferencia o estilo de cada tipo de 'evento' no calendário. Se é feriado ou evento criado o container é preto.
-        if (event.type === 'holiday' || event.type === 'event') {
+        if (event.type === 'holiday' || event.type === 'eventCreated') {
             return {
                 style: {
                     backgroundColor: 'black',
@@ -373,11 +374,13 @@ const MyCalendar = () => {
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
             setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
+            console.log(event)
             setShowModal(true);
             // Verifica se o item clicado é um evento criado
-        } else if (event.type === 'event') {
+        } else if (event.type === 'eventCreated') {
             setSelectedEvent(event);
             setModalType('detail'); //Define que o tipo de modal que vai abrir é o de detalhe do evento criado
+            console.log(event)
             setShowModal(true);
         }
     };
