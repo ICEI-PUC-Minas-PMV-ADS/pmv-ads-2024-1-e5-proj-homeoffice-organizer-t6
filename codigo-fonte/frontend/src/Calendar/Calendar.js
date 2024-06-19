@@ -5,11 +5,11 @@ import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
-import CalendarToolbar from './CalendarToolbar';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
-import './Select.css'
 import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
@@ -61,12 +61,13 @@ const MyCalendar = () => {
                 }
                 const data = await response.json();
                 const eventList = data.map(event => ({
+                    id: event.id,
                     title: event.title,
                     description: event.description,
                     start: moment(event.date).toDate(),
                     end: moment(event.date).toDate(),
                     allDay: true,
-                    type: 'event'
+                    type: 'eventCreated'
                 }));
                 setEvents(prevEvents => [...prevEvents, ...eventList]);
             } catch (error) {
@@ -265,7 +266,7 @@ const MyCalendar = () => {
             cursor: 'pointer'
         };
 
-        return {style};
+        return { style };
     };
 
     const collaboratorColors = [
@@ -294,7 +295,7 @@ const MyCalendar = () => {
     const handleInvalidDaySelect = (slotInfo) => {
         // função que lida com a seleção de um dia inválido pra marcar home office no calendário. (se a pessoa selecionar um evento, feriado ou fim de semana, aparece a msg que não é possível fazer home office naquele dia)
         const selectedDayHasEvent = combinedEvents.some(event =>
-            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'event'
+            moment(event.start).isSame(slotInfo.start, 'day') && event.type === 'eventCreated'
         );
 
         const selectedDayIsHoliday = combinedEvents.some(event =>
@@ -317,7 +318,7 @@ const MyCalendar = () => {
     };
 
     const handleCollaboratorSelect = async (collaborator) => {
-         // função para selecionar um colaborador e atribuir o home office em uma data específica (na data que ele clicou)
+        // função para selecionar um colaborador e atribuir o home office em uma data específica (na data que ele clicou)
         if (homeOfficeEvents.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
             toast.error('Já existe um evento para esta data.');
             return;
@@ -338,7 +339,7 @@ const MyCalendar = () => {
 
     const eventPropGetter = (event) => {
         // essa funçao diferencia o estilo de cada tipo de 'evento' no calendário. Se é feriado ou evento criado o container é preto.
-        if (event.type === 'holiday' || event.type === 'event') {
+        if (event.type === 'holiday' || event.type === 'eventCreated') {
             return {
                 style: {
                     backgroundColor: 'black',
@@ -368,13 +369,106 @@ const MyCalendar = () => {
         return {};
     };
 
-    const handleCollaboratorClick = (event) => {
+    const handleEventTypeClick = (event) => {
         // Verifica se o item clicado é um colaborador
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
             setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
-            setShowModal(true); // Abre o modal
+            console.log(event)
+            setShowModal(true);
+            // Verifica se o item clicado é um evento criado
+        } else if (event.type === 'eventCreated') {
+            setSelectedEvent(event);
+            setModalType('detail'); //Define que o tipo de modal que vai abrir é o de detalhe do evento criado
+            console.log(event)
+            setShowModal(true);
         }
+    };
+
+    const CalendarToolbar = ({
+                                 selectedSector,
+                                 selectedCollaborator,
+                                 collaborators,
+                                 handleSectorChange,
+                                 handleCollaboratorChange,
+                                 onPrevClick,
+                                 onNextClick,
+                                 currentNavigation,
+                                 openModal
+                             }) => {
+        return (
+            <div className="content-page">
+                <div className="toolbar-container">
+                    <div className="toolbar">
+                        <div className="left-buttons">
+                            <div className="collaborator-container">
+                                <button className="toolbar-button" onClick={() => openModal('collaborator')}>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
+                                    <span className="text">Adicionar Colaborador</span>
+                                </button>
+                                <div className="select-container">
+                                    <select
+                                        className="select"
+                                        value={selectedSector}
+                                        onChange={handleSectorChange}
+                                    >
+                                        <option value="">
+                                            {selectedSector ? 'Limpar filtro' : 'Selecione um setor'}
+                                        </option>
+                                        <option value="atendimento">Atendimento</option>
+                                        <option value="comunicação">Comunicação</option>
+                                        <option value="conteúdo">Conteúdo</option>
+                                        <option value="financeiro">Financeiro</option>
+                                        <option value="onidevs">Onidevs</option>
+                                        <option value="qh4">QH4</option>
+                                        <option value="rh">RH</option>
+                                    </select>
+                                    <div className="select-arrow"></div>
+                                </div>
+                                <div className="select-container">
+                                    <select
+                                        className="select"
+                                        value={selectedCollaborator}
+                                        onChange={handleCollaboratorChange}
+                                    >
+                                        <option value="">
+                                            {selectedCollaborator ? 'Limpar filtro' : 'Selecione um colaborador'}
+                                        </option>
+                                        {selectedSector &&
+                                            collaborators
+                                                .filter(
+                                                    collaborator =>
+                                                        collaborator.sector === selectedSector
+                                                )
+                                                .map(collaborator => (
+                                                    <option key={collaborator.id} value={collaborator.name}>
+                                                        {collaborator.name}
+                                                    </option>
+                                                ))}
+                                    </select>
+                                    <div className="select-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="right-buttons">
+                            <div className="options-container">
+                                <button className="toolbar-button" onClick={onPrevClick}>
+                                    {'<'}
+                                </button>
+                                <div className="navigation-info">{currentNavigation}</div>
+                                <button className="toolbar-button" onClick={onNextClick}>
+                                    {'>'}
+                                </button>
+                                <button className="toolbar-button" onClick={() => openModal('event')}>
+                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
+                                    <span className="text">Criar Evento</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
     };
 
     return (
@@ -409,7 +503,7 @@ const MyCalendar = () => {
                         view={view}
                         date={date}
                         dayPropGetter={getDayProp}
-                        onSelectEvent={handleCollaboratorClick}
+                        onSelectEvent={handleEventTypeClick}
                         views={['month']}
                         eventPropGetter={eventPropGetter}
                         eventContent={handleCollaboratorNameStyle}
@@ -435,7 +529,7 @@ const MyCalendar = () => {
                     closeModal={closeModal}
                 />
             )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} onSave={handleSaveEvent}/>}
+            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} handleSave={handleSaveEvent}/>}
             {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
             {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
                 <DeleteConfirmationModal

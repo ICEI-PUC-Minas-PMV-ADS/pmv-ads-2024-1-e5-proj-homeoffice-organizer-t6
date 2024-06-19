@@ -19,6 +19,8 @@ function Login() {
         email,
         password
       });
+      localStorage.setItem('token', response.data.token);
+      console.log(response.data.token)
       showToast('Operação realizada com sucesso!', 'success');
       navigate('/home');
     } catch (error) {
