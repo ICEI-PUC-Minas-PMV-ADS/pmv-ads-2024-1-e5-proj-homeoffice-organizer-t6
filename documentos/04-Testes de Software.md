@@ -17,13 +17,11 @@ Banco de dados: Sqlite
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/ef35be87-55c5-4828-b42a-8ff2fbc08fa2
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/cb479a05-e246-478c-b2b6-70864c5eeca7
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/f059b871-b21e-47b6-80c5-a3e91f460fdf
-
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/c17f359f-5126-4364-b89f-7164bab199ab
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/c91c63af-2188-45c1-9aaf-c062a9eda736
 
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/b85b6a44-026c-472f-a436-35f7863c7fb9
 
 
 
