@@ -31,7 +31,9 @@ const ModalCollaborator = ({closeModal}) => {
             }
 
             showToast('Colaborador adicionado com sucesso.', 'success');
-            window.location.reload();
+            setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
         } catch (error) {
             console.error('Erro:', error);
             showToast('Erro ao adicionar colaborador', 'error');

@@ -13,7 +13,9 @@ const EventDetailModal = ({ closeModal, event }) => {
             if (response.ok) {
                 toast.success('Evento apagado');
                 closeModal();
-                window.location.reload()
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             } else {
               console.log(event)
                 toast.error('Erro ao deletar esse evento');
@@ -31,8 +33,7 @@ const EventDetailModal = ({ closeModal, event }) => {
                 <h2>Detalhes do Evento</h2>
                 <p><strong>Título:</strong> {event.title}</p>
                 <p><strong>Descrição:</strong> {event.description}</p>
-                <p><strong>Início:</strong> {new Date(event.start).toLocaleString()}</p>
-                <p><strong>Fim:</strong> {new Date(event.end).toLocaleString()}</p>
+                <p><strong>Data:</strong> {new Date(event.start).toLocaleString()}</p>
                 <button className="delete-button" onClick={handleDelete}>Deletar Evento</button>
             </div>
         </div>

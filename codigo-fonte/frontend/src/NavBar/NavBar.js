@@ -7,9 +7,7 @@ function Navbar({pageName}) {
     return (
         <nav className="navbar">
             <div className="navbar-left">
-                <a href="/Calendar">
                     <img src={logoImg} alt="Logo" style={{width: '200px', height: 'auto'}}/>
-                </a>
             </div>
             <div className="navbar-right">
                 {pageName === 'login' ? (

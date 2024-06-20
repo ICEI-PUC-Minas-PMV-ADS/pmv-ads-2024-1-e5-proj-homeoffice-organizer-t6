@@ -76,6 +76,7 @@ const ModalCollaborators = ({
     return (
         <div className="modal">
             <div className="modal-content">
+                <span className="close" onClick={closeModal}>&times;</span>
                 <h2>Selecione um Colaborador</h2>
                 {collaborators.map((collaborator, index) => (
                     !collaboratorHasTwoDatesInWeek(collaborator) && !collaboratorAlreadyBookedOnDate(collaborator) && (
@@ -91,7 +92,6 @@ const ModalCollaborators = ({
                         </div>
                     )
                 ))}
-                <button onClick={closeModal}>Cancelar</button>
             </div>
         </div>
     );

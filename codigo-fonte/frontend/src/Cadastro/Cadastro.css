@@ -5,14 +5,16 @@
   align-items: center;
   justify-content: center;
   height: 70vh;
+  padding-top: 50px;
 }
 
 .cadastro-form {
   background-color: #fff;
-  width: 300px;
+  width: 400px; /* Aumentado para 400px */
   padding: 30px;
   border: 1px solid #E0E0E0;
   border-radius: 5px;
+  margin-top: 20px; /* Adicionado espaço entre a Navbar e o formulário */
 }
 
 .form-group {
@@ -25,9 +27,10 @@
 
 .input-field {
   width: 100%;
-  padding: 20px 10px !important;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .input-error {
@@ -41,7 +44,7 @@
 
 .submit-button {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   text-transform: uppercase;
   background-color: #212121;
   color: #fff;
@@ -57,7 +60,7 @@
 
 .link-existing-account {
   text-align: right;
-  margin-right: 80px;
+  margin-right: 10px; /* Reduzido para alinhar melhor com o formulário */
   color: darkgrey;
   font-size: 14px;
   font-weight: 400;

@@ -6,13 +6,14 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
 import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
+import ModalDeleteCollaborator from "../DeleteCollaborator/DeleteCollaborator";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -28,6 +29,7 @@ const MyCalendar = () => {
     const [view, setView] = useState(Views.MONTH);
     const [date, setDate] = useState(new Date());
     const [selectedEvent, setSelectedEvent] = useState(null);
+    const [selectCollaborators, setSelectCollaborators] = useState([]);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -158,7 +160,7 @@ const MyCalendar = () => {
     }, []);
 
     const openModal = (type) => {
-        // função pra abrir um modal com base no tipo fornecido
+        //funçao para abrir o modal com base no tipo fornecido
         setModalType(type);
         setShowModal(true);
     };
@@ -266,7 +268,7 @@ const MyCalendar = () => {
             cursor: 'pointer'
         };
 
-        return { style };
+        return {style};
     };
 
     const collaboratorColors = [
@@ -406,6 +408,10 @@ const MyCalendar = () => {
                                     <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Adicionar Colaborador</span>
                                 </button>
+                                <button className="toolbar-button" onClick={() => openModal('delete-collaborator')}>
+                                    <span className="icon"><FontAwesomeIcon icon={faMinus}/> </span>
+                                    <span className="text">Deletar Colaborador</span>
+                                </button>
                                 <div className="select-container">
                                     <select
                                         className="select"
@@ -526,6 +532,12 @@ const MyCalendar = () => {
             {showModal && modalType === 'collaborator' && (
                 <ModalCollaborator
                     selectedDate={selectedDate}
+                    closeModal={closeModal}
+                />
+            )}
+            {showModal && modalType === 'delete-collaborator' && (
+                <ModalDeleteCollaborator
+                    collaborators={collaborators}
                     closeModal={closeModal}
                 />
             )}
