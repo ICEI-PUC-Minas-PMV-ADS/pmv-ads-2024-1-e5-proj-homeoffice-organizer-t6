@@ -1,0 +1,21 @@
+message: Please cite this software using these metadata.
+title: Home Office Organizer
+authors:
+  - family-names: Anderson de Carvalho
+    given-names:  Alisson
+  - family-names: Alves Rocha de Souza
+    given-names: Arthur
+  - family-names: Liberato de Abreu
+    given-names: Nathália
+  - family-names: Luiz Alves de Oliveira
+    given-names: Vinicius
+  - name-suffix: Professora
+    affiliation: PUC Minas
+    family-names: Christina de Paiva Carvalho
+    given-names: Joyce
+keywords:
+  - Agendamento
+  - Home Office
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6
+version: 1.0.0
+date-released: 2024-06-19
