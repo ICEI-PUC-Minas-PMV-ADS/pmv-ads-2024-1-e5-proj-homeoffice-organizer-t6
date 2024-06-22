@@ -4,17 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="conseguindo deletar colaboradores">
+    <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="Update requirements.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_2_24,_11_23_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6_2_24__11_23_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08c91285ecb75d3c2ec8bcbd9ee13b253b143905" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2ea1e69bd3b5227df6bc13d1510e768be4314f34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4007bbeb6eeb6ea185e771d0c8e932d310bf65af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43751495113cbd467b885226fea3faf1c5b9c986" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc0725bb0c101010bd5e2cca3474df7c17cbe1c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d79356dd43eb6097ed1033f1540cf147ddfb9736" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/dad0c6a1cd9a22f37da156a99a4d8b9c7189c556" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7e7847633886943d284305be6519cdc5739e6d6" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08c91285ecb75d3c2ec8bcbd9ee13b253b143905" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2ea1e69bd3b5227df6bc13d1510e768be4314f34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/0/4007bbeb6eeb6ea185e771d0c8e932d310bf65af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/3/43751495113cbd467b885226fea3faf1c5b9c986" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/c/bc0725bb0c101010bd5e2cca3474df7c17cbe1c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/7/d79356dd43eb6097ed1033f1540cf147ddfb9736" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/dad0c6a1cd9a22f37da156a99a4d8b9c7189c556" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/7/e7e7847633886943d284305be6519cdc5739e6d6" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Cadastro/Cadastro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Calendar/CalendarToolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Calendar/CalendarToolbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/EventModal/EventModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/EventModal/EventModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NavBar/NavBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="dev-alisson-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -43,12 +56,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-vinicius&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/vinicius/Documents/trabalho puc/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/codigo-fonte/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/vinicius/Documents/trabalho puc/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/codigo-fonte/node_modules/typescript/lib&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -73,6 +87,14 @@
     <MESSAGE value="parte do backend de criacao de evento" />
     <MESSAGE value="feriado e dias de evento sem possibilidade de&#10;fazer home" />
     <MESSAGE value="conseguindo deletar colaboradores" />
-    <option name="LAST_COMMIT_MESSAGE" value="conseguindo deletar colaboradores" />
+    <MESSAGE value="atualizando a main" />
+    <MESSAGE value="alteracao na navbar" />
+    <MESSAGE value="alinhando elementos e atualizando pagina&#10;automaticamente&#10;apos criacao de evento" />
+    <MESSAGE value="ajustes finais" />
+    <MESSAGE value="opcao de deletar colaborador" />
+    <MESSAGE value="citation.cff" />
+    <MESSAGE value="link da navbar pra homepage" />
+    <MESSAGE value="Update requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update requirements.txt" />
   </component>
 </project>
