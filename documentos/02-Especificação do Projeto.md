@@ -47,7 +47,7 @@ Foram estabelecidos os níveis de prioridade de acordo com os dois aspectos prin
 |RF-003| O gestor deve conseguir adicionar ao calendário um novo colaborador. | ALTA |
 |RF-004| Ao adicionar um novo colaborador, o sistema deve permitir informar nome, setor e e-mail do colaborador | ALTA |
 |RF-005| Os gestores devem conseguir criar e alterar as escalas de trabalho dos colaboradores, marcando um dia do calendário com o nome desse respectivo colaborador. | ALTA | 
-|RF-006| Para agendar o dia, o método deve ser arrastando o nome do colaborador até esse dia. | ALTA |
+|RF-006| Para agendar o dia, o método deve ser clicar na data do calendário e abrir um modal para selecionar o colaborador. | ALTA |
 |RF-007| Deve existir um filtro por setor no calendário que, quando usado, filtra apenas por membros daquele determinado setor. | ALTA |
 |RF-008| O sistema deve exibir as marcações da escala dos funcionários no calendário, com distinção clara entre os dias de jornada presencial e home office. | ALTA |
 |RF-009| O sistema deve informar fins de semana e feriados no calendário. | ALTA |
