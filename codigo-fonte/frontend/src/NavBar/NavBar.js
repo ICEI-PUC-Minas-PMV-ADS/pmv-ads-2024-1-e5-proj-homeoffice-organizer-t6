@@ -1,13 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoImg from './img/HomeOrganizerLogo.jpeg';
 import './NavBar.css'
 
-function Navbar({pageName}) {
+function Navbar({ pageName }) {
     return (
         <nav className="navbar">
             <div className="navbar-left">
-                    <img src={logoImg} alt="Logo" style={{width: '200px', height: 'auto'}}/>
+
+                <Link to="/calendar" className='navbar-link'>
+                    <img src={logoImg} alt="Logo" style={{ width: '200px', height: 'auto' }} />
+                </Link>
             </div>
             <div className="navbar-right">
                 {pageName === 'login' ? (
