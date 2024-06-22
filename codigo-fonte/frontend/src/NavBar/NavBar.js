@@ -8,7 +8,7 @@ function Navbar({ pageName }) {
         <nav className="navbar">
             <div className="navbar-left">
 
-                <Link to="/calendar" className='navbar-link'>
+                <Link to="/home" className='navbar-link'>
                     <img src={logoImg} alt="Logo" style={{ width: '200px', height: 'auto' }} />
                 </Link>
             </div>
