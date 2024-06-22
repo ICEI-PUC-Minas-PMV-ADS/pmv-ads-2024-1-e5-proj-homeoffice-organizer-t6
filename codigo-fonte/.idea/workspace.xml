@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b953171c-5c62-4111-b77f-5777baca111b" name="Changes" comment="tirando chave">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3257b5ed8a4e803c99540824124d0fdfa1d61854" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3257b5ed8a4e803c99540824124d0fdfa1d61854" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a68b9ccdbf98b7a1347b74cd6c065660c90e552b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a68b9ccdbf98b7a1347b74cd6c065660c90e552b" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.npmrc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
