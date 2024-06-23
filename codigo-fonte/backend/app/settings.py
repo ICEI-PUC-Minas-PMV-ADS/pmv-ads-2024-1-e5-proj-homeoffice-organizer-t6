@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'usuarios',
     'collaborator',
     'event',
-    'dj_database_url',  # Adicionando dj_database_url às INSTALLED_APPS
+    'dj_database_url',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,6 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com',
-    # Adicione outros domínios permitidos se necessário
 ]
 
 ROOT_URLCONF = 'app.urls'
