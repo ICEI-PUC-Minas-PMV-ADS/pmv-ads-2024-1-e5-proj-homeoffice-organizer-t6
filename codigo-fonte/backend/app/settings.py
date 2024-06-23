@@ -1,19 +1,13 @@
 import os
 from pathlib import Path
-import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com']
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -25,9 +19,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'usuarios',  # Seu app de usuários
-    'collaborator',  # Seu app de colaboradores
-    'event',  # Seu app de eventos
+    'usuarios',
+    'collaborator',
+    'event',
 ]
 
 MIDDLEWARE = [
@@ -65,31 +59,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-# Configure o banco de dados com dj_database_url
+# Configuração para uso do banco de dados em memória (SQLite)
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-# URL para os arquivos estáticos
 STATIC_URL = '/static/'
 
-# Diretórios onde os arquivos estáticos são localizados
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Define o diretório onde os arquivos estáticos serão coletados
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configurações adicionais de segurança
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT = True
