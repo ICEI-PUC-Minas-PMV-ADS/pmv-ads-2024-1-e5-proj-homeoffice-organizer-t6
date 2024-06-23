@@ -11,3 +11,4 @@ rest-framework-simplejwt==0.0.2
 sqlparse==0.4.4
 typing_extensions==4.10.0
 gunicorn==22.0.0
+dj-database-url
