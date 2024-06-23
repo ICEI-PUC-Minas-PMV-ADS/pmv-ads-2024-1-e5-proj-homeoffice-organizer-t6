@@ -5,6 +5,7 @@ import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
+import axiosInstance from '../axiosInstance';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
@@ -55,7 +56,7 @@ const MyCalendar = () => {
         const fetchEvents = async () => {
             // função que pega a lista de eventos que já foi criada pelo usuário
             try {
-                const response = await fetch('http://127.0.0.1:8000/event/events-list/');
+                const response = await axiosInstance.get('/event/events-list/');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar eventos.');
                 }
@@ -81,7 +82,7 @@ const MyCalendar = () => {
     const fetchCollaboratorDates = async () => {
         // função que busca os dias de home office que foram marcados para os colaboradores
         try {
-            const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-dates-list/`);
+            const response = await axiosInstance.get('/collaborator/collaborator-dates-list/');
             if (!response.ok) {
                 throw new Error('Erro ao buscar as datas dos colaboradores.');
             }
@@ -108,11 +109,11 @@ const MyCalendar = () => {
     const fetchCollaborators = async (sector) => {
         // função que pega o nome dos colaboradores e o filtra por determinado setor (de acordo com o setor que esta selecionado no select)
         try {
-            let url = 'http://127.0.0.1:8000/collaborator/collaborators/';
+            let url = '/collaborator/collaborators/';
             if (sector) {
                 url += `?sector=${sector}`;
             }
-            const response = await fetch(url);
+            const response = await axiosInstance.get(url);
             if (!response.ok) {
                 throw new Error('Erro ao buscar colaboradores.');
             }
@@ -195,9 +196,7 @@ const MyCalendar = () => {
     const handleDeleteHome = async (collaboratorId) => {
         //função para deletar o "evento" de home office de determinado colaborador
         try {
-            const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator-date-delete/${collaboratorId}/`, {
-                method: 'DELETE',
-            });
+            const response = await await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
             if (!response.ok) {
                 throw new Error('Erro ao excluir home office');
             }
