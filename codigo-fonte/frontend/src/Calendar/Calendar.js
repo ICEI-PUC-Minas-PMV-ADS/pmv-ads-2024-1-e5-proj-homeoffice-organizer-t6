@@ -5,7 +5,6 @@ import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
-import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
