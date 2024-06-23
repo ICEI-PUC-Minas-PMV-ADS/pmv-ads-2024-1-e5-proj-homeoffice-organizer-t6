@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com, https://pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com']
+ALLOWED_HOSTS = ['https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com', 'https://pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com']
 
 # Application definition
 
