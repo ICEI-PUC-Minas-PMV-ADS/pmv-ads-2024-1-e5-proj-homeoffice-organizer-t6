@@ -58,7 +58,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    'https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com',
+    # Adicione outros domínios permitidos se necessário
 ]
 
 ROOT_URLCONF = 'app.urls'
