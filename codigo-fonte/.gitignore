@@ -23,4 +23,3 @@ yarn-debug.log*
 yarn-error.log*
 venv/
 db.sqlite3
-/codigo-fonte/frontend/.npmrc
