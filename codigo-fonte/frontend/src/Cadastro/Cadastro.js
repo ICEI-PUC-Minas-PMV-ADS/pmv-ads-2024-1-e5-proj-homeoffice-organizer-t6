@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axiosInstance from '../axiosInstance';
 import './Cadastro.css';
 import Navbar from "../NavBar/NavBar";
-import {useNavigate} from "react-router-dom";
-import {toast} from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function SignUp() {
     const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function SignUp() {
     const [credentialExist, setCredentialExist] = useState(false);
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormData({
             ...formData,
             [name]: value
@@ -41,7 +41,7 @@ function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        let formErrors = {...errors};
+        let formErrors = { ...errors };
 
         if (formData.senha !== formData.confirmarSenha) {
             formErrors.confirmarSenha = true;
@@ -71,8 +71,10 @@ function SignUp() {
                 navigate('/login');
             }, 2000);
         } catch (error) {
-            toast.error('Erro ao fazer o cadastro:', error);
-            setCredentialExist(true);
+            toast.error(`Erro ao fazer o cadastro: ${error.message}`);
+            if (error.response && error.response.status === 409) {
+                setCredentialExist(true);
+            }
         }
     };
 
@@ -110,7 +112,7 @@ function SignUp() {
                         {errors.confirmarSenha && <span className="error-message">As senhas não correspondem.</span>}
                     </div>
                     <div className="form-group">
-                        <a className="link-existing-account" href="/Login">Já tenho uma conta</a>
+                        <a className="link-existing-account" href="/login">Já tenho uma conta</a>
                     </div>
                     <button className="submit-button" type="submit">Criar Conta</button>
                 </form>
