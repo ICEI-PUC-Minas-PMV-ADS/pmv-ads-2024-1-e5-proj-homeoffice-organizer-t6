@@ -5,7 +5,6 @@ import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Navbar from '../NavBar/NavBar';
 import './Calendar.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
@@ -405,11 +404,9 @@ const MyCalendar = () => {
                         <div className="left-buttons">
                             <div className="collaborator-container">
                                 <button className="toolbar-button" onClick={() => openModal('collaborator')}>
-                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Adicionar Colaborador</span>
                                 </button>
                                 <button className="toolbar-button" onClick={() => openModal('delete-collaborator')}>
-                                    <span className="icon"><FontAwesomeIcon icon={faMinus}/> </span>
                                     <span className="text">Deletar Colaborador</span>
                                 </button>
                                 <div className="select-container">
@@ -466,7 +463,6 @@ const MyCalendar = () => {
                                     {'>'}
                                 </button>
                                 <button className="toolbar-button" onClick={() => openModal('event')}>
-                                    <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Criar Evento</span>
                                 </button>
                             </div>
