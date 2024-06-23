@@ -25,16 +25,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-<<<<<<< HEAD
     'usuarios',  # Seu app de usuários
     'collaborator',  # Seu app de colaboradores
     'event',  # Seu app de eventos
-=======
-    'usuarios',
-    'collaborator',
-    'event',
-    'dj_database_url',
->>>>>>> 162ed5d0828acf18029a579d870cfe78acabfa9b
 ]
 
 MIDDLEWARE = [
