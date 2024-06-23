@@ -25,9 +25,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+<<<<<<< HEAD
     'usuarios',  # Seu app de usuários
     'collaborator',  # Seu app de colaboradores
     'event',  # Seu app de eventos
+=======
+    'usuarios',
+    'collaborator',
+    'event',
+    'dj_database_url',
+>>>>>>> 162ed5d0828acf18029a579d870cfe78acabfa9b
 ]
 
 MIDDLEWARE = [
@@ -43,7 +50,6 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com',
-    # Adicione outros domínios permitidos se necessário
 ]
 
 ROOT_URLCONF = 'app.urls'
