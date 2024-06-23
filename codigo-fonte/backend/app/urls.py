@@ -10,11 +10,11 @@ urlpatterns = [
     path('collaborator/', include('collaborator.urls')),
     path('event/', include('event.urls')),
 
-    # Rota para servir o index.html do React em produção
-    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
+    # # Rota para servir o index.html do React em produção
+    # re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
 
-# Adicionando configuração para servir arquivos estáticos e de mídia em desenvolvimento
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# # Adicionando configuração para servir arquivos estáticos e de mídia em desenvolvimento
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
