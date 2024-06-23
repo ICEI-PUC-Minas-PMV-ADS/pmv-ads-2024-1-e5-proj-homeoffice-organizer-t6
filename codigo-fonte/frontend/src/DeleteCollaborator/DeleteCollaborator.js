@@ -1,5 +1,6 @@
 import {toast} from "react-toastify";
 import {useState} from "react";
+import axiosInstance from "../axiosInstance";
 import './DeleteCollaborator.css'
 
 const ModalDeleteCollaborator = ({closeModal, collaborators}) => {
@@ -18,7 +19,7 @@ const ModalDeleteCollaborator = ({closeModal, collaborators}) => {
     const handleDelete = async () => {
         if (selectedCollaborator) {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/collaborator/collaborator/${selectedCollaborator}/`, {
+                const response = await axiosInstance.delete(`/collaborator/collaborator/${selectedCollaborator}/`, {
                     method: 'DELETE',
                 });
 

@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import axiosInstance from '../axiosInstance';
 import './ModalCollaborator.css';
-import {showToast} from "../ToastContainer";
+import { showToast } from "../ToastContainer";
 
-const ModalCollaborator = ({closeModal}) => {
+const ModalCollaborator = ({ closeModal }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [sector, setSector] = useState('');
@@ -18,12 +19,12 @@ const ModalCollaborator = ({closeModal}) => {
 
         try {
             // Realiza a chamada para criar o colaborador no backend
-            const response = await fetch('http://127.0.0.1:8000/collaborator/create-collaborator/', {
+            const response = await axiosInstance.post('/collaborator/create-collaborator/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({name: name, email, sector}),
+                body: JSON.stringify({ name: name, email, sector }),
             });
 
             if (!response.ok) {
@@ -32,8 +33,8 @@ const ModalCollaborator = ({closeModal}) => {
 
             showToast('Colaborador adicionado com sucesso.', 'success');
             setTimeout(() => {
-                    window.location.reload();
-                }, 2000);
+                window.location.reload();
+            }, 2000);
         } catch (error) {
             console.error('Erro:', error);
             showToast('Erro ao adicionar colaborador', 'error');

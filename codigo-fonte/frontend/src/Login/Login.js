@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosInstance';
 import './Login.css';
 import Navbar from "../NavBar/NavBar";
 import { useNavigate } from 'react-router-dom';
 import { showToast } from "../ToastContainer";
+import axiosInstance from '../axiosInstance';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ function Login() {
 
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/login/', {
+      const response = await axiosInstance.post('/auth/login/', {
         email,
         password
       });

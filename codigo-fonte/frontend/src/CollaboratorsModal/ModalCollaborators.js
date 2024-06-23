@@ -1,5 +1,6 @@
 import React from 'react';
 import './ModalCollaborators.css';
+import axiosInstance from '../axiosInstance';
 import {toast} from 'react-toastify';
 import moment from 'moment';
 
@@ -48,7 +49,7 @@ const ModalCollaborators = ({
 
         try {
             // funçao que faz chamada de criação de home office do colaborador
-            const response = await fetch('http://127.0.0.1:8000/collaborator/api/collaborator-date/', {
+            const response = await axiosInstance.post('/collaborator/api/collaborator-date/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

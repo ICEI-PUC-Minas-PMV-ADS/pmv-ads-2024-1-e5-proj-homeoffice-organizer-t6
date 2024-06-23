@@ -1,5 +1,6 @@
 import React from 'react';
 import './EventDetailsModal.css';
+import axiosInstance from '../axiosInstance';
 import { toast } from 'react-toastify';
 
 const EventDetailModal = ({ closeModal, event }) => {
@@ -7,7 +8,7 @@ const EventDetailModal = ({ closeModal, event }) => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/event/events/delete/${event.id}`, {
+            const response = await axiosInstance.delete(`/event/events/delete/${event.id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
@@ -17,7 +18,7 @@ const EventDetailModal = ({ closeModal, event }) => {
                     window.location.reload();
                 }, 2000);
             } else {
-              console.log(event)
+                console.log(event)
                 toast.error('Erro ao deletar esse evento');
             }
         } catch (error) {
