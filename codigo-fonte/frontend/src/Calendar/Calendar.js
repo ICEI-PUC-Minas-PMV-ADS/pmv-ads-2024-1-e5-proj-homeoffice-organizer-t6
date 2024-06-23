@@ -113,7 +113,7 @@ const MyCalendar = () => {
             if (sector) {
                 url += `?sector=${sector}`;
             }
-            const response = await axiosInstance.get(url);
+            const response = await axiosInstance.fetch(url);
             if (!response.ok) {
                 throw new Error('Erro ao buscar colaboradores.');
             }

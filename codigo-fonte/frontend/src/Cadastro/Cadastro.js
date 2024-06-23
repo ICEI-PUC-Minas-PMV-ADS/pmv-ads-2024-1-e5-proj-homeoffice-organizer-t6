@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosInstance';
 import './Cadastro.css';
 import Navbar from "../NavBar/NavBar";
 import {useNavigate} from "react-router-dom";
@@ -65,7 +65,7 @@ function SignUp() {
         };
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/auth/signup/', dataToSend);
+            const response = await axiosInstance.post('/auth/signup/', dataToSend);
             toast.success('Sucesso! Seu cadastro foi feito com sucesso!');
             setTimeout(() => {
                 navigate('/login');
