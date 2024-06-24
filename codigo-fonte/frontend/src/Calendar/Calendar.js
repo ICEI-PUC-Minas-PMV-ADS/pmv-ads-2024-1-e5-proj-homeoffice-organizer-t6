@@ -13,6 +13,7 @@ import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
 import ModalDeleteCollaborator from "../DeleteCollaborator/DeleteCollaborator";
+import axios from "axios";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -107,7 +108,7 @@ const MyCalendar = () => {
             if (sector) {
                 url += `?sector=${sector}`;
             }
-            const response = await axiosInstance.fetch(url);
+            const response = await axios.get(url)
             const data = await response.data;
             setCollaborators(data);
         } catch (error) {
