@@ -1,3 +1,12 @@
 # Apresentação da Solução
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+## Apresentação do projeto em vídeo
+Nesse vídeo explicamos onde surgiu a ideia do projeto e a solução com a aplicação que desenvolvemos.
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/dfaa1a9b-8dba-4e1a-86f6-b1c7430ccc6f
+
+## Vídeo do parceiro 
+
+Nesse vídeo o parceiro explica sobre a utilidade e importância do projeto para a empresa e como isso impacta na vida dos colaoradores.
+
+
