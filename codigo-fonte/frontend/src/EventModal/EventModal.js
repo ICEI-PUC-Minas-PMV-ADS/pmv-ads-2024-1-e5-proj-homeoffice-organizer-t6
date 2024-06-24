@@ -28,7 +28,9 @@ const EventModal = ({closeModal}) => {
             }
             toast.success('Evento criado com sucesso!')
             closeModal();
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
         } catch (error) {
             console.error('Erro ao criar evento:', error.message);
             toast.error(`Erro ao agendar evento.`);

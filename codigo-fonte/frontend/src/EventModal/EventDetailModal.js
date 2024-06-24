@@ -1,8 +1,8 @@
 import React from 'react';
 import './EventDetailsModal.css';
-import { toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 
-const EventDetailModal = ({ closeModal, event }) => {
+const EventDetailModal = ({closeModal, event}) => {
     if (!event) return null;
 
     const handleDelete = async () => {
@@ -13,9 +13,11 @@ const EventDetailModal = ({ closeModal, event }) => {
             if (response.ok) {
                 toast.success('Evento apagado');
                 closeModal();
-                window.location.reload()
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             } else {
-              console.log(event)
+                console.log(event)
                 toast.error('Erro ao deletar esse evento');
             }
         } catch (error) {

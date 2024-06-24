@@ -13,6 +13,7 @@ import EventDetailModal from "../EventModal/EventDetailModal";
 import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
+import ModalDeleteCollaborator from "../ModalDeleteCollaborator/ModalDeleteCollaborator";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -266,7 +267,7 @@ const MyCalendar = () => {
             cursor: 'pointer'
         };
 
-        return { style };
+        return {style};
     };
 
     const collaboratorColors = [
@@ -406,48 +407,51 @@ const MyCalendar = () => {
                                     <span className="icon"><FontAwesomeIcon icon={faPlus}/> </span>
                                     <span className="text">Adicionar Colaborador</span>
                                 </button>
-                                <div className="select-container">
-                                    <select
-                                        className="select"
-                                        value={selectedSector}
-                                        onChange={handleSectorChange}
-                                    >
-                                        <option value="">
-                                            {selectedSector ? 'Limpar filtro' : 'Selecione um setor'}
-                                        </option>
-                                        <option value="atendimento">Atendimento</option>
-                                        <option value="comunicação">Comunicação</option>
-                                        <option value="conteúdo">Conteúdo</option>
-                                        <option value="financeiro">Financeiro</option>
-                                        <option value="onidevs">Onidevs</option>
-                                        <option value="qh4">QH4</option>
-                                        <option value="rh">RH</option>
-                                    </select>
-                                    <div className="select-arrow"></div>
-                                </div>
-                                <div className="select-container">
-                                    <select
-                                        className="select"
-                                        value={selectedCollaborator}
-                                        onChange={handleCollaboratorChange}
-                                    >
-                                        <option value="">
-                                            {selectedCollaborator ? 'Limpar filtro' : 'Selecione um colaborador'}
-                                        </option>
-                                        {selectedSector &&
-                                            collaborators
-                                                .filter(
-                                                    collaborator =>
-                                                        collaborator.sector === selectedSector
-                                                )
-                                                .map(collaborator => (
-                                                    <option key={collaborator.id} value={collaborator.name}>
-                                                        {collaborator.name}
-                                                    </option>
-                                                ))}
-                                    </select>
-                                    <div className="select-arrow"></div>
-                                </div>
+                                <button className="toolbar-button" onClick={() => openModal('delete-collaborator')}>
+                                    <span className="text">Deletar Colaborador</span>
+                                </button>
+                                    <div className="select-container">
+                                        <select
+                                            className="select"
+                                            value={selectedSector}
+                                            onChange={handleSectorChange}
+                                        >
+                                            <option value="">
+                                                {selectedSector ? 'Limpar filtro' : 'Selecione um setor'}
+                                            </option>
+                                            <option value="atendimento">Atendimento</option>
+                                            <option value="comunicação">Comunicação</option>
+                                            <option value="conteúdo">Conteúdo</option>
+                                            <option value="financeiro">Financeiro</option>
+                                            <option value="onidevs">Onidevs</option>
+                                            <option value="qh4">QH4</option>
+                                            <option value="rh">RH</option>
+                                        </select>
+                                        <div className="select-arrow"></div>
+                                    </div>
+                                    <div className="select-container">
+                                        <select
+                                            className="select"
+                                            value={selectedCollaborator}
+                                            onChange={handleCollaboratorChange}
+                                        >
+                                            <option value="">
+                                                {selectedCollaborator ? 'Limpar filtro' : 'Selecione um colaborador'}
+                                            </option>
+                                            {selectedSector &&
+                                                collaborators
+                                                    .filter(
+                                                        collaborator =>
+                                                            collaborator.sector === selectedSector
+                                                    )
+                                                    .map(collaborator => (
+                                                        <option key={collaborator.id} value={collaborator.name}>
+                                                            {collaborator.name}
+                                                        </option>
+                                                    ))}
+                                        </select>
+                                        <div className="select-arrow"></div>
+                                    </div>
                             </div>
                         </div>
                         <div className="right-buttons">
@@ -468,7 +472,7 @@ const MyCalendar = () => {
                     </div>
                 </div>
             </div>
-        );
+    );
     };
 
     return (
@@ -529,6 +533,12 @@ const MyCalendar = () => {
                     closeModal={closeModal}
                 />
             )}
+            {showModal && modalType === 'delete-collaborator' && (
+                <ModalDeleteCollaborator
+                    collaborators={collaborators}
+                    closeModal={closeModal}
+                />
+            )}
             {showModal && modalType === 'event' && <EventModal closeModal={closeModal} handleSave={handleSaveEvent}/>}
             {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
             {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
@@ -541,6 +551,6 @@ const MyCalendar = () => {
             )}
         </div>
     );
-};
+    };
 
-export default MyCalendar;
+    export default MyCalendar;
