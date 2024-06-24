@@ -35,7 +35,7 @@ const MyCalendar = () => {
             // função que busca feriados em uma api pública e insere no calendario como um evento
             try {
                 const response = await fetch(`https://brasilapi.com.br/api/feriados/v1/2024`);
-                const data = await response.json();
+                const data = await response.data;
                 const holidayEvents = data.map(holiday => ({
                     title: holiday.name,
                     start: moment(holiday.date).toDate(),
@@ -57,7 +57,7 @@ const MyCalendar = () => {
             // função que pega a lista de eventos que já foi criada pelo usuário
             try {
                 const response = await axiosInstance.get('/event/events-list/');
-                const data = await response.json();
+                const data = await response.data();
                 const eventList = data.map(event => ({
                     id: event.id,
                     title: event.title,
@@ -80,7 +80,7 @@ const MyCalendar = () => {
         // função que busca os dias de home office que foram marcados para os colaboradores
         try {
             const response = await axiosInstance.get('/collaborator/collaborator-dates-list/');
-            const data = await response.json();
+            const data = await response.data;
             const collaboratorEvents = data.map(item => ({
                 id: item.id,
                 title: item.collaborator,
@@ -108,7 +108,7 @@ const MyCalendar = () => {
                 url += `?sector=${sector}`;
             }
             const response = await axiosInstance.fetch(url);
-            const data = await response.json();
+            const data = await response.data;
             setCollaborators(data);
         } catch (error) {
             console.error('Erro ao buscar colaboradores:', error.message);
