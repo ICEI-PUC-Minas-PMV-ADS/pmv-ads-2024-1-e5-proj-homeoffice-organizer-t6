@@ -25,10 +25,6 @@ const ModalCollaborator = ({ closeModal }) => {
             formData.append('sector', sector)
             const response = await axiosInstance.post('/collaborator/create-collaborator/', formData);
 
-            if (!response.ok) {
-                throw new Error('Erro ao adicionar colaborador.');
-            }
-
             showToast('Colaborador adicionado com sucesso.', 'success');
             setTimeout(() => {
                 window.location.reload();

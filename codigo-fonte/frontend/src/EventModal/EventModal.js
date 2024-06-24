@@ -23,10 +23,6 @@ const EventModal = ({ closeModal }) => {
                 },
                 body: JSON.stringify(newEvent),
             });
-
-            if (!response.ok) {
-                throw new Error('Erro ao criar evento.');
-            }
             toast.success('Evento criado com sucesso!')
             closeModal();
             setTimeout(() => {

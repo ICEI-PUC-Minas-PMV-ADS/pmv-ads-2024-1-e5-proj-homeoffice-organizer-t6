@@ -57,9 +57,6 @@ const MyCalendar = () => {
             // função que pega a lista de eventos que já foi criada pelo usuário
             try {
                 const response = await axiosInstance.get('/event/events-list/');
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar eventos.');
-                }
                 const data = await response.json();
                 const eventList = data.map(event => ({
                     id: event.id,
@@ -83,9 +80,6 @@ const MyCalendar = () => {
         // função que busca os dias de home office que foram marcados para os colaboradores
         try {
             const response = await axiosInstance.get('/collaborator/collaborator-dates-list/');
-            if (!response.ok) {
-                throw new Error('Erro ao buscar as datas dos colaboradores.');
-            }
             const data = await response.json();
             const collaboratorEvents = data.map(item => ({
                 id: item.id,
@@ -114,9 +108,6 @@ const MyCalendar = () => {
                 url += `?sector=${sector}`;
             }
             const response = await axiosInstance.fetch(url);
-            if (!response.ok) {
-                throw new Error('Erro ao buscar colaboradores.');
-            }
             const data = await response.json();
             setCollaborators(data);
         } catch (error) {
@@ -196,10 +187,7 @@ const MyCalendar = () => {
     const handleDeleteHome = async (collaboratorId) => {
         //função para deletar o "evento" de home office de determinado colaborador
         try {
-            const response = await await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
-            if (!response.ok) {
-                throw new Error('Erro ao excluir home office');
-            }
+            const response = await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
             setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
             toast.success('Marcação excluída com sucesso!');
             closeModal();
@@ -373,13 +361,11 @@ const MyCalendar = () => {
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
             setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
-            console.log(event)
             setShowModal(true);
             // Verifica se o item clicado é um evento criado
         } else if (event.type === 'eventCreated') {
             setSelectedEvent(event);
             setModalType('detail'); //Define que o tipo de modal que vai abrir é o de detalhe do evento criado
-            console.log(event)
             setShowModal(true);
         }
     };
