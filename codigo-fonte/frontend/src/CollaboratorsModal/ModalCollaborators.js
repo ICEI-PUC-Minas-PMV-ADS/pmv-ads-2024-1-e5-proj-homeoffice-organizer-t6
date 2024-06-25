@@ -9,7 +9,7 @@ const ModalCollaborators = ({
     closeModal,
     collaborators,
     setHomeOfficeEvents,
-    homeOfficeEvents,
+    homeOfficeEvents,  // Certifique-se de que homeOfficeEvents está sendo passado como prop
     colors
 }) => {
     const collaboratorHasTwoDatesInWeek = (collaborator) => {
@@ -42,7 +42,6 @@ const ModalCollaborators = ({
         };
     
         try {
-            // Certifique-se de que selectedDate é uma instância de moment
             const formattedDate = moment(selectedDate).format('YYYY-MM-DD');
     
             // POST para adicionar data de home office para o colaborador
@@ -56,7 +55,9 @@ const ModalCollaborators = ({
             }
     
             // Atualiza o estado local com o novo evento
-            setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
+            const updatedEvents = [...homeOfficeEvents, newEvent]; // Cria uma nova lista com o novo evento
+            setHomeOfficeEvents(updatedEvents);
+    
             closeModal();
             toast.success('Home office agendado com sucesso!');
         } catch (error) {
