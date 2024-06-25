@@ -40,18 +40,21 @@ const ModalCollaborators = ({
             allDay: true,
             type: 'homeOffice'
         };
-
+    
         try {
+            // Certifique-se de que selectedDate é uma instância de moment
+            const formattedDate = moment(selectedDate).format('YYYY-MM-DD');
+    
             // POST para adicionar data de home office para o colaborador
             const response = await axiosInstance.post('/collaborator/api/collaborator-date/', {
                 collaborator_id: collaborator.id,
-                date: selectedDate.format('YYYY-MM-DD'),
+                date: formattedDate,
             });
-
+    
             if (response.status !== 201) {
                 throw new Error('Erro ao agendar home office');
             }
-
+    
             // Atualiza o estado local com o novo evento
             setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
             closeModal();
@@ -60,7 +63,7 @@ const ModalCollaborators = ({
             console.error('Erro ao agendar home office:', error);
             toast.error('Erro ao agendar home office.');
         }
-    };
+    };    
 
     return (
         <div className="modal">
