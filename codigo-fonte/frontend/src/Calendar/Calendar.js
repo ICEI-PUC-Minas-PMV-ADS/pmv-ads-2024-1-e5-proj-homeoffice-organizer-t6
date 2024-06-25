@@ -13,7 +13,6 @@ import {toast} from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
 import ModalDeleteCollaborator from "../DeleteCollaborator/DeleteCollaborator";
-import axios from "axios";
 
 const MyCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -29,14 +28,13 @@ const MyCalendar = () => {
     const [view, setView] = useState(Views.MONTH);
     const [date, setDate] = useState(new Date());
     const [selectedEvent, setSelectedEvent] = useState(null);
-    const [selectCollaborators, setSelectCollaborators] = useState([]);
 
     useEffect(() => {
         const fetchHolidays = async () => {
             // função que busca feriados em uma api pública e insere no calendario como um evento
             try {
                 const response = await fetch(`https://brasilapi.com.br/api/feriados/v1/2024`);
-                const data = await response.data;
+                const data = await response.json();
                 const holidayEvents = data.map(holiday => ({
                     title: holiday.name,
                     start: moment(holiday.date).toDate(),
@@ -58,7 +56,7 @@ const MyCalendar = () => {
             // função que pega a lista de eventos que já foi criada pelo usuário
             try {
                 const response = await axiosInstance.get('/event/events-list/');
-                const data = await response.data();
+                const data = await response.data;
                 const eventList = data.map(event => ({
                     id: event.id,
                     title: event.title,
@@ -108,7 +106,7 @@ const MyCalendar = () => {
             if (sector) {
                 url += `?sector=${sector}`;
             }
-            const response = await axios.get(url)
+            const response = await axiosInstance.get(url)
             const data = await response.data;
             setCollaborators(data);
         } catch (error) {
