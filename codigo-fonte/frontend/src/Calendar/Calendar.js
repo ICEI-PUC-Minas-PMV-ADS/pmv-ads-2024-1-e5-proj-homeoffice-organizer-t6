@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {Calendar, momentLocalizer, Views} from 'react-big-calendar';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -9,7 +9,7 @@ import axiosInstance from '../axiosInstance';
 import ModalCollaborator from "../NewCollaborator/ModalCollaborator";
 import EventModal from "../EventModal/EventModal";
 import EventDetailModal from "../EventModal/EventDetailModal";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import ModalCollaborators from "../CollaboratorsModal/ModalCollaborators";
 import DeleteConfirmationModal from "../DeleteEvent/DeleteConfirmationModal";
 import ModalDeleteCollaborator from "../DeleteCollaborator/DeleteCollaborator";
@@ -252,7 +252,7 @@ const MyCalendar = () => {
             cursor: 'pointer'
         };
 
-        return {style};
+        return { style };
     };
 
     const collaboratorColors = [
@@ -304,20 +304,32 @@ const MyCalendar = () => {
     };
 
     const handleCollaboratorSelect = async (collaborator) => {
-        // função para selecionar um colaborador e atribuir o home office em uma data específica (na data que ele clicou)
+        // Verifica se selectedDate é uma instância válida de moment
+        if (!moment(selectedDate).isValid()) {
+            console.error('selectedDate não é uma instância válida de moment.');
+            return;
+        }
+
+        // Verifica se já existe um evento de home office para a data selecionada
         if (homeOfficeEvents.some(event => moment(event.start).isSame(selectedDate, 'day'))) {
             toast.error('Já existe um evento para esta data.');
             return;
         }
+
+        // Cria um novo evento de home office
         const newEvent = {
             id: Date.now(),
             title: collaborator.name,
-            start: selectedDate,
-            end: selectedDate,
+            start: moment(selectedDate), // Garante que selectedDate seja uma instância de moment
+            end: moment(selectedDate), // Garante que selectedDate seja uma instância de moment
             allDay: true,
             type: 'homeOffice'
         };
+
+        // Atualiza a lista de eventos de home office com o novo evento
         setHomeOfficeEvents(prevHomeOfficeEvents => [...prevHomeOfficeEvents, newEvent]);
+
+        // Fecha o modal após selecionar o colaborador
         closeModal();
     };
 
@@ -370,16 +382,16 @@ const MyCalendar = () => {
     };
 
     const CalendarToolbar = ({
-                                 selectedSector,
-                                 selectedCollaborator,
-                                 collaborators,
-                                 handleSectorChange,
-                                 handleCollaboratorChange,
-                                 onPrevClick,
-                                 onNextClick,
-                                 currentNavigation,
-                                 openModal
-                             }) => {
+        selectedSector,
+        selectedCollaborator,
+        collaborators,
+        handleSectorChange,
+        handleCollaboratorChange,
+        onPrevClick,
+        onNextClick,
+        currentNavigation,
+        openModal
+    }) => {
         return (
             <div className="content-page">
                 <div className="toolbar-container">
@@ -458,7 +470,7 @@ const MyCalendar = () => {
 
     return (
         <div className="calendar-container">
-            <Navbar pageName={''}/>
+            <Navbar pageName={''} />
             <CalendarToolbar
                 selectedSector={selectedSector}
                 selectedCollaborator={selectedCollaborator}
@@ -473,7 +485,7 @@ const MyCalendar = () => {
             <div className="calendar-content">
                 <div
                     className="calendar-wrapper"
-                    onDrop={(e) => handleDrop(e, {start: selectedDate})}
+                    onDrop={(e) => handleDrop(e, { start: selectedDate })}
                     onDragOver={handleDragOver}
                 >
                     <Calendar
@@ -483,7 +495,7 @@ const MyCalendar = () => {
                         events={combinedEvents}
                         startAccessor="start"
                         endAccessor="end"
-                        style={{height: 'calc(100vh - 200px)', width: '100%'}}
+                        style={{ height: 'calc(100vh - 200px)', width: '100%' }}
                         toolbar={false}
                         view={view}
                         date={date}
@@ -520,8 +532,8 @@ const MyCalendar = () => {
                     closeModal={closeModal}
                 />
             )}
-            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} handleSave={handleSaveEvent}/>}
-            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent}/>}
+            {showModal && modalType === 'event' && <EventModal closeModal={closeModal} handleSave={handleSaveEvent} />}
+            {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
             {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
                 <DeleteConfirmationModal
                     collaboratorId={selectedEvent.id}
