@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-q1-xt8(+yr^6iye@sa3@miqn&(#-be96ild1s!o)wlmwqrzd3-
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com']
+ALLOWED_HOSTS = ['pmv-ads-2024-1-e5-proj-homeoffice-rjmv.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
