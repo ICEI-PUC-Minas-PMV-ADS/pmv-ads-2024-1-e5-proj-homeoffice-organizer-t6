@@ -1,22 +1,29 @@
 import React from 'react';
-import axiosInstance from '../axiosInstance';
+import axios from 'axios'; // Importe axios para fazer requisições HTTP
 import { toast } from 'react-toastify';
 
-const DeleteConfirmationModal = ({ collaboratorId, collaboratorName, onDelete, onClose, setHomeOfficeEvents, homeOfficeEvents }) => {
+const DeleteConfirmationModal = ({ collaboratorId, collaboratorName, onClose, setHomeOfficeEvents, homeOfficeEvents }) => {
 
     const handleDelete = async () => {
         try {
-            await axiosInstance.delete(`/collaborator/api/collaborator-date/${collaboratorId}`);
-            
-            const updatedEvents = homeOfficeEvents.filter(event => event.collaboratorId !== collaboratorId);
-            setHomeOfficeEvents(updatedEvents);
-    
-            toast.success('Home office removido com sucesso!');
+            // Realiza a requisição DELETE para excluir a data de home office
+            const response = await axios.delete(`/collaborator-date-delete/${collaboratorId}/`);
+
+            // Verifica se a exclusão foi bem-sucedida
+            if (response.status === 200) {
+                // Atualiza o estado local removendo o evento deletado
+                const updatedEvents = homeOfficeEvents.filter(event => event.collaboratorId !== collaboratorId);
+                setHomeOfficeEvents(updatedEvents);
+
+                toast.success('Home office removido com sucesso!');
+            } else {
+                throw new Error('Erro ao excluir home office');
+            }
         } catch (error) {
             console.error('Erro ao remover home office:', error);
             toast.error('Erro ao remover home office.');
         } finally {
-            onClose();
+            onClose(); // Fecha o modal de confirmação
         }
     };
 
