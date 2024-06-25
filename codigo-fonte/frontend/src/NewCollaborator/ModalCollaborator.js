@@ -32,6 +32,8 @@ const ModalCollaborator = ({ closeModal }) => {
 
             // Fechar o modal após adicionar o colaborador
             closeModal();
+
+            window.location.reload();
         } catch (error) {
             console.error('Erro:', error);
             showToast('Erro ao adicionar colaborador', 'error');
