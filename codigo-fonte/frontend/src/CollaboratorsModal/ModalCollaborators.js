@@ -42,7 +42,6 @@ const ModalCollaborators = ({
         };
 
         try {
-            // Certifique-se de que selectedDate é uma instância de moment
             const formattedDate = moment(selectedDate).format('YYYY-MM-DD');
 
             // POST para adicionar data de home office para o colaborador
@@ -55,9 +54,8 @@ const ModalCollaborators = ({
                 throw new Error('Erro ao agendar home office');
             }
 
-            // Atualiza o estado local com o novo evento antes de fechar o modal
-            setHomeOfficeEvents(prevHomeOfficeEvents => [...prevHomeOfficeEvents, newEvent]);
-            closeModal();
+            // Atualiza o estado local com o novo evento
+            setHomeOfficeEvents([...homeOfficeEvents, { ...newEvent, id: response.data.id }]);
             toast.success('Home office agendado com sucesso!');
         } catch (error) {
             console.error('Erro ao agendar home office:', error);
