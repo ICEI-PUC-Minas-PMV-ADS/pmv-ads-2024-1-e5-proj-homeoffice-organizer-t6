@@ -11,14 +11,12 @@ const ModalCollaborator = ({ closeModal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Verifica se todos os campos foram preenchidos
         if (!name || !email || !sector) {
             showToast('Preencha todos os campos!', 'error');
             return;
         }
 
         try {
-            // Realiza a chamada para criar o colaborador no backend
             let formData = new FormData();
             formData.append('name', name)
             formData.append('email', email)
@@ -26,21 +24,19 @@ const ModalCollaborator = ({ closeModal }) => {
             const response = await axiosInstance.post('/collaborator/create-collaborator/', formData);
 
             showToast('Colaborador adicionado com sucesso.', 'success');
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000);
+
+            // Atualizar localmente o estado após adicionar o colaborador
+            setName('');
+            setEmail('');
+            setSector('');
+
+            // Fechar o modal após adicionar o colaborador
+            closeModal();
         } catch (error) {
             console.error('Erro:', error);
             showToast('Erro ao adicionar colaborador', 'error');
         }
-
-        // Limpa os campos após adicionar o colaborador
-        setName('');
-        setEmail('');
-        setSector('');
-        closeModal();
     };
-
 
     return (
         <div className="modal-collaborator">
