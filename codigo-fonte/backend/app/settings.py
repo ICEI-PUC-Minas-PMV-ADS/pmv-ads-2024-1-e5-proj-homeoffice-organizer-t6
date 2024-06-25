@@ -39,7 +39,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com',
-    'https://pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com',
+    'https://pmv-ads-2024-1-e5-proj-homeoffice-rjmv.onrender.com',
 ]
 
 ROOT_URLCONF = 'app.urls'
