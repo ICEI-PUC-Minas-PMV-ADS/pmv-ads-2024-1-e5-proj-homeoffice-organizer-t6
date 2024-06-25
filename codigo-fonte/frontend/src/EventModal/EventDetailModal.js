@@ -11,18 +11,17 @@ const EventDetailModal = ({ closeModal, event }) => {
             const response = await axiosInstance.delete(`/event/events/delete/${event.id}`, {
                 method: 'DELETE'
             });
-            if (response.ok) {
+            if (response.status === 204) {
                 toast.success('Evento apagado');
                 closeModal();
                 setTimeout(() => {
                     window.location.reload();
                 }, 2000);
             } else {
-                console.log(event)
                 toast.error('Erro ao deletar esse evento');
             }
         } catch (error) {
-            console.log(event)
+            console.error('Erro ao deletar evento:', error);
             toast.error('Erro ao deletar esse evento');
         }
     };
