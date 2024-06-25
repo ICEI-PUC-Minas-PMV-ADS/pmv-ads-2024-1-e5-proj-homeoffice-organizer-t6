@@ -22,10 +22,11 @@ const EventModal = ({ closeModal }) => {
             if (response.status === 201) {
                 toast.success('Evento criado com sucesso!');
                 closeModal();
-                // Atualiza o estado local antes de recarregar
                 setTitle('');
                 setDescription('');
                 setDate('');
+                
+                window.location.reload();
             } else {
                 toast.error('Erro ao criar evento. Por favor, tente novamente.');
             }

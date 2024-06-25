@@ -23,8 +23,9 @@ const ModalDeleteCollaborator = ({ closeModal, collaborators }) => {
 
                 if (response.status === 204) {
                     toast.success('Colaborador deletado com sucesso.');
-                    // Atualizar o estado local após deletar com sucesso
                     setSelectedCollaborator('');
+                    
+                    window.location.reload();
                 } else {
                     toast.error('Erro ao deletar colaborador.');
                 }
