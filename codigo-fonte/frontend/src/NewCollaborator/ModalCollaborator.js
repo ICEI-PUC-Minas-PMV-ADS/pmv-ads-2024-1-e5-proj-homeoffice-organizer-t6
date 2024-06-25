@@ -19,17 +19,11 @@ const ModalCollaborator = ({ closeModal }) => {
 
         try {
             // Realiza a chamada para criar o colaborador no backend
-            const response = await axiosInstance.post('/collaborator/create-collaborator/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name: name, email, sector }),
-            });
-
-            if (!response.ok) {
-                throw new Error('Erro ao adicionar colaborador.');
-            }
+            let formData = new FormData();
+            formData.append('name', name)
+            formData.append('email', email)
+            formData.append('sector', sector)
+            const response = await axiosInstance.post('/collaborator/create-collaborator/', formData);
 
             showToast('Colaborador adicionado com sucesso.', 'success');
             setTimeout(() => {

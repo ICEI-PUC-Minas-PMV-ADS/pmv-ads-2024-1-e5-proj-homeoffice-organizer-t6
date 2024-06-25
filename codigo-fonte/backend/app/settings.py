@@ -1,13 +1,15 @@
+# Django settings for server project.
+
 import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key')
+SECRET_KEY = 'django-insecure-q1-xt8(+yr^6iye@sa3@miqn&(#-be96ild1s!o)wlmwqrzd3-'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['pmv-ads-2024-1-e5-proj-homeoffice-jegz.onrender.com']
+ALLOWED_HOSTS = ['pmv-ads-2024-1-e5-proj-homeoffice-rjmv.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -25,6 +27,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -32,11 +35,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     'https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com',
+    'https://pmv-ads-2024-1-e5-proj-homeoffice-rjmv.onrender.com',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -59,7 +62,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-# Configuração para uso do banco de dados em memória (SQLite)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -67,19 +69,32 @@ DATABASES = {
     }
 }
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_TZ = True
+
+STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+# Secure SSL redirect (recommended in production)
 SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-X_FRAME_OPTIONS = 'DENY'

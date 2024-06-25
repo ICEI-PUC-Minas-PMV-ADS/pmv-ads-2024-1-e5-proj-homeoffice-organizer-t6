@@ -28,7 +28,6 @@ const MyCalendar = () => {
     const [view, setView] = useState(Views.MONTH);
     const [date, setDate] = useState(new Date());
     const [selectedEvent, setSelectedEvent] = useState(null);
-    const [selectCollaborators, setSelectCollaborators] = useState([]);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -57,10 +56,7 @@ const MyCalendar = () => {
             // função que pega a lista de eventos que já foi criada pelo usuário
             try {
                 const response = await axiosInstance.get('/event/events-list/');
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar eventos.');
-                }
-                const data = await response.json();
+                const data = await response.data;
                 const eventList = data.map(event => ({
                     id: event.id,
                     title: event.title,
@@ -83,10 +79,7 @@ const MyCalendar = () => {
         // função que busca os dias de home office que foram marcados para os colaboradores
         try {
             const response = await axiosInstance.get('/collaborator/collaborator-dates-list/');
-            if (!response.ok) {
-                throw new Error('Erro ao buscar as datas dos colaboradores.');
-            }
-            const data = await response.json();
+            const data = await response.data;
             const collaboratorEvents = data.map(item => ({
                 id: item.id,
                 title: item.collaborator,
@@ -113,11 +106,8 @@ const MyCalendar = () => {
             if (sector) {
                 url += `?sector=${sector}`;
             }
-            const response = await axiosInstance.fetch(url);
-            if (!response.ok) {
-                throw new Error('Erro ao buscar colaboradores.');
-            }
-            const data = await response.json();
+            const response = await axiosInstance.get(url)
+            const data = await response.data;
             setCollaborators(data);
         } catch (error) {
             console.error('Erro ao buscar colaboradores:', error.message);
@@ -196,10 +186,7 @@ const MyCalendar = () => {
     const handleDeleteHome = async (collaboratorId) => {
         //função para deletar o "evento" de home office de determinado colaborador
         try {
-            const response = await await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
-            if (!response.ok) {
-                throw new Error('Erro ao excluir home office');
-            }
+            const response = await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
             setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
             toast.success('Marcação excluída com sucesso!');
             closeModal();
@@ -373,13 +360,11 @@ const MyCalendar = () => {
         if (event.type === 'homeOffice') {
             setSelectedEvent(event);
             setModalType('deleteConfirmation'); // Define o modal que vai abrir como o de confirmação pra deletar aquele home office
-            console.log(event)
             setShowModal(true);
             // Verifica se o item clicado é um evento criado
         } else if (event.type === 'eventCreated') {
             setSelectedEvent(event);
             setModalType('detail'); //Define que o tipo de modal que vai abrir é o de detalhe do evento criado
-            console.log(event)
             setShowModal(true);
         }
     };
