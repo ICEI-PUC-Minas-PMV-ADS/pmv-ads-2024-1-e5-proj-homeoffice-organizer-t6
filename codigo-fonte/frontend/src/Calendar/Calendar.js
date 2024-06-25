@@ -183,11 +183,11 @@ const MyCalendar = () => {
         return dayProp;
     };
 
-    const handleDeleteHome = async (collaboratorId) => {
+    const handleDeleteHome = async (collaboratorDateId) => {
         try {
-            await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
+            await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorDateId}/`);
             // Atualiza o estado removendo o evento excluído
-            setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
+            setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorDateId));
             toast.success('Marcação excluída com sucesso!');
             closeModal();
         } catch (error) {
