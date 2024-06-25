@@ -41,24 +41,24 @@ const ModalCollaborators = ({
             type: 'homeOffice'
         };
 
-        setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
-
         try {
+            // POST para adicionar data de home office para o colaborador
             const response = await axiosInstance.post('/collaborator/api/collaborator-date/', {
                 collaborator_id: collaborator.id,
-                date: selectedDate.format('YYYY-MM-DD'), // Use format() para obter a data no formato desejado
+                date: selectedDate.format('YYYY-MM-DD'),
             });
 
             if (response.status !== 201) {
                 throw new Error('Erro ao agendar home office');
             }
 
+            // Atualiza o estado local com o novo evento
+            setHomeOfficeEvents([...homeOfficeEvents, newEvent]);
             closeModal();
             toast.success('Home office agendado com sucesso!');
         } catch (error) {
             console.error('Erro ao agendar home office:', error);
             toast.error('Erro ao agendar home office.');
-            setHomeOfficeEvents(prevEvents => prevEvents.filter(event => event !== newEvent));
         }
     };
 
