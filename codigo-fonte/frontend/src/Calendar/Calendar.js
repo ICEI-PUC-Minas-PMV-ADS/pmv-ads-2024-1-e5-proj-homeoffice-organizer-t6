@@ -184,9 +184,9 @@ const MyCalendar = () => {
     };
 
     const handleDeleteHome = async (collaboratorId) => {
-        //função para deletar o "evento" de home office de determinado colaborador
         try {
-            const response = await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
+            await axiosInstance.delete(`/collaborator/collaborator-date-delete/${collaboratorId}/`);
+            // Atualiza o estado removendo o evento excluído
             setHomeOfficeEvents(prevEvents => prevEvents.filter(e => e.id !== collaboratorId));
             toast.success('Marcação excluída com sucesso!');
             closeModal();
