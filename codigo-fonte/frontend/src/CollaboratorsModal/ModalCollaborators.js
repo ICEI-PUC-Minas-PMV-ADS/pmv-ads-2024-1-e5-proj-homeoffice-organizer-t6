@@ -56,6 +56,7 @@ const ModalCollaborators = ({
 
             // Atualiza o estado local com o novo evento
             setHomeOfficeEvents([...homeOfficeEvents, { ...newEvent, id: response.data.id }]);
+            closeModal();
             toast.success('Home office agendado com sucesso!');
         } catch (error) {
             console.error('Erro ao agendar home office:', error);
