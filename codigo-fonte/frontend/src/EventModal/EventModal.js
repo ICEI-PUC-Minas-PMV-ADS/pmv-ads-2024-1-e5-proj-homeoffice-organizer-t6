@@ -16,21 +16,22 @@ const EventModal = ({ closeModal }) => {
         };
 
         try {
-            const response = await axiosInstance.post('/event/event-create/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newEvent),
-            });
-            toast.success('Evento criado com sucesso!')
-            closeModal();
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000);
+            const response = await axiosInstance.post('/event/event-create/', newEvent);
+
+            // Verifica o status da resposta
+            if (response.status === 201) {
+                toast.success('Evento criado com sucesso!');
+                closeModal();
+                // Atualiza o estado local antes de recarregar
+                setTitle('');
+                setDescription('');
+                setDate('');
+            } else {
+                toast.error('Erro ao criar evento. Por favor, tente novamente.');
+            }
         } catch (error) {
             console.error('Erro ao criar evento:', error.message);
-            toast.error(`Erro ao agendar evento.`);
+            toast.error('Erro ao agendar evento.');
         }
     };
 
@@ -45,7 +46,7 @@ const EventModal = ({ closeModal }) => {
                 <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                 <label>Data:</label>
                 <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-                <button type="submit" onClick={handleSave}>Salvar</button>
+                <button type="button" onClick={handleSave}>Salvar</button>
             </div>
         </div>
     );

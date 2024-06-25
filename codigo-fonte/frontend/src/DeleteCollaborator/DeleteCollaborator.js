@@ -1,9 +1,9 @@
-import {toast} from "react-toastify";
-import {useState} from "react";
+import React, { useState } from 'react';
+import { toast } from "react-toastify";
 import axiosInstance from "../axiosInstance";
-import './DeleteCollaborator.css'
+import './DeleteCollaborator.css';
 
-const ModalDeleteCollaborator = ({closeModal, collaborators}) => {
+const ModalDeleteCollaborator = ({ closeModal, collaborators }) => {
     const [selectedSector, setSelectedSector] = useState('');
     const [selectedCollaborator, setSelectedCollaborator] = useState('');
 
@@ -19,21 +19,18 @@ const ModalDeleteCollaborator = ({closeModal, collaborators}) => {
     const handleDelete = async () => {
         if (selectedCollaborator) {
             try {
-                const response = await axiosInstance.delete(`/collaborator/collaborator/${selectedCollaborator}/`, {
-                    method: 'DELETE',
-                });
+                const response = await axiosInstance.delete(`/collaborator/collaborator/${selectedCollaborator}/`);
 
                 if (response.status === 204) {
                     toast.success('Colaborador deletado com sucesso.');
+                    // Atualizar o estado local após deletar com sucesso
+                    setSelectedCollaborator('');
                 } else {
                     toast.error('Erro ao deletar colaborador.');
                 }
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2000);
                 closeModal();
             } catch (error) {
-                console.error('Erro:', error);
+                console.error('Erro ao deletar colaborador:', error);
                 toast.error('Erro ao deletar colaborador.');
                 closeModal();
             }
@@ -42,7 +39,7 @@ const ModalDeleteCollaborator = ({closeModal, collaborators}) => {
         }
     };
 
-    const filteredCollaborators = collaborators.filter(collaborator => collaborator.sector === selectedSector);
+    const filteredCollaborators = selectedSector ? collaborators.filter(collaborator => collaborator.sector === selectedSector) : [];
 
     return (
         <div className="modal">
