@@ -536,10 +536,10 @@ const MyCalendar = () => {
             {showModal && modalType === 'detail' && <EventDetailModal closeModal={closeModal} event={selectedEvent} />}
             {showModal && modalType === 'deleteConfirmation' && selectedEvent && (
                 <DeleteConfirmationModal
-                    collaboratorId={selectedEvent.id}
-                    collaboratorName={selectedEvent.title}
-                    onDelete={handleDeleteHome}
-                    onClose={closeModal}
+                    collaboratorDateId={selectedEvent.id} // Verifique se selectedEvent.id está definido corretamente
+                    collaboratorName={selectedEvent.collaboratorName} // Nome do colaborador para exibição no modal
+                    onDelete={handleDeleteHome} // Função para deletar a marcação de home office
+                    onClose={closeModal} // Função para fechar o modal
                 />
             )}
         </div>
