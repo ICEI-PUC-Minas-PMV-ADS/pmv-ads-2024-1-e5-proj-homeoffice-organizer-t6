@@ -9,5 +9,5 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-orga
 
 Nesse vídeo o parceiro explica sobre a utilidade e importância do projeto para a empresa e como isso impacta na vida dos colaoradores.
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/15d6e87a-4215-4918-93a5-8e1d60160e96
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/eb550577-256b-4afc-a346-e19524ca7bff
 
