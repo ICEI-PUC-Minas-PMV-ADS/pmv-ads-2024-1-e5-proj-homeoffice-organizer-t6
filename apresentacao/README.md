@@ -13,7 +13,8 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-orga
 
 ## Apresentação na PUC
 
-[Apresentacao-projeto .pptx](https://github.com/user-attachments/files/16022517/Apresentacao-projeto.pptx)
+[Apresentacao-projeto .pptx](https://github.com/user-attachments/files/16022525/Apresentacao-projeto.pptx)
+
 
 
 
