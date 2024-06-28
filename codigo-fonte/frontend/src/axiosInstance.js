@@ -4,7 +4,7 @@ const baseURL = 'https://pmv-ads-2024-1-e5-proj-homeoffice-rjmv.onrender.com';
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
-  timeout: 5000,
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
