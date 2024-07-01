@@ -15,6 +15,10 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-orga
 
 [Apresentacao-projeto .pptx](https://github.com/user-attachments/files/16022525/Apresentacao-projeto.pptx)
 
+## Demonstração do projeto funcionando no Modo Produção
+
+[Demonstracao-projeto.mp4](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/assets/103579574/db6baa0d-7359-43e9-a581-99b3dcdeba83)
+
 
 
 
